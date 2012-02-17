@@ -1,0 +1,18 @@
+//
+//  OrderPageController.h
+//  BallParkTest
+//
+//  Created by Seth  Thompson on 2/14/12.
+//  Copyright (c) 2012 Bradley University. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface OrderPageController : UIViewController <UITextFieldDelegate>
+@property (weak, nonatomic) IBOutlet UIImageView *logo;
+@property (weak, nonatomic) IBOutlet UILabel *label;
+@property (weak, nonatomic) NSString *logoName;
+@property (weak, nonatomic) NSString *foodName;
+
+
+@end
