@@ -35,14 +35,22 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
 
-    [label setTextAlignment:UITextAlignmentCenter];
+    [itemName setTextAlignment:UITextAlignmentCenter];
+    [itemName setText:[menuItem valueForKey:@"name"]];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:2];
+    [formatter setMinimumFractionDigits:0];
+    
+    [price setText:[formatter stringFromNumber:[menuItem valueForKey:@"price"]]];
+    [priceDelivery setText:[formatter stringFromNumber:delivery]];
+    
     
 }
 
 - (void)viewDidUnload
 {
     [self setLogo:nil];
-    [self setLabel:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
