@@ -12,12 +12,16 @@
 		<key>menu</key>
 		<array>
 			<dict>
+				<key>itemURL</key>
+				<string>http://www.phdelicious.com/images/Alsbeefshop/comboall.jpg</string>
 				<key>name</key>
 				<string>Italian Sausage</string>
 				<key>price</key>
 				<real>4</real>
 			</dict>
 			<dict>
+				<key>itemURL</key>
+				<string>http://chicago.seriouseats.com/images/20120113-187464-standing-room-only-als-under-the-l-fries.jpg</string>
 				<key>name</key>
 				<string>Polish With Fries</string>
 				<key>price</key>
@@ -35,6 +39,8 @@
 		<key>menu</key>
 		<array>
 			<dict>
+				<key>itemURL</key>
+				<string>http://www.seriouseats.com/images/20090915-hot-douggies.jpg</string>
 				<key>name</key>
 				<string>The Dog</string>
 				<key>price</key>
