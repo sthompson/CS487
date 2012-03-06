@@ -52,12 +52,6 @@
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:
                          [NSURL URLWithString:[menuItem objectForKey:@"itemURL"]]];
     logo.image = [UIImage imageWithData:imageData];
-    
-    
-    
-    
-    
-    
 }
 
 - (void)viewDidUnload

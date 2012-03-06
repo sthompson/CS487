@@ -104,5 +104,48 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>Gino&apos;s East</string>
+		<key>delivery</key>
+		<real>2.5</real>
+		<key>logoURL</key>
+		<string>http://www.secondcitypizzatours.com/Gino&apos;s_Logo.jpg</string>
+		<key>menu</key>
+		<array>
+			<dict>
+				<key>itemURL</key>
+				<string>http://slice.seriouseats.com/images/2011/07/20110720-161716-Chicago-Ginos-East-Deep-Dish-Slice-CC.jpg</string>
+				<key>name</key>
+				<string>Slice of Sausage Pizza</string>
+				<key>price</key>
+				<real>3.99</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://www.thecookbookchronicles.com/blog/wp-content/uploads/2009/08/ginoseast8.jpg</string>
+				<key>name</key>
+				<string>Slice of Pepperoni Pizza</string>
+				<key>price</key>
+				<real>3.99</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://www.ginosonhiggins.com/images/goh_app.jpg</string>
+				<key>name</key>
+				<string>Garlic Sticks with Dip</string>
+				<key>price</key>
+				<real>5.99</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://www.mightysweet.com/mesohungry/wp-content/uploads/2009/08/17-99cent-Root-Beer-Float-at-Venice-Beach.jpg</string>
+				<key>name</key>
+				<string>Root Beer Float</string>
+				<key>price</key>
+				<real>4.5</real>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>
