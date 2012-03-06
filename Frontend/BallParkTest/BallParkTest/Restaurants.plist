@@ -27,6 +27,30 @@
 				<key>price</key>
 				<integer>5</integer>
 			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://unbreaded.com/wp-content/uploads/2009/04/als-beef-chicago.jpg</string>
+				<key>name</key>
+				<string>Italian Beef</string>
+				<key>price</key>
+				<real>5.99</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://3.bp.blogspot.com/-ku7jyoiulcM/TtLAUuiOlFI/AAAAAAAAASU/whkSjpsBDsQ/s1600/SAM_0912.JPG</string>
+				<key>name</key>
+				<string>BBQ Bacon Chedder Burger</string>
+				<key>price</key>
+				<real>5.99</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://seanlockedigitalimagery.files.wordpress.com/2009/07/als_22.jpg?w=450</string>
+				<key>name</key>
+				<string>Bleu Cheese Fries</string>
+				<key>price</key>
+				<real>3.5</real>
+			</dict>
 		</array>
 	</dict>
 	<dict>
@@ -44,7 +68,39 @@
 				<key>name</key>
 				<string>The Dog</string>
 				<key>price</key>
-				<real>3.99</real>
+				<real>2</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://leisureblogs.chicagotribune.com/.a/6a00d8341c58f853ef0147e01f6d5d970b-800wi</string>
+				<key>name</key>
+				<string>The Elvis</string>
+				<key>price</key>
+				<real>3</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://farm7.static.flickr.com/6140/5983349794_8b8095ea40.jpg</string>
+				<key>name</key>
+				<string>The Dave Pound</string>
+				<key>price</key>
+				<real>1.5</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://s3-media3.ak.yelpcdn.com/bphoto/5zG4s2e04WGH_YAeyG2Z5Q/l.jpg</string>
+				<key>name</key>
+				<string>The Charlie and James Sohn</string>
+				<key>price</key>
+				<real>3</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://media.avclub.com/images/articles/article/24974/HD_duckfatFF_Decider_jpg_627x325_crop_upscale_q85.jpg</string>
+				<key>name</key>
+				<string>Duck Fat Fries</string>
+				<key>price</key>
+				<real>3.5</real>
 			</dict>
 		</array>
 	</dict>
