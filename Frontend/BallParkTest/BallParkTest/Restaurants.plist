@@ -147,5 +147,83 @@
 			</dict>
 		</array>
 	</dict>
+	<dict>
+		<key>name</key>
+		<string>Goose Island</string>
+		<key>delivery</key>
+		<real>2</real>
+		<key>logoURL</key>
+		<string>http://www.gooseisland.com/goosefilebin/images/partner_tools/logos/low_res_jpeg/GooseIsland_Corporate_Logo_Lo_Res.jpg</string>
+		<key>menu</key>
+		<array>
+			<dict>
+				<key>itemURL</key>
+				<string>http://beercraving.com/sites/default/files/imagecache/beer_full/goose312_0.jpeg</string>
+				<key>name</key>
+				<string>312 Urban Wheat Ale</string>
+				<key>price</key>
+				<real>5</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://4.bp.blogspot.com/-fAQSHGSVnUc/Tyn-8cdfFtI/AAAAAAAAAB8/go2DTf533RU/s1600/Goose+Island+Honker&apos;s+Ale.jpg</string>
+				<key>name</key>
+				<string>Honker&apos;s Ale</string>
+				<key>price</key>
+				<real>6</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://beer-taster.com/wp-content/uploads/yapb_cache/goose_island_nut_brown_ale.3wksr9cv22qscwkc4g8oo4088.6ylu316ao144c8c4woosog48w.th.jpeg</string>
+				<key>name</key>
+				<string>Nut Brown Ale</string>
+				<key>price</key>
+				<real>6</real>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://www.drinkingrealbeer.com/wp-content/uploads/2011/02/goose-island-pepe-nero.jpg</string>
+				<key>name</key>
+				<string>Pepe Nero</string>
+				<key>price</key>
+				<real>8</real>
+			</dict>
+		</array>
+	</dict>
+	<dict>
+		<key>name</key>
+		<string>Eli&apos;s Cheesecake</string>
+		<key>delivery</key>
+		<integer>3</integer>
+		<key>logoURL</key>
+		<string>http://larryfire.files.wordpress.com/2010/08/elis_cheesecake_logo_raster.jpg</string>
+		<key>menu</key>
+		<array>
+			<dict>
+				<key>itemURL</key>
+				<string>http://www.americanfoodandag.com/NewsLetter/Images/eli-cheesecake-Original.jpg</string>
+				<key>name</key>
+				<string>Original Cheesecake</string>
+				<key>price</key>
+				<integer>5</integer>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://1.bp.blogspot.com/_I8SyiXYp9zc/RyS-w09vc8I/AAAAAAAAAFQ/f_HYyZMGKzE/s320/Eli%27s%2Bchocolate%2Bchip%2Bcheesecake.bmp</string>
+				<key>name</key>
+				<string>Chocolate Chip Cheesecake</string>
+				<key>price</key>
+				<integer>6</integer>
+			</dict>
+			<dict>
+				<key>itemURL</key>
+				<string>http://www.atlantic.k12.ia.us/~2015008/images/turtlecheesecake.jpg</string>
+				<key>name</key>
+				<string>Turtle Cheesecake</string>
+				<key>price</key>
+				<real>6</real>
+			</dict>
+		</array>
+	</dict>
 </array>
 </plist>
