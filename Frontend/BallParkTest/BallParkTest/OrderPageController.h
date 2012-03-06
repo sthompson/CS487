@@ -12,7 +12,6 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
 @property (weak, nonatomic) IBOutlet UILabel *label;
 @property (weak, nonatomic) NSDictionary *menuItem;
-@property (weak, nonatomic) NSString *companyName;
 @property (weak, nonatomic) NSNumber *delivery;
 
 
