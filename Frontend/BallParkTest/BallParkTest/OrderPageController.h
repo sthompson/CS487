@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceDelivery;
 @property (weak, nonatomic) NSDictionary *menuItem;
 @property (weak, nonatomic) NSNumber *delivery;
+@property (weak, nonatomic) NSString *imageURL;
 
 
 @end

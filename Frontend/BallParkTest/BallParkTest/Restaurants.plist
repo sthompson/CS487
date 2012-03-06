@@ -7,6 +7,8 @@
 		<string>Al&apos;s Beef</string>
 		<key>delivery</key>
 		<real>3</real>
+		<key>logoURL</key>
+		<string>http://evanstonlifestyle.com/blog/wp-content/uploads/2008/11/als-beef1.jpg</string>
 		<key>menu</key>
 		<array>
 			<dict>
@@ -28,6 +30,8 @@
 		<string>Hot Doug&apos;s</string>
 		<key>delivery</key>
 		<integer>3</integer>
+		<key>logoURL</key>
+		<string>http://hotdougs.com/Images/HotDougslogo_medium.jpg</string>
 		<key>menu</key>
 		<array>
 			<dict>

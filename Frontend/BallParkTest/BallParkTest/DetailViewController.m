@@ -102,6 +102,7 @@
     self.page = [[OrderPageController alloc] initWithNibName:@"OrderPageController" bundle:nil];    
     self.page.delivery = [menu valueForKey:@"delivery"];
     self.page.menuItem = [[menu valueForKey:@"menu"] objectAtIndex:indexPath.row];
+    self.page.imageURL = [menu valueForKey:@"logoURL"];
     
 
     [self.navigationController pushViewController:self.page animated:YES];

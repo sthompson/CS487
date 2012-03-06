@@ -9,7 +9,7 @@
 #import "OrderPageController.h"
 
 @implementation OrderPageController
-@synthesize logo,menuItem,itemName,delivery,price,priceDelivery;
+@synthesize logo,menuItem,itemName,delivery,price,priceDelivery,imageURL;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
