@@ -30,6 +30,14 @@
 
 #pragma mark - View lifecycle
 
+// Returns a valid url string
+-(id) getString:(NSString *)urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString]; 
+    NSString *data = [[NSString alloc] initWithContentsOfURL:url encoding:NSStringEncodingConversionAllowLossy error:nil];
+    return data;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -44,6 +52,15 @@
     
     [price setText:[formatter stringFromNumber:[menuItem valueForKey:@"price"]]];
     [priceDelivery setText:[formatter stringFromNumber:delivery]];
+    
+    // Set Image
+    NSString *url = [self getString:imageURL];
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL:[NSURL URLWithString:url]];
+    logo.image = [UIImage imageWithData:imageData];
+    
+    
+    
+    
     
     
 }

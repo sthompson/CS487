@@ -17,5 +17,7 @@
 @property (weak, nonatomic) NSNumber *delivery;
 @property (weak, nonatomic) NSString *imageURL;
 
+-(NSString *)getString:(NSString *)url;     // Parses JSON to a string
+
 
 @end
