@@ -78,7 +78,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [menu count];
+    return [[menu valueForKey:@"menu"]count];
 }
 
 // Customize the appearance of table view cells.
@@ -93,7 +93,7 @@
     }
     
     // Configure the cell.
-    cell.textLabel.text = [menu objectAtIndex:[indexPath row]];
+    cell.textLabel.text = [[[menu valueForKey:@"menu"]objectAtIndex:indexPath.row]valueForKey:@"name"];
     return cell;
 }
 
@@ -103,7 +103,7 @@
     
 
     
-    self.page.logoName = logoname;
+    
     self.page.foodName = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]; 
     
 

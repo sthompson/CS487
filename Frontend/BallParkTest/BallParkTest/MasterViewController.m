@@ -38,12 +38,6 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     restaurants = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"restaurants" ofType:@"plist"]];
-    
-    
-    
-    
-    
-    
 }
 
 - (void)viewDidUnload
@@ -150,8 +144,7 @@
 
     self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     
-    self.detailViewController.menu = [menus objectForKey:[restaurants objectAtIndex:[indexPath row]]];
-    self.detailViewController.logoname = [names objectForKey:[restaurants objectAtIndex:[indexPath row]]];
+    self.detailViewController.menu = [restaurants objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
