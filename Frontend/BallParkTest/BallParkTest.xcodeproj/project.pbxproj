@@ -108,6 +108,7 @@
 				726782B914EAFC6C007FED82 /* OrderPageController.xib */,
 				7202CC2514EAE46900B12012 /* MasterViewController.xib */,
 				726782B514EAE980007FED82 /* DetailViewController.xib */,
+				7220D95915068EC90013DFD5 /* Resources */,
 				7202CC1414EAE46900B12012 /* Supporting Files */,
 			);
 			path = BallParkTest;
@@ -121,9 +122,16 @@
 				7202CC1614EAE46900B12012 /* InfoPlist.strings */,
 				7202CC1914EAE46900B12012 /* main.m */,
 				7202CC1B14EAE46900B12012 /* BallParkTest-Prefix.pch */,
-				7220D956150681EE0013DFD5 /* Restaurants.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		7220D95915068EC90013DFD5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				7220D956150681EE0013DFD5 /* Restaurants.plist */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		726782BC14EAFDE7007FED82 /* Images */ = {

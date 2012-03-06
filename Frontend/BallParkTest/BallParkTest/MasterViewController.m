@@ -36,23 +36,8 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    restaurants = [[NSMutableArray alloc] initWithCapacity:10];
-    [restaurants addObject: @"Hot Doug's"];
-    [restaurants addObject: @"Gino's East"];
-    [restaurants addObject: @"Al's"];
-    [restaurants addObject: @"Khan's BBQ"];
-    
-    NSArray *hotdogs = [[NSArray alloc] initWithObjects:@"The Dog",@"The Elvis",@"The Paul Kelly",@"French Fries", @"Duck Fat Fries", nil];
-    NSArray *ginos = [[NSArray alloc] initWithObjects:@"Sausage Slice",@"Pepperoni Slice",@"Chicago Fire Slice", @"Vegetarian Slice",@"Calzone", nil];
-    NSArray *als = [[NSArray alloc] initWithObjects:@"Polish With Fries",@"Italian Sausage", @"Italian Beef", @"Burger", nil];
-    NSArray *khans = [[NSArray alloc] initWithObjects:@"Tandoori Chicken", @"Frontier Beef",@"Bihari Kabab", @"Goat Qorma",nil];
-    
-    NSArray *list = [[NSArray alloc] initWithObjects:@"dougs.jpg",@"ginos.png",@"als.jpg",@"khans.png", nil];
-    
-    menus = [[NSDictionary alloc] initWithObjects:[[NSArray alloc] initWithObjects:hotdogs,ginos,als,khans, nil ] forKeys: restaurants];
-    
-    names = [[NSDictionary alloc] initWithObjects:list forKeys:restaurants];
-    
+
+    restaurants = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"Restaurants" ofType:@"plist"]];
     
     
     
@@ -118,7 +103,7 @@
 
     // Configure the cell.
     
-    cell.textLabel.text = [restaurants objectAtIndex:[indexPath row]];
+    cell.textLabel.text = [[restaurants objectAtIndex:[indexPath row]] valueForKey:@"name"];
     return cell;
 }
 
@@ -162,6 +147,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+
     self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     
     self.detailViewController.menu = [menus objectForKey:[restaurants objectAtIndex:[indexPath row]]];

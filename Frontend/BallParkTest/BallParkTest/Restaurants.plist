@@ -9,22 +9,20 @@
 		<key>delivery</key>
 		<real>3</real>
 		<key>menu</key>
-		<dict>
-			<key>item 1</key>
+		<array>
 			<dict>
 				<key>name</key>
 				<string>Italian Sausage</string>
 				<key>price</key>
 				<real>4</real>
 			</dict>
-			<key>item 2</key>
 			<dict>
 				<key>name</key>
 				<string>Polish With Fries</string>
 				<key>price</key>
 				<integer>5</integer>
 			</dict>
-		</dict>
+		</array>
 	</dict>
 	<key>item 2</key>
 	<dict>
@@ -33,15 +31,14 @@
 		<key>delivery</key>
 		<integer>3</integer>
 		<key>menu</key>
-		<dict>
-			<key>item 1</key>
+		<array>
 			<dict>
 				<key>name</key>
 				<string>The Dog</string>
 				<key>price</key>
 				<string>3.99</string>
 			</dict>
-		</dict>
+		</array>
 	</dict>
 </dict>
 </plist>
