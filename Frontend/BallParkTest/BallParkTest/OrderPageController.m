@@ -10,7 +10,7 @@
 
 @implementation OrderPageController
 @synthesize label;
-@synthesize logo,logoName,foodName;
+@synthesize logo,menuItem,companyName,delivery;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,8 +35,7 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
-    [logo setImage:[UIImage imageNamed:logoName]];
-    [label setText:foodName];
+
     [label setTextAlignment:UITextAlignmentCenter];
     
 }

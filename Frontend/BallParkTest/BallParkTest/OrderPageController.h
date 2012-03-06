@@ -11,8 +11,9 @@
 @interface OrderPageController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
 @property (weak, nonatomic) IBOutlet UILabel *label;
-@property (weak, nonatomic) NSString *logoName;
-@property (weak, nonatomic) NSString *foodName;
+@property (weak, nonatomic) NSDictionary *menuItem;
+@property (weak, nonatomic) NSString *companyName;
+@property (weak, nonatomic) NSNumber *delivery;
 
 
 @end

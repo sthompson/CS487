@@ -99,12 +99,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    self.page = [[OrderPageController alloc] initWithNibName:@"OrderPageController" bundle:nil];
-    
-
-    
-    
-    self.page.foodName = [[[tableView cellForRowAtIndexPath:indexPath] textLabel] text]; 
+    self.page = [[OrderPageController alloc] initWithNibName:@"OrderPageController" bundle:nil];    
+    self.page.delivery = [menu valueForKey:@"delivery"];
+    self.page.companyName = [menu valueForKey:@"name"];
+    self.page.menuItem = [[menu valueForKey:@"menu"] objectAtIndex:indexPath.row];
     
 
     [self.navigationController pushViewController:self.page animated:YES];
