@@ -221,7 +221,7 @@
 							<int key="NSfFlags">16</int>
 						</object>
 					</object>
-					<object class="IBUILabel" id="204728556">
+					<object class="IBUILabel" id="73648822">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{139, 246}, {42, 21}}</string>
@@ -241,7 +241,7 @@
 						<reference key="IBUIFontDescription" ref="326660889"/>
 						<reference key="IBUIFont" ref="768876310"/>
 					</object>
-					<object class="IBUILabel" id="35495049">
+					<object class="IBUILabel" id="802281053">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{139, 285}, {42, 21}}</string>
@@ -313,7 +313,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">price</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="204728556"/>
+						<reference key="destination" ref="73648822"/>
 					</object>
 					<int key="connectionID">18</int>
 				</object>
@@ -321,7 +321,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">priceDelivery</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="35495049"/>
+						<reference key="destination" ref="802281053"/>
 					</object>
 					<int key="connectionID">19</int>
 				</object>
@@ -353,8 +353,8 @@
 							<reference ref="859606144"/>
 							<reference ref="55235925"/>
 							<reference ref="701763515"/>
-							<reference ref="204728556"/>
-							<reference ref="35495049"/>
+							<reference ref="73648822"/>
+							<reference ref="802281053"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -406,12 +406,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">15</int>
-						<reference key="object" ref="204728556"/>
+						<reference key="object" ref="73648822"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">16</int>
-						<reference key="object" ref="35495049"/>
+						<reference key="object" ref="802281053"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -445,7 +445,6 @@
 					<string key="superclassName">UIViewController</string>
 					<dictionary class="NSMutableDictionary" key="outlets">
 						<string key="itemName">UILabel</string>
-						<string key="label">UILabel</string>
 						<string key="logo">UIImageView</string>
 						<string key="price">UILabel</string>
 						<string key="priceDelivery">UILabel</string>
@@ -453,10 +452,6 @@
 					<dictionary class="NSMutableDictionary" key="toOneOutletInfosByName">
 						<object class="IBToOneOutletInfo" key="itemName">
 							<string key="name">itemName</string>
-							<string key="candidateClassName">UILabel</string>
-						</object>
-						<object class="IBToOneOutletInfo" key="label">
-							<string key="name">label</string>
 							<string key="candidateClassName">UILabel</string>
 						</object>
 						<object class="IBToOneOutletInfo" key="logo">
