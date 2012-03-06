@@ -43,8 +43,10 @@
     [formatter setMaximumFractionDigits:2];
     [formatter setMinimumFractionDigits:2];
     
-    [price setText:[formatter stringFromNumber:[menuItem valueForKey:@"price"]]];
-    [priceDelivery setText:[formatter stringFromNumber:delivery]];
+    [price setText:[NSString stringWithFormat:@"$%@",
+                    [formatter stringFromNumber:[menuItem valueForKey:@"price"]]]];
+    [priceDelivery setText:[NSString stringWithFormat:@"$%@",
+                            [formatter stringFromNumber:delivery]]];
     
     // Set Image
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:
