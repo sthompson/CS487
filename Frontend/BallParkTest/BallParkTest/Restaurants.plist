@@ -2,10 +2,46 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>Item 1</key>
+	<key>item 1</key>
 	<dict>
 		<key>name</key>
 		<string>Al&apos;s Beef</string>
+		<key>delivery</key>
+		<real>3</real>
+		<key>menu</key>
+		<dict>
+			<key>item 1</key>
+			<dict>
+				<key>name</key>
+				<string>Italian Sausage</string>
+				<key>price</key>
+				<real>4</real>
+			</dict>
+			<key>item 2</key>
+			<dict>
+				<key>name</key>
+				<string>Polish With Fries</string>
+				<key>price</key>
+				<integer>5</integer>
+			</dict>
+		</dict>
+	</dict>
+	<key>item 2</key>
+	<dict>
+		<key>name</key>
+		<string>Hot Doug&apos;s</string>
+		<key>delivery</key>
+		<integer>3</integer>
+		<key>menu</key>
+		<dict>
+			<key>item 1</key>
+			<dict>
+				<key>name</key>
+				<string>The Dog</string>
+				<key>price</key>
+				<string>3.99</string>
+			</dict>
+		</dict>
 	</dict>
 </dict>
 </plist>
