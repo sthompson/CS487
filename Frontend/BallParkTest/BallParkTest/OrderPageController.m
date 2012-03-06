@@ -40,7 +40,7 @@
     
     NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
     [formatter setMaximumFractionDigits:2];
-    [formatter setMinimumFractionDigits:0];
+    [formatter setMinimumFractionDigits:2];
     
     [price setText:[formatter stringFromNumber:[menuItem valueForKey:@"price"]]];
     [priceDelivery setText:[formatter stringFromNumber:delivery]];

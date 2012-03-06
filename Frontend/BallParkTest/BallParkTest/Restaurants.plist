@@ -34,7 +34,7 @@
 				<key>name</key>
 				<string>The Dog</string>
 				<key>price</key>
-				<string>3.99</string>
+				<real>3.99</real>
 			</dict>
 		</array>
 	</dict>
