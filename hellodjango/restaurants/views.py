@@ -8,9 +8,8 @@ from hellodjango.restaurants.models import Menu
 from hellodjango.restaurants.models import Food_Item 
 
 def json(request):
-   data = serializers.serialize("python",Restaurant.objects.all())
-   actual_data = [d["fields"] for d in data]
-   return HttpResponse(simplejson.dumps(actual_data))
+   data = serializers.serialize("json",Restaurant.objects.all())
+   return HttpResponse(simplejson.dumps(data))
 
 def restaurants(request):
    data = serializers.serialize("python",Restaurant.objects.all())
