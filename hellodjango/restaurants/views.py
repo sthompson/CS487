@@ -23,7 +23,7 @@ def menu(request,res_name):
    food_ids = [d["fields"]["food_item"] for d in data]
    food_items = serializers.serialize("python",Food_Item.objects.all()
    #my_items = [d["fields"]["name"] for d in food_items if 1 in food_ids]
-   return HttpResponse(simplejson.dumps(food_items))
+   return HttpResponse(food_items)
    
    
 
