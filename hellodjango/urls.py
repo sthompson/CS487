@@ -8,7 +8,9 @@ from hellodjango.restaurants import views as res_views
 
 urlpatterns = patterns('',
    (r'^$',root), 
-   (r'^test/$',res_views.json),
+   (r'^restaurants/$',res_views.restaurants),
+   (r'^menu/([]+)/$',res_views.menu),
+   (r'^fooditem/([]+)/$',res_views.fooditem),
     # Examples:
     # url(r'^$', 'hellodjango.views.home', name='home'),
     # url(r'^hellodjango/', include('hellodjango.foo.urls')),
