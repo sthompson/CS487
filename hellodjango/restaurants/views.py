@@ -20,9 +20,9 @@ def menu(request,res_name):
    restaurant = serializers.serialize("python",Restaurant.objects.filter(name=res_name))
    res_id = restaurant[0]["pk"]
    menu = serializers.serialize("python",Menu.objects.filter(restaurant=res_id))
-   food_ids = [d["fields"]["food_item"] for d in data]
-   food_items = serializers.serialize("json",Food_Item.objects.all())
-   #my_items = [d["fields"]["name"] for d in food_items if 1 in food_ids]
+   food_ids = [d["fields"]["food_item"] for d in menu]
+   food_items = serializers.serialize("python",Food_Item.objects.all())
+   my_items = [d["fields"]["name"] for d in food_items if 1 in food_ids]
    return HttpResponse(food_items)
    
    
