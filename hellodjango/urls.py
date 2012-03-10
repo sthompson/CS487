@@ -1,6 +1,5 @@
 from django.conf.urls.defaults import patterns, include, url
 from hellodjango.views import root
-from hellodjango.person import views 
 from hellodjango.restaurants import views as res_views
 
 # Uncomment the next two lines to enable the admin:
@@ -9,7 +8,6 @@ from hellodjango.restaurants import views as res_views
 
 urlpatterns = patterns('',
    (r'^$',root), 
-   (r'^names/$',views.names),
    (r'^test/$',res_views.json),
     # Examples:
     # url(r'^$', 'hellodjango.views.home', name='home'),
