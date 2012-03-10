@@ -10,7 +10,7 @@ urlpatterns = patterns('',
    (r'^$',root), 
    (r'^test/$',res_views.json),
    (r'^restaurants/$',res_views.restaurants),
-   (r'^menu/([]+)/$',res_views.menu),
+   (r'^menu/(.+)/$',res_views.menu),
   # (r'^fooditem/([]+)/$',res_views.fooditem),
     # Examples:
     # url(r'^$', 'hellodjango.views.home', name='home'),
