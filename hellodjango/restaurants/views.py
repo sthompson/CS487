@@ -23,7 +23,7 @@ def menu(request,res_name):
    food_ids = [d["fields"]["food_item"] for d in menu]
    food_items = serializers.serialize("python",Food_Item.objects.all())
    my_items = [d["fields"]["name"] for d in food_items if d["pk"] in food_ids]
-   return HttpResponse(food_items)
+   return HttpResponse(simplejson.dumps(my_items))
    
    
 
