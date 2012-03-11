@@ -4,6 +4,7 @@ import os.path
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+APPEND_SLASH = True
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
