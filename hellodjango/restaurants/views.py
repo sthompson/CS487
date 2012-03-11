@@ -30,7 +30,8 @@ def fooditem(request,food_name):
   # actual_food_items= [d["fields"] for d in food_items]
   # return HttpResponse(simplejson.dumps(actual_food_items))
    food_item = serializers.serialize("python",Food_Item.objects.filter(name=food_name))
-   return HttpResponse(simplejson.dumps(food_item[0]))
+   actual_food_item = food_item[0]["fields"]
+   return HttpResponse(simplejson.dumps(actual_food_item))
    
    
    
