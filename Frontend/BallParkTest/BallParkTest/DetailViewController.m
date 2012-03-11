@@ -13,7 +13,7 @@
 
 @implementation DetailViewController
 
-@synthesize menu, logoname, page, restaurantName, menuList;
+@synthesize logoname, page, restaurantName, menuList, delivery;
 
 
 #pragma mark - Managing the detail item
@@ -102,8 +102,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.page = [[OrderPageController alloc] initWithNibName:@"OrderPageController" bundle:nil];    
-    self.page.delivery = [menu valueForKey:@"delivery"];
-    self.page.menuItem = [[menu valueForKey:@"menu"] objectAtIndex:indexPath.row];
+    self.page.delivery = self.delivery;
+    //self.page.menuItem = [[menu valueForKey:@"menu"] objectAtIndex:indexPath.row];
 
     
 

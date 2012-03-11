@@ -172,6 +172,9 @@
                                     NSASCIIStringEncoding];
     self.detailViewController.menuList = [self getArrayFromURLString:
                                          urlFormattedString];
+    self.detailViewController.delivery = [NSNumber numberWithFloat:
+                                          [[[restaurants objectAtIndex:indexPath.row] 
+                                            objectForKey:@"delivery"] floatValue]]; 
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
