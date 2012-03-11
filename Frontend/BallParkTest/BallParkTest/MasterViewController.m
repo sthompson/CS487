@@ -166,8 +166,12 @@
 
     self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     
+    NSString *urlString =  [NSString stringWithFormat: 
+                            @"http://sharp-sunrise-9199.herokuapp.com/menu/%@/",[[restaurants objectAtIndex:indexPath.row] valueForKey:@"name"]];
+    NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:
+                                    NSASCIIStringEncoding];
     self.detailViewController.menuList = [self getArrayFromURLString:
-                                          [NSString stringWithFormat: @"http://sharp-sunrise-9199.herokuapp.com/menu/%@/",[[restaurants objectAtIndex:indexPath.row] valueForKey:@"name"]]];
+                                         urlFormattedString];
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
