@@ -38,6 +38,7 @@
 	// Do any additional setup after loading the view, typically from a nib.
 
     restaurants = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"restaurants" ofType:@"plist"]];
+    
 }
 
 - (void)viewDidUnload
