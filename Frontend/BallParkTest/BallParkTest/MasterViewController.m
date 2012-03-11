@@ -33,21 +33,30 @@
 
 #pragma mark - View lifecycle
 
+-(NSArray *) getArrayFromURLString:(NSString *) urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *data = [[NSData alloc]initWithContentsOfURL:url];
+    CJSONDeserializer *theDeserializer = [CJSONDeserializer deserializer];
+    theDeserializer.nullObject = NULL;
+    NSError *theError = nil;
+    return [[NSArray alloc] 
+                   initWithArray:[theDeserializer deserialize:data error:&theError]];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
 
-    //restaurants = [[NSArray alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"restaurants" ofType:@"plist"]]; 
-
-    //NSString *test = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];    
-    NSURL *url = [NSURL URLWithString:@"http://sharp-sunrise-9199.herokuapp.com/restaurants/"];
+    /*NSURL *url = [NSURL URLWithString:@"http://sharp-sunrise-9199.herokuapp.com/restaurants/"];
     NSData *data = [[NSData alloc]initWithContentsOfURL:url];
     CJSONDeserializer *theDeserializer = [CJSONDeserializer deserializer];
     theDeserializer.nullObject = NULL;
     NSError *theError = nil;
     restaurants = [[NSArray alloc] 
-                   initWithArray:[theDeserializer deserialize:data error:&theError]];
+                   initWithArray:[theDeserializer deserialize:data error:&theError]];*/
+    restaurants = [self getArrayFromURLString:@"http://sharp-sunrise-9199.herokuapp.com/restaurants/"];
     
 
     
@@ -157,7 +166,8 @@
 
     self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
     
-    self.detailViewController.menu = [restaurants objectAtIndex:indexPath.row];
+    self.detailViewController.menuList = [self getArrayFromURLString:
+                                          [NSString stringWithFormat: @"http://sharp-sunrise-9199.herokuapp.com/menu/%@/",[[restaurants objectAtIndex:indexPath.row] valueForKey:@"name"]]];
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 

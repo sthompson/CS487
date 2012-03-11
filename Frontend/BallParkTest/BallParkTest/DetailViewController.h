@@ -13,7 +13,9 @@
 @interface DetailViewController : UITableViewController
 
 @property (strong, nonatomic) OrderPageController *page;
+@property (strong, nonatomic) NSString *restaurantName;
 @property (strong, nonatomic) NSDictionary *menu;
+@property (strong, nonatomic) NSArray *menuList;
 
 
 @property (strong, nonatomic) NSString *logoname;

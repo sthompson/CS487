@@ -13,7 +13,7 @@
 
 @implementation DetailViewController
 
-@synthesize menu, logoname, page;
+@synthesize menu, logoname, page, restaurantName, menuList;
 
 
 #pragma mark - Managing the detail item
@@ -78,7 +78,8 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[menu valueForKey:@"menu"]count];
+    //return [[menu valueForKey:@"menu"]count];
+    return [menuList count];
 }
 
 // Customize the appearance of table view cells.
@@ -93,7 +94,8 @@
     }
     
     // Configure the cell.
-    cell.textLabel.text = [[[menu valueForKey:@"menu"]objectAtIndex:indexPath.row]valueForKey:@"name"];
+    //cell.textLabel.text = [[[menu valueForKey:@"menu"]objectAtIndex:indexPath.row]valueForKey:@"name"];
+    cell.textLabel.text = [menuList objectAtIndex:indexPath.row];
     return cell;
 }
 
