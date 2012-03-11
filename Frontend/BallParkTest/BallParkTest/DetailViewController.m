@@ -7,6 +7,7 @@
 //
 #import "DetailViewController.h"
 #import "OrderPageController.h"
+#import "MasterViewController.h"
 
 
 
@@ -103,7 +104,12 @@
 {
     self.page = [[OrderPageController alloc] initWithNibName:@"OrderPageController" bundle:nil];    
     self.page.delivery = self.delivery;
-    //self.page.menuItem = [[menu valueForKey:@"menu"] objectAtIndex:indexPath.row];
+    NSString *urlString = [NSString stringWithFormat:
+                           @"http://sharp-sunrise-9199.herokuapp.com/fooditem/%@/",
+                           [menuList objectAtIndex:indexPath.row]];
+    NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:
+                                    NSASCIIStringEncoding];
+    self.page.menuItem = (NSDictionary *)[MasterViewController getDataFromURLString:urlFormattedString];
 
     
 

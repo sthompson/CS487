@@ -17,4 +17,6 @@
 @property (strong, nonatomic) NSDictionary *menus;
 @property (strong, nonatomic) NSDictionary *names;
 
++(id) getDataFromURLString:(NSString *) urlString;
+
 @end

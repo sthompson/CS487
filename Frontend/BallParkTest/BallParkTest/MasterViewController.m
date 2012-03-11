@@ -33,15 +33,14 @@
 
 #pragma mark - View lifecycle
 
--(NSArray *) getArrayFromURLString:(NSString *) urlString
++(id) getDataFromURLString:(NSString *) urlString
 {
     NSURL *url = [NSURL URLWithString:urlString];
     NSData *data = [[NSData alloc]initWithContentsOfURL:url];
     CJSONDeserializer *theDeserializer = [CJSONDeserializer deserializer];
     theDeserializer.nullObject = NULL;
     NSError *theError = nil;
-    return [[NSArray alloc] 
-                   initWithArray:[theDeserializer deserialize:data error:&theError]];
+    return [theDeserializer deserialize:data error:&theError];
 }
 
 - (void)viewDidLoad
@@ -56,7 +55,7 @@
     NSError *theError = nil;
     restaurants = [[NSArray alloc] 
                    initWithArray:[theDeserializer deserialize:data error:&theError]];*/
-    restaurants = [self getArrayFromURLString:@"http://sharp-sunrise-9199.herokuapp.com/restaurants/"];
+    restaurants = (NSArray *)[MasterViewController getDataFromURLString:@"http://sharp-sunrise-9199.herokuapp.com/restaurants/"];
     
 
     
@@ -170,7 +169,7 @@
                             @"http://sharp-sunrise-9199.herokuapp.com/menu/%@/",[[restaurants objectAtIndex:indexPath.row] valueForKey:@"name"]];
     NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:
                                     NSASCIIStringEncoding];
-    self.detailViewController.menuList = [self getArrayFromURLString:
+    self.detailViewController.menuList = (NSArray *)[MasterViewController getDataFromURLString:
                                          urlFormattedString];
     self.detailViewController.delivery = [NSNumber numberWithFloat:
                                           [[[restaurants objectAtIndex:indexPath.row] 
