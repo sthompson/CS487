@@ -44,7 +44,7 @@
     [formatter setMinimumFractionDigits:2];
     
     [price setText:[NSString stringWithFormat:@"$%@",
-                    [formatter stringFromNumber:[menuItem valueForKey:@"price"]]]];
+                    [menuItem valueForKey:@"price"]]];
     [priceDelivery setText:[NSString stringWithFormat:@"$%@",
                             [formatter stringFromNumber:delivery]]];
     
