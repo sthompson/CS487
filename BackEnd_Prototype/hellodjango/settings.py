@@ -1,3 +1,5 @@
+#test
+
 import os.path
 
 # Django settings for hellodjango project.
