@@ -16,8 +16,6 @@
 @property (strong, nonatomic) NSString *restaurantName;
 @property (strong, nonatomic) NSArray *menuList;
 @property (strong, nonatomic) NSString *logoname;
-@property (strong, nonatomic) NSNumber *delivery;
-
 
 
 @end

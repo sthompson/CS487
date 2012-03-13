@@ -10,11 +10,9 @@
 #import "MasterViewController.h"
 
 
-
-
 @implementation DetailViewController
 
-@synthesize logoname, page, restaurantName, menuList, delivery;
+@synthesize logoname, page, restaurantName, menuList;
 
 
 #pragma mark - Managing the detail item
@@ -103,7 +101,6 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     self.page = [[OrderPageController alloc] initWithNibName:@"OrderPageController" bundle:nil];    
-    self.page.delivery = self.delivery;
     NSString *urlString = [NSString stringWithFormat:
                            @"http://sharp-sunrise-9199.herokuapp.com/fooditem/%@/",
                            [menuList objectAtIndex:indexPath.row]];

@@ -9,7 +9,7 @@
 #import "OrderPageController.h"
 
 @implementation OrderPageController
-@synthesize logo,menuItem,itemName,delivery,price,priceDelivery;
+@synthesize logo,menuItem,itemName,price;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,8 +45,6 @@
     
     [price setText:[NSString stringWithFormat:@"$%@",
                     [menuItem valueForKey:@"price"]]];
-    [priceDelivery setText:[NSString stringWithFormat:@"$%@",
-                            [formatter stringFromNumber:delivery]]];
     
     // Set Image
     NSData *imageData = [[NSData alloc] initWithContentsOfURL:
