@@ -21,4 +21,4 @@ class Menu(models.Model):
    food_item = models.ForeignKey(Food_Item) 
 
    def __unicode__(self):
-      return restaurant.name + " " + food_item.name
+      return self.restaurant.name + " " + self.food_item.name
