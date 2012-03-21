@@ -14,6 +14,7 @@ def json(request):
 def restaurants(request):
    data = serializers.serialize("python",Restaurant.objects.all())
    actual_data = [d["fields"] for d in data]
+   #actual_data = serializers.serialize("json",Restaurant.objects.all())
    return HttpResponse(simplejson.dumps(actual_data))
 
 def menu(request,res_name): 
@@ -32,7 +33,7 @@ def fooditem(request,food_name):
    food_item = serializers.serialize("python",Food_Item.objects.filter(name=food_name))
    actual_food_item = food_item[0]["fields"]
    return HttpResponse(simplejson.dumps(actual_food_item))
-   
+
    
    
    
