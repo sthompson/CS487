@@ -50,6 +50,12 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(IBAction)finished:(id)sender
+{
+    [delegate userFinished:self withInfo:nil];
+}
+
+
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
     

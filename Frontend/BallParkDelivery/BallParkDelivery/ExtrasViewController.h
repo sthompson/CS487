@@ -24,4 +24,6 @@
 
 @property(nonatomic, assign) id<ModalViewDelegate> delegate;
 
+-(IBAction)finished:(id)sender;
+
 @end
