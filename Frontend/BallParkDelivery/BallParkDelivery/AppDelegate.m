@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "RestaurantViewController.h"
+#import "StadiumViewController.h"
 
 @implementation AppDelegate
 
@@ -20,8 +20,8 @@
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
 
-    RestaurantViewController *masterViewController = [[RestaurantViewController alloc] initWithNibName:@"RestaurantViewController" bundle:nil];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:masterViewController];
+    StadiumViewController *stadiumViewController = [[StadiumViewController alloc] initWithNibName:@"StadiumViewController" bundle:nil];
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:stadiumViewController];
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
