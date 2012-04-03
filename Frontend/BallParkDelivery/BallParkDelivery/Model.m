@@ -38,6 +38,15 @@
     return stadiums;
 }
 
++(NSArray *) getExtrasFromRestaurantName:(NSString *) restaurantName
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/extra_item/"];
+    NSString *post = [NSString stringWithFormat:@"restaurant_name=%@",restaurantName];
+    
+    NSArray *extras = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
+    return extras;
+}
+
 +(id) getPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post
 {
     NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:

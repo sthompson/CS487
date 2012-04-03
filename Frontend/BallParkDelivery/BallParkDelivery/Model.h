@@ -15,5 +15,6 @@
 +(NSArray *) getStadiums;
 +(NSArray *) getRestaurantsFromStadiumName: (NSString *)stadiumName;
 +(NSArray *) getMenuFromRestaurantName:(NSString *)restaurantName;
++(NSArray *) getExtrasFromRestaurantName:(NSString *) restaurantName;
 
 @end
