@@ -1,3 +1,4 @@
+
 //
 //  Model.m
 //  BallParkDelivery
@@ -13,7 +14,7 @@
 
 +(NSArray *) getRestaurantsFromStadiumName:(NSString *)stadiumName
 {
-    NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/restaurant/?stadium_name=@%",stadiumName];
+    NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/restaurant/?stadium_name=%@",stadiumName];
     
     NSArray *restaurants = (NSArray *)[Model getDataFromURLString:urlString];
     return restaurants;
