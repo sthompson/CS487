@@ -106,7 +106,7 @@
 
 
 
-- (void) extras:(id)sender
+- (IBAction) extras:(id)sender
 {
     
     self.extrasViewController = [[ExtrasViewController alloc] initWithNibName:@"ExtrasViewController" bundle:nil];
