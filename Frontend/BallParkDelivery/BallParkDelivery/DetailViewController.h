@@ -21,4 +21,6 @@
 @property (strong, nonatomic) NSDictionary *menuItem;
 @property (strong, nonatomic) NSString *restaurantName;
 
+-(IBAction)extras:(id)sender;
+
 @end

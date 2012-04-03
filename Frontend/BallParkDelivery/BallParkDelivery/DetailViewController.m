@@ -104,15 +104,15 @@
     return self;
 }
 
-#pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+
+- (void) extras:(id)sender
 {
     
     self.extrasViewController = [[ExtrasViewController alloc] initWithNibName:@"ExtrasViewController" bundle:nil];
     
     self.extrasViewController.extras = [Model getExtrasFromRestaurantName:restaurantName];
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    [self presentViewController:self.extrasViewController animated:YES completion:nil];
 }
 							
 @end
