@@ -115,5 +115,10 @@
     self.extrasViewController.delegate = self;
     [self presentViewController:self.extrasViewController animated:YES completion:nil];
 }
+
+-(BOOL) textFieldShouldReturn:(UITextField *)textField
+{
+    return [textField resignFirstResponder];
+}
 							
 @end
