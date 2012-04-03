@@ -10,4 +10,6 @@
 
 @interface Model : UIViewController
 
++(NSArray *) getRestaurantsFromStadiumName: (NSString *)stadiumName;
+
 @end

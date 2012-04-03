@@ -10,6 +10,22 @@
 
 @implementation Model
 
++(NSArray *) getRestaurantsFromStadiumName:(NSString *)stadiumName
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/restaurant/?stadium_name=@%",stadiumName];
+    
+    NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:
+                                    NSASCIIStringEncoding];
+    NSURL *url = [[NSURL alloc] initWithString:urlFormattedString];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    NSURLResponse *response;
+    NSData *data;
+    
+    data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+    
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
