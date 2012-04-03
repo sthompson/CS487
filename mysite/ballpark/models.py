@@ -1,44 +1,39 @@
 from django.db import models
 
 class Stadium(models.Model):
-    stadium_id = models.AutoField(primary_key=True)
-    stadium_name = models.CharField(max_length=20, unique=True)
+    stadium_name = models.CharField(max_length=25, primary_key=True)
 
     def __unicode__(self):
         return self.stadium_name
 
 class Restaurants(models.Model):
-    restaurant_id = models.AutoField(primary_key=True)
-    restaurant_name = models.CharField(max_length=20, unique=True)
-    stadium_id = models.ForeignKey(Stadium)
+    restaurant_name = models.CharField(max_length=25, primary_key=True)
+    stadium_name = models.ForeignKey(Stadium)
 
     def __unicode__(self):
         return self.restaurant_name
 
 
 class Item_type(models.Model):
-    item_type_id = models.AutoField(primary_key=True)
-    item_type_name = models.CharField(max_length=20, unique=True)
+    item_type = models.CharField(max_length=20, primary_key=True)
 
     def __unicode__(self):
         return self.type_name
 
 class Menu_items(models.Model):
-    menu_item_id = models.AutoField(primary_key=True)
-    restaurant_id = models.ForeignKey(Restaurants)
+    restaurant_name = models.ForeignKey(Restaurants)
     item_name = models.CharField(max_length=20)
     item_price = models.DecimalField(max_digits=6, decimal_places=2)
-    item_type_id = models.ForeignKey(Item_type)
+    item_type = models.ForeignKey(Item_type)
 
     def __unicode__(self):
         return self.item_name
     
     class Meta:
-        unique_together = ('restaurant_id', 'item_name')
+        unique_together = ('restaurant_name', 'item_name')
 
 class Extra_items(models.Model):
-    extra_item_id = models.AutoField(primary_key=True)
-    restaurant_id = models.ForeignKey(Restaurants)
+    restaurant_name = models.ForeignKey(Restaurants)
     extra_name = models.CharField(max_length=20)
     extra_price = models.DecimalField(max_digits=6, decimal_places=2)
 
@@ -46,27 +41,26 @@ class Extra_items(models.Model):
         return self.extra_name
     
     class Meta:
-        unique_together = ('restaurant_id', 'extra_name')
+        unique_together = ('restaurant_name', 'extra_name')
 
-class Order_status_codes(models.Model):
-    order_status_id = models.AutoField(primary_key=True)
-    order_status_description = models.CharField(max_length=20, unique=True)
+class Status_description(models.Model):
+    order_status_description = models.CharField(max_length=20, primary_key=True)
 
     def __unicode__(self):
         return self.status_description
 
 class Order_status(models.Model):
     order_num = models.AutoField(primary_key=True)
-    order_status_description = models.ForeignKey(Order_status_codes)
+    seat_num = models.CharField(max_length=20)
+    order_status_description = models.ForeignKey(Status_description)
 
     def __unicode__(self):
         return u'Order %d: %s' % (self.order_num, self.order_status_description)
 
 class Orders(models.Model):
-    order_id = models.AutoField(primary_key=True)
     order_num = models.ForeignKey(Order_status)
-    restaurant_id = models.ForeignKey(Restaurants)
-    timestamp = models.DateTimeField()
+    restaurant_name = models.ForeignKey(Restaurants)
+    timestamp = models.DateTimeField(auto_now_add=True)
     item_name = models.CharField(max_length=20)
     item_price = models.DecimalField(max_digits=6, decimal_places=2)
     item_quantity = models.IntegerField()
@@ -77,18 +71,17 @@ class Orders(models.Model):
         return self.order_num
 
     class Meta:
-        unique_together = ('order_num', 'restaurant_id', 'item_name', 'item_quantity', 'extra_name')
+        unique_together = ('order_num', 'restaurant_name', 'item_name', 'item_quantity', 'extra_name')
 
 class Roles(models.Model):
-    role_id = models.AutoField(primary_key=True)
-    role = models.CharField(max_length=20, unique=True)
+    role = models.CharField(max_length=20, primary_key=True)
 
     def __unicode__(self):
         return self.role
 
 class Administrator(models.Model):
     user = models.CharField(max_length=20, primary_key=True)
-    role_id = models.ForeignKey(Roles)
+    role = models.ForeignKey(Roles)
     password = models.CharField(max_length=20)
 
     def __unicode__(self):
