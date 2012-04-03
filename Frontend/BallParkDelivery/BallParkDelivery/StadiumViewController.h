@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+@class RestaurantViewController;
+
 @interface StadiumViewController : UITableViewController
+
+@property (strong, nonatomic) RestaurantViewController *restaurantViewController;
+@property (strong, nonatomic) NSArray *stadiums;
 
 @end

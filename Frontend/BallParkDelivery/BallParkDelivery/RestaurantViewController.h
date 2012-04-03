@@ -14,6 +14,8 @@
 
 @property (strong, nonatomic) MenuViewController *menuViewController;
 @property (strong, nonatomic) NSArray *restaurants;
+@property (strong, nonatomic) NSString *stadiumName;
+
 
 
 @end

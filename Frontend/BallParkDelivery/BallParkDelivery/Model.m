@@ -34,8 +34,8 @@
 +(NSArray *) getStadiums
 {
     NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/stadium/"];
-    NSArray *menu = (NSArray *)[Model getDataFromURLString:urlString];
-    return menu;
+    NSArray *stadiums = (NSArray *)[Model getDataFromURLString:urlString];
+    return stadiums;
 }
 
 +(id) getPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post

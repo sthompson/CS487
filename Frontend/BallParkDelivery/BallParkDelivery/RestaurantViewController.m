@@ -14,7 +14,7 @@
 @implementation RestaurantViewController
 
 @synthesize menuViewController = _menuViewController;
-@synthesize restaurants;
+@synthesize restaurants,stadiumName;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -37,7 +37,6 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    restaurants = [Model getRestaurantsFromStadiumName:@"Comiskey Park"];
 }
 
 - (void)viewDidUnload
@@ -50,6 +49,7 @@
 - (void)viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    [self.tableView reloadData];
 }
 
 - (void)viewDidAppear:(BOOL)animated
