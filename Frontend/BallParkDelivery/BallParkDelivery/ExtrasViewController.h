@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol ModalViewDelegate
+
+- (void) userFinished:(id)sender withInfo:(NSArray*) info;  
+
+@end
+
 @interface ExtrasViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
