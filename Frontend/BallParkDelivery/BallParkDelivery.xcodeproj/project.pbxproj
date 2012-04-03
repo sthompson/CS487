@@ -17,6 +17,7 @@
 		7224BCE6152AA25A00707C3A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCE5152AA25A00707C3A /* DetailViewController.m */; };
 		7224BCE9152AA25A00707C3A /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7224BCE7152AA25A00707C3A /* MasterViewController.xib */; };
 		7224BCEC152AA25A00707C3A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7224BCEA152AA25A00707C3A /* DetailViewController.xib */; };
+		7224BCF4152AA33A00707C3A /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCF3152AA33A00707C3A /* Model.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,8 @@
 		7224BCE5152AA25A00707C3A /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		7224BCE8152AA25A00707C3A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
 		7224BCEB152AA25A00707C3A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+		7224BCF2152AA33A00707C3A /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		7224BCF3152AA33A00707C3A /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +87,8 @@
 			children = (
 				7224BCDE152AA25A00707C3A /* AppDelegate.h */,
 				7224BCDF152AA25A00707C3A /* AppDelegate.m */,
+				7224BCF2152AA33A00707C3A /* Model.h */,
+				7224BCF3152AA33A00707C3A /* Model.m */,
 				7224BCE1152AA25A00707C3A /* MasterViewController.h */,
 				7224BCE2152AA25A00707C3A /* MasterViewController.m */,
 				7224BCE4152AA25A00707C3A /* DetailViewController.h */,
@@ -174,6 +179,7 @@
 				7224BCE0152AA25A00707C3A /* AppDelegate.m in Sources */,
 				7224BCE3152AA25A00707C3A /* MasterViewController.m in Sources */,
 				7224BCE6152AA25A00707C3A /* DetailViewController.m in Sources */,
+				7224BCF4152AA33A00707C3A /* Model.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
