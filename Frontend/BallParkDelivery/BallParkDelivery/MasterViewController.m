@@ -13,7 +13,7 @@
 
 @implementation MasterViewController
 
-@synthesize detailViewController = _detailViewController;
+@synthesize menuViewController = _menuViewController;
 @synthesize restaurants;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
