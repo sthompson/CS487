@@ -18,7 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 @property (weak, nonatomic) IBOutlet UIButton *finished;
-@property (weak, nonatomic) IBOutlet UIButton *none;
 
 @property (strong, nonatomic) NSArray *extras;
 @property (strong, nonatomic) NSMutableArray *selectedRows;

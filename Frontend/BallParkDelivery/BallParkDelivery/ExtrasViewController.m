@@ -10,7 +10,7 @@
 
 @implementation ExtrasViewController
 
-@synthesize tableview,finished,none,extras,delegate,selectedRows;
+@synthesize tableview,finished,extras,delegate,selectedRows;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -104,5 +104,6 @@
         [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
     }
 }
+
 
 @end
