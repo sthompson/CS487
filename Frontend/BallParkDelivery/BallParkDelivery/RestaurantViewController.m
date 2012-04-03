@@ -6,12 +6,12 @@
 //  Copyright (c) 2012 Bradley University. All rights reserved.
 //
 
-#import "MasterViewController.h"
+#import "RestaurantViewController.h"
 
 #import "MenuViewController.h"
 #import "Model.h"
 
-@implementation MasterViewController
+@implementation RestaurantViewController
 
 @synthesize menuViewController = _menuViewController;
 @synthesize restaurants;

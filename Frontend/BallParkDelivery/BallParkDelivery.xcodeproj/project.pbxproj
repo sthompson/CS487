@@ -13,9 +13,9 @@
 		7224BCDA152AA25A00707C3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7224BCD8152AA25A00707C3A /* InfoPlist.strings */; };
 		7224BCDC152AA25A00707C3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCDB152AA25A00707C3A /* main.m */; };
 		7224BCE0152AA25A00707C3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCDF152AA25A00707C3A /* AppDelegate.m */; };
-		7224BCE3152AA25A00707C3A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCE2152AA25A00707C3A /* MasterViewController.m */; };
+		7224BCE3152AA25A00707C3A /* RestaurantViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCE2152AA25A00707C3A /* RestaurantViewController.m */; };
 		7224BCE6152AA25A00707C3A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCE5152AA25A00707C3A /* DetailViewController.m */; };
-		7224BCE9152AA25A00707C3A /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7224BCE7152AA25A00707C3A /* MasterViewController.xib */; };
+		7224BCE9152AA25A00707C3A /* RestaurantViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7224BCE7152AA25A00707C3A /* RestaurantViewController.xib */; };
 		7224BCEC152AA25A00707C3A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7224BCEA152AA25A00707C3A /* DetailViewController.xib */; };
 		7224BCF4152AA33A00707C3A /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCF3152AA33A00707C3A /* Model.m */; };
 		7224BD05152AAA7F00707C3A /* CDataScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCFB152AAA7F00707C3A /* CDataScanner.m */; };
@@ -38,11 +38,11 @@
 		7224BCDD152AA25A00707C3A /* BallParkDelivery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BallParkDelivery-Prefix.pch"; sourceTree = "<group>"; };
 		7224BCDE152AA25A00707C3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7224BCDF152AA25A00707C3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7224BCE1152AA25A00707C3A /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
-		7224BCE2152AA25A00707C3A /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		7224BCE1152AA25A00707C3A /* RestaurantViewController.h */ = {isa = PBXFileReference; path = RestaurantViewController.h; sourceTree = "<group>"; };
+		7224BCE2152AA25A00707C3A /* RestaurantViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RestaurantViewController.m; sourceTree = "<group>"; };
 		7224BCE4152AA25A00707C3A /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		7224BCE5152AA25A00707C3A /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
-		7224BCE8152AA25A00707C3A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
+		7224BCE8152AA25A00707C3A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/RestaurantViewController.xib; sourceTree = "<group>"; };
 		7224BCEB152AA25A00707C3A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
 		7224BCF2152AA33A00707C3A /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		7224BCF3152AA33A00707C3A /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
@@ -111,13 +111,13 @@
 				7224BCDF152AA25A00707C3A /* AppDelegate.m */,
 				7224BCF2152AA33A00707C3A /* Model.h */,
 				7224BCF3152AA33A00707C3A /* Model.m */,
-				7224BCE1152AA25A00707C3A /* MasterViewController.h */,
-				7224BCE2152AA25A00707C3A /* MasterViewController.m */,
+				7224BCE1152AA25A00707C3A /* RestaurantViewController.h */,
+				7224BCE2152AA25A00707C3A /* RestaurantViewController.m */,
 				7224BD0A152ABB3400707C3A /* MenuViewController.h */,
 				7224BD0B152ABB3400707C3A /* MenuViewController.m */,
 				7224BCE4152AA25A00707C3A /* DetailViewController.h */,
 				7224BCE5152AA25A00707C3A /* DetailViewController.m */,
-				7224BCE7152AA25A00707C3A /* MasterViewController.xib */,
+				7224BCE7152AA25A00707C3A /* RestaurantViewController.xib */,
 				7224BCEA152AA25A00707C3A /* DetailViewController.xib */,
 				7224BD0C152ABB3400707C3A /* MenuViewController.xib */,
 				7224BCD6152AA25A00707C3A /* Supporting Files */,
@@ -206,7 +206,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7224BCDA152AA25A00707C3A /* InfoPlist.strings in Resources */,
-				7224BCE9152AA25A00707C3A /* MasterViewController.xib in Resources */,
+				7224BCE9152AA25A00707C3A /* RestaurantViewController.xib in Resources */,
 				7224BCEC152AA25A00707C3A /* DetailViewController.xib in Resources */,
 				7224BD0E152ABB3400707C3A /* MenuViewController.xib in Resources */,
 			);
@@ -221,7 +221,7 @@
 			files = (
 				7224BCDC152AA25A00707C3A /* main.m in Sources */,
 				7224BCE0152AA25A00707C3A /* AppDelegate.m in Sources */,
-				7224BCE3152AA25A00707C3A /* MasterViewController.m in Sources */,
+				7224BCE3152AA25A00707C3A /* RestaurantViewController.m in Sources */,
 				7224BCE6152AA25A00707C3A /* DetailViewController.m in Sources */,
 				7224BCF4152AA33A00707C3A /* Model.m in Sources */,
 				7224BD05152AAA7F00707C3A /* CDataScanner.m in Sources */,
@@ -244,12 +244,12 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		7224BCE7152AA25A00707C3A /* MasterViewController.xib */ = {
+		7224BCE7152AA25A00707C3A /* RestaurantViewController.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
 				7224BCE8152AA25A00707C3A /* en */,
 			);
-			name = MasterViewController.xib;
+			name = RestaurantViewController.xib;
 			sourceTree = "<group>";
 		};
 		7224BCEA152AA25A00707C3A /* DetailViewController.xib */ = {
@@ -349,6 +349,7 @@
 				7224BCF1152AA25A00707C3A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

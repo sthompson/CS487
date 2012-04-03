@@ -10,7 +10,7 @@
 
 @class MenuViewController;
 
-@interface MasterViewController : UITableViewController
+@interface RestaurantViewController : UITableViewController
 
 @property (strong, nonatomic) MenuViewController *menuViewController;
 @property (strong, nonatomic) NSArray *restaurants;
