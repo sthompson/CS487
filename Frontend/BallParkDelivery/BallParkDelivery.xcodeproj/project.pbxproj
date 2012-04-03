@@ -27,6 +27,8 @@
 		7224BD0E152ABB3400707C3A /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7224BD0C152ABB3400707C3A /* MenuViewController.xib */; };
 		723094D1152B507F00C3CDD8 /* StadiumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094CF152B507F00C3CDD8 /* StadiumViewController.m */; };
 		723094D2152B507F00C3CDD8 /* StadiumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094D0152B507F00C3CDD8 /* StadiumViewController.xib */; };
+		723094DA152B7DA600C3CDD8 /* ExtrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094D8152B7DA600C3CDD8 /* ExtrasViewController.m */; };
+		723094DB152B7DA600C3CDD8 /* ExtrasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094D9152B7DA600C3CDD8 /* ExtrasViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +67,9 @@
 		723094CE152B507F00C3CDD8 /* StadiumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StadiumViewController.h; sourceTree = "<group>"; };
 		723094CF152B507F00C3CDD8 /* StadiumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StadiumViewController.m; sourceTree = "<group>"; };
 		723094D0152B507F00C3CDD8 /* StadiumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StadiumViewController.xib; sourceTree = "<group>"; };
+		723094D7152B7DA600C3CDD8 /* ExtrasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrasViewController.h; sourceTree = "<group>"; };
+		723094D8152B7DA600C3CDD8 /* ExtrasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtrasViewController.m; sourceTree = "<group>"; };
+		723094D9152B7DA600C3CDD8 /* ExtrasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtrasViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,10 +129,13 @@
 				7224BD0B152ABB3400707C3A /* MenuViewController.m */,
 				7224BCE4152AA25A00707C3A /* DetailViewController.h */,
 				7224BCE5152AA25A00707C3A /* DetailViewController.m */,
+				723094D7152B7DA600C3CDD8 /* ExtrasViewController.h */,
+				723094D8152B7DA600C3CDD8 /* ExtrasViewController.m */,
 				723094D0152B507F00C3CDD8 /* StadiumViewController.xib */,
 				7224BCE7152AA25A00707C3A /* RestaurantViewController.xib */,
 				7224BCEA152AA25A00707C3A /* DetailViewController.xib */,
 				7224BD0C152ABB3400707C3A /* MenuViewController.xib */,
+				723094D9152B7DA600C3CDD8 /* ExtrasViewController.xib */,
 				7224BCD6152AA25A00707C3A /* Supporting Files */,
 			);
 			path = BallParkDelivery;
@@ -218,6 +226,7 @@
 				7224BCEC152AA25A00707C3A /* DetailViewController.xib in Resources */,
 				7224BD0E152ABB3400707C3A /* MenuViewController.xib in Resources */,
 				723094D2152B507F00C3CDD8 /* StadiumViewController.xib in Resources */,
+				723094DB152B7DA600C3CDD8 /* ExtrasViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -240,6 +249,7 @@
 				7224BD09152AAA7F00707C3A /* CJSONSerializer.m in Sources */,
 				7224BD0D152ABB3400707C3A /* MenuViewController.m in Sources */,
 				723094D1152B507F00C3CDD8 /* StadiumViewController.m in Sources */,
+				723094DA152B7DA600C3CDD8 /* ExtrasViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
