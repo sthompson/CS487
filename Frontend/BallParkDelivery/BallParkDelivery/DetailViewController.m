@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ExtrasViewController.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -14,6 +15,7 @@
 
 @implementation DetailViewController
 
+@synthesize extrasViewController = _extrasViewController;
 @synthesize logo,menuItem,itemName,price;
 
 #pragma mark - Managing the detail item
@@ -37,6 +39,11 @@
     logo.image = [UIImage imageWithData:imageData];*/
 
 
+}
+
+- (void) userFinished:(id)sender withInfo:(NSArray*) info
+{
+    [sender dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

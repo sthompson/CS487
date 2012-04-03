@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ExtrasViewController.h"
 
-@interface DetailViewController : UIViewController<UITextFieldDelegate>
+@interface DetailViewController : UIViewController<UITextFieldDelegate, ModalViewDelegate>
 
+
+@property (strong, nonatomic) ExtrasViewController *extrasViewController;
 
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
 @property (weak, nonatomic) IBOutlet UILabel *itemName;
