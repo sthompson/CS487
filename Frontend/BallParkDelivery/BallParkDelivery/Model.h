@@ -12,5 +12,6 @@
 
 +(id) getDataFromURLString:(NSString *) urlString andPost: (NSString *) post;
 +(NSArray *) getRestaurantsFromStadiumName: (NSString *)stadiumName;
++(NSArray *) getMenuFromRestaurantName:(NSString *)restaurantName;
 
 @end
