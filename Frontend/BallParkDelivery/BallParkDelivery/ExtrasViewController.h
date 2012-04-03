@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExtrasViewController : UIViewController
+@interface ExtrasViewController : UIViewController <UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UIButton *finished;
+@property (weak, nonatomic) IBOutlet UIButton *none;
 
 @end

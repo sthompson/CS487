@@ -10,6 +10,8 @@
 
 @implementation ExtrasViewController
 
+@synthesize tableview,finished,none;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
