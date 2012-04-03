@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExtrasViewController : UITableViewController
+@interface ExtrasViewController : UIViewController
 
 @end
