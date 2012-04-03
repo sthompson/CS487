@@ -112,6 +112,7 @@
     self.extrasViewController = [[ExtrasViewController alloc] initWithNibName:@"ExtrasViewController" bundle:nil];
     
     self.extrasViewController.extras = [Model getExtrasFromRestaurantName:restaurantName];
+    self.extrasViewController.delegate = self;
     [self presentViewController:self.extrasViewController animated:YES completion:nil];
 }
 							

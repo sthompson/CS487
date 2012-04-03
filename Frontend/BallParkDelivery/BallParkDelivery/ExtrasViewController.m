@@ -10,7 +10,7 @@
 
 @implementation ExtrasViewController
 
-@synthesize tableview,finished,none,extras;
+@synthesize tableview,finished,none,extras,delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

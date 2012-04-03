@@ -22,4 +22,6 @@
 
 @property (strong, nonatomic) NSArray *extras;
 
+@property(nonatomic, assign) id<ModalViewDelegate> delegate;
+
 @end
