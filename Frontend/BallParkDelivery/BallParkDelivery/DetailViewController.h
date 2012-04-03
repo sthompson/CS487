@@ -17,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
 @property (weak, nonatomic) IBOutlet UILabel *itemName;
 @property (weak, nonatomic) IBOutlet UILabel *price;
-@property (weak, nonatomic) NSDictionary *menuItem;
+
+@property (strong, nonatomic) NSDictionary *menuItem;
+@property (strong, nonatomic) NSString *restaurantName;
 
 @end

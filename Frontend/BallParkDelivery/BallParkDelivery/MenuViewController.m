@@ -157,6 +157,7 @@
     self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
 
     self.detailViewController.menuItem = [menuList objectAtIndex:indexPath.row];
+    self.detailViewController.restaurantName = self.restaurantName;
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 

@@ -8,6 +8,7 @@
 
 #import "DetailViewController.h"
 #import "ExtrasViewController.h"
+#import "Model.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -16,7 +17,7 @@
 @implementation DetailViewController
 
 @synthesize extrasViewController = _extrasViewController;
-@synthesize logo,menuItem,itemName,price;
+@synthesize logo,menuItem,itemName,price,restaurantName;
 
 #pragma mark - Managing the detail item
 
@@ -101,6 +102,17 @@
         self.title = NSLocalizedString(@"Detail", @"Detail");
     }
     return self;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    
+    self.extrasViewController = [[ExtrasViewController alloc] initWithNibName:@"ExtrasViewController" bundle:nil];
+    
+    self.extrasViewController.extras = [Model getExtrasFromRestaurantName:restaurantName];
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 							
 @end
