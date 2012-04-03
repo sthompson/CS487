@@ -11,6 +11,7 @@
 @interface Model : UIViewController
 
 +(id) getPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post;
++(id) getDataFromURLString:(NSString *) urlString;
 +(NSArray *) getRestaurantsFromStadiumName: (NSString *)stadiumName;
 +(NSArray *) getMenuFromRestaurantName:(NSString *)restaurantName;
 

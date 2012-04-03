@@ -51,6 +51,16 @@
     return [theDeserializer deserialize:data error:&theError];
 }
 
++(id) getDataFromURLString:(NSString *) urlString
+{
+    NSURL *url = [NSURL URLWithString:urlString];
+    NSData *data = [[NSData alloc]initWithContentsOfURL:url];
+    CJSONDeserializer *theDeserializer = [CJSONDeserializer deserializer];
+    theDeserializer.nullObject = NULL;
+    NSError *theError = nil;
+    return [theDeserializer deserialize:data error:&theError];
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
