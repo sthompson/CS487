@@ -17,7 +17,7 @@
     NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/restaurant/"];
     NSString *post = [NSString stringWithFormat:@"stadium_name=%@",stadiumName];
     
-    NSArray *restaurants = (NSArray *)[Model getDataFromURLString:urlString andPost:post];
+    NSArray *restaurants = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
     return restaurants;
 }
 
@@ -26,11 +26,11 @@
     NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/menu_item/"];
     NSString *post = [NSString stringWithFormat:@"restaurant_name=%@",restaurantName];
     
-    NSArray *menu = (NSArray *)[Model getDataFromURLString:urlString andPost:post];
+    NSArray *menu = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
     return menu;
 }
 
-+(id) getDataFromURLString:(NSString *) urlString andPost: (NSString *) post
++(id) getPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post
 {
     NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:
                                     NSASCIIStringEncoding];
