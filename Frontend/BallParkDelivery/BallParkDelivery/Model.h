@@ -10,6 +10,7 @@
 
 @interface Model : UIViewController
 
++(id) getDataFromURLString:(NSString *) urlString;
 +(NSArray *) getRestaurantsFromStadiumName: (NSString *)stadiumName;
 
 @end

@@ -7,6 +7,7 @@
 //
 
 #import "Model.h"
+#import "CJSONDeserializer.h"
 
 @implementation Model
 
@@ -14,6 +15,12 @@
 {
     NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/restaurant/?stadium_name=@%",stadiumName];
     
+    NSArray *restaurants = (NSArray *)[Model getDataFromURLString:urlString];
+    return restaurants;
+}
+
++(id) getDataFromURLString:(NSString *) urlString
+{
     NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:
                                     NSASCIIStringEncoding];
     NSURL *url = [[NSURL alloc] initWithString:urlFormattedString];
@@ -23,7 +30,10 @@
     NSData *data;
     
     data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
-    
+    CJSONDeserializer *theDeserializer = [CJSONDeserializer deserializer];
+    theDeserializer.nullObject = NULL;
+    NSError *theError = nil;
+    return [theDeserializer deserialize:data error:&theError];
 }
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
