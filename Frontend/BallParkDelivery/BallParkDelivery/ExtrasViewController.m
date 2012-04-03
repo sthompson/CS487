@@ -10,7 +10,7 @@
 
 @implementation ExtrasViewController
 
-@synthesize tableview,finished,none,extras,delegate;
+@synthesize tableview,finished,none,extras,delegate,selectedRows;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +35,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    selectedRows = [[NSMutableArray alloc] init];
+    for (int i = 0; i<[extras count]; i++) 
+    {
+        [selectedRows addObject:[NSNumber numberWithBool:NO]];
+    }
+    
 }
 
 - (void)viewDidUnload
@@ -77,12 +83,26 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
     // Configure the cell...
     cell.textLabel.text = [[extras objectAtIndex:indexPath.row] objectForKey:@"extra_name"];
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if ([[selectedRows objectAtIndex:indexPath.row]boolValue])
+    {
+        [selectedRows replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:NO]];
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryNone];
+    }
+    else
+    {
+        [selectedRows replaceObjectAtIndex:indexPath.row withObject:[NSNumber numberWithBool:YES]];
+        [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
 }
 
 @end
