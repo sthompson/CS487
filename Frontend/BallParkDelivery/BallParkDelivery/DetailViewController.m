@@ -21,7 +21,20 @@
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
+    [itemName setTextAlignment:UITextAlignmentCenter];
+    [itemName setText:[menuItem valueForKey:@"item_name"]];
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setMaximumFractionDigits:2];
+    [formatter setMinimumFractionDigits:2];
+    
+    [price setText:[NSString stringWithFormat:@"$%@",
+                    [menuItem valueForKey:@"item_price"]]];
+    
+    // Set Image
+    /*NSData *imageData = [[NSData alloc] initWithContentsOfURL:
+                         [NSURL URLWithString:[menuItem objectForKey:@"itemURL"]]];
+    logo.image = [UIImage imageWithData:imageData];*/
 
 
 }

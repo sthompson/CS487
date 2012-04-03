@@ -102,6 +102,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     // Configure the cell...
@@ -152,11 +153,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.detailViewController) {
-        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
-    }
-    self.detailViewController.itemName = [[menuList objectAtIndex:indexPath.row]objectForKey:@"item_name"];
-    self.detailViewController.price = [[menuList objectAtIndex:indexPath.row]objectForKey:@"item_price"];
+
+    self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+
+    self.detailViewController.menuItem = [menuList objectAtIndex:indexPath.row];
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
