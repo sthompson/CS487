@@ -14,19 +14,24 @@
 
 +(NSArray *) getRestaurantsFromStadiumName:(NSString *)stadiumName
 {
-    NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/restaurant/?stadium_name=%@",stadiumName];
+    NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/restaurant/"];
+    NSString *post = [NSString stringWithFormat:@"stadium_name=%@",stadiumName];
     
-    NSArray *restaurants = (NSArray *)[Model getDataFromURLString:urlString];
+    NSArray *restaurants = (NSArray *)[Model getDataFromURLString:urlString andPost:post];
     return restaurants;
 }
 
-+(id) getDataFromURLString:(NSString *) urlString
++(id) getDataFromURLString:(NSString *) urlString andPost: (NSString *) post
 {
     NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:
                                     NSASCIIStringEncoding];
     NSURL *url = [[NSURL alloc] initWithString:urlFormattedString];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
     NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
     [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:postData];
     NSURLResponse *response;
     NSData *data;
     
