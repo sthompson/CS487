@@ -1,0 +1,300 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7224BCD0152AA25A00707C3A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7224BCCF152AA25A00707C3A /* UIKit.framework */; };
+		7224BCD2152AA25A00707C3A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7224BCD1152AA25A00707C3A /* Foundation.framework */; };
+		7224BCD4152AA25A00707C3A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7224BCD3152AA25A00707C3A /* CoreGraphics.framework */; };
+		7224BCDA152AA25A00707C3A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7224BCD8152AA25A00707C3A /* InfoPlist.strings */; };
+		7224BCDC152AA25A00707C3A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCDB152AA25A00707C3A /* main.m */; };
+		7224BCE0152AA25A00707C3A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCDF152AA25A00707C3A /* AppDelegate.m */; };
+		7224BCE3152AA25A00707C3A /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCE2152AA25A00707C3A /* MasterViewController.m */; };
+		7224BCE6152AA25A00707C3A /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BCE5152AA25A00707C3A /* DetailViewController.m */; };
+		7224BCE9152AA25A00707C3A /* MasterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7224BCE7152AA25A00707C3A /* MasterViewController.xib */; };
+		7224BCEC152AA25A00707C3A /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7224BCEA152AA25A00707C3A /* DetailViewController.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		7224BCCB152AA25A00707C3A /* BallParkDelivery.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BallParkDelivery.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7224BCCF152AA25A00707C3A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		7224BCD1152AA25A00707C3A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		7224BCD3152AA25A00707C3A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		7224BCD7152AA25A00707C3A /* BallParkDelivery-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BallParkDelivery-Info.plist"; sourceTree = "<group>"; };
+		7224BCD9152AA25A00707C3A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		7224BCDB152AA25A00707C3A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7224BCDD152AA25A00707C3A /* BallParkDelivery-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BallParkDelivery-Prefix.pch"; sourceTree = "<group>"; };
+		7224BCDE152AA25A00707C3A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7224BCDF152AA25A00707C3A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7224BCE1152AA25A00707C3A /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		7224BCE2152AA25A00707C3A /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		7224BCE4152AA25A00707C3A /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		7224BCE5152AA25A00707C3A /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		7224BCE8152AA25A00707C3A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MasterViewController.xib; sourceTree = "<group>"; };
+		7224BCEB152AA25A00707C3A /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/DetailViewController.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7224BCC8152AA25A00707C3A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7224BCD0152AA25A00707C3A /* UIKit.framework in Frameworks */,
+				7224BCD2152AA25A00707C3A /* Foundation.framework in Frameworks */,
+				7224BCD4152AA25A00707C3A /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		7224BCC0152AA25A00707C3A = {
+			isa = PBXGroup;
+			children = (
+				7224BCD5152AA25A00707C3A /* BallParkDelivery */,
+				7224BCCE152AA25A00707C3A /* Frameworks */,
+				7224BCCC152AA25A00707C3A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		7224BCCC152AA25A00707C3A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7224BCCB152AA25A00707C3A /* BallParkDelivery.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7224BCCE152AA25A00707C3A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7224BCCF152AA25A00707C3A /* UIKit.framework */,
+				7224BCD1152AA25A00707C3A /* Foundation.framework */,
+				7224BCD3152AA25A00707C3A /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7224BCD5152AA25A00707C3A /* BallParkDelivery */ = {
+			isa = PBXGroup;
+			children = (
+				7224BCDE152AA25A00707C3A /* AppDelegate.h */,
+				7224BCDF152AA25A00707C3A /* AppDelegate.m */,
+				7224BCE1152AA25A00707C3A /* MasterViewController.h */,
+				7224BCE2152AA25A00707C3A /* MasterViewController.m */,
+				7224BCE4152AA25A00707C3A /* DetailViewController.h */,
+				7224BCE5152AA25A00707C3A /* DetailViewController.m */,
+				7224BCE7152AA25A00707C3A /* MasterViewController.xib */,
+				7224BCEA152AA25A00707C3A /* DetailViewController.xib */,
+				7224BCD6152AA25A00707C3A /* Supporting Files */,
+			);
+			path = BallParkDelivery;
+			sourceTree = "<group>";
+		};
+		7224BCD6152AA25A00707C3A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				7224BCD7152AA25A00707C3A /* BallParkDelivery-Info.plist */,
+				7224BCD8152AA25A00707C3A /* InfoPlist.strings */,
+				7224BCDB152AA25A00707C3A /* main.m */,
+				7224BCDD152AA25A00707C3A /* BallParkDelivery-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		7224BCCA152AA25A00707C3A /* BallParkDelivery */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7224BCEF152AA25A00707C3A /* Build configuration list for PBXNativeTarget "BallParkDelivery" */;
+			buildPhases = (
+				7224BCC7152AA25A00707C3A /* Sources */,
+				7224BCC8152AA25A00707C3A /* Frameworks */,
+				7224BCC9152AA25A00707C3A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BallParkDelivery;
+			productName = BallParkDelivery;
+			productReference = 7224BCCB152AA25A00707C3A /* BallParkDelivery.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		7224BCC2152AA25A00707C3A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+				ORGANIZATIONNAME = "Bradley University";
+			};
+			buildConfigurationList = 7224BCC5152AA25A00707C3A /* Build configuration list for PBXProject "BallParkDelivery" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7224BCC0152AA25A00707C3A;
+			productRefGroup = 7224BCCC152AA25A00707C3A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7224BCCA152AA25A00707C3A /* BallParkDelivery */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		7224BCC9152AA25A00707C3A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7224BCDA152AA25A00707C3A /* InfoPlist.strings in Resources */,
+				7224BCE9152AA25A00707C3A /* MasterViewController.xib in Resources */,
+				7224BCEC152AA25A00707C3A /* DetailViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		7224BCC7152AA25A00707C3A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7224BCDC152AA25A00707C3A /* main.m in Sources */,
+				7224BCE0152AA25A00707C3A /* AppDelegate.m in Sources */,
+				7224BCE3152AA25A00707C3A /* MasterViewController.m in Sources */,
+				7224BCE6152AA25A00707C3A /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		7224BCD8152AA25A00707C3A /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7224BCD9152AA25A00707C3A /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		7224BCE7152AA25A00707C3A /* MasterViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7224BCE8152AA25A00707C3A /* en */,
+			);
+			name = MasterViewController.xib;
+			sourceTree = "<group>";
+		};
+		7224BCEA152AA25A00707C3A /* DetailViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7224BCEB152AA25A00707C3A /* en */,
+			);
+			name = DetailViewController.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		7224BCED152AA25A00707C3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		7224BCEE152AA25A00707C3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		7224BCF0152AA25A00707C3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BallParkDelivery/BallParkDelivery-Prefix.pch";
+				INFOPLIST_FILE = "BallParkDelivery/BallParkDelivery-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		7224BCF1152AA25A00707C3A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "BallParkDelivery/BallParkDelivery-Prefix.pch";
+				INFOPLIST_FILE = "BallParkDelivery/BallParkDelivery-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		7224BCC5152AA25A00707C3A /* Build configuration list for PBXProject "BallParkDelivery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7224BCED152AA25A00707C3A /* Debug */,
+				7224BCEE152AA25A00707C3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7224BCEF152AA25A00707C3A /* Build configuration list for PBXNativeTarget "BallParkDelivery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7224BCF0152AA25A00707C3A /* Debug */,
+				7224BCF1152AA25A00707C3A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 7224BCC2152AA25A00707C3A /* Project object */;
+}
