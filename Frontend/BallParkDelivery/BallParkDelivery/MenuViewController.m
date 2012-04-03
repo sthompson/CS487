@@ -7,9 +7,11 @@
 //
 
 #import "MenuViewController.h"
+#import "DetailViewController.h"
 
 @implementation MenuViewController
 
+@synthesize detailViewController = _detailViewController;
 @synthesize restaurantName,menuList;
 
 - (id)initWithStyle:(UITableViewStyle)style
@@ -150,13 +152,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    if (!self.detailViewController) {
+        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    }
+    self.detailViewController.itemName = [[menuList objectAtIndex:indexPath.row]objectForKey:@"item_name"];
+    self.detailViewController.price = [[menuList objectAtIndex:indexPath.row]objectForKey:@"item_price"];
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
 @end

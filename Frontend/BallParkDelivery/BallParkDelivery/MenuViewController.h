@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+@class DetailViewController;
 
 @interface MenuViewController : UITableViewController
 
+@property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSString *restaurantName;
 @property (strong, nonatomic) NSArray *menuList;
 
