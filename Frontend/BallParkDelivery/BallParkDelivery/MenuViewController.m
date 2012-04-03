@@ -10,6 +10,8 @@
 
 @implementation MenuViewController
 
+@synthesize restaurantName,menuList;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];

@@ -8,7 +8,7 @@
 
 #import "MasterViewController.h"
 
-#import "DetailViewController.h"
+#import "MenuViewController.h"
 #import "Model.h"
 
 @implementation MasterViewController
@@ -141,11 +141,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.detailViewController) {
-        self.detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    if (!self.menuViewController) {
+        self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     }
-    
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
+    self.menuViewController.restaurantName = [[restaurants objectAtIndex:indexPath.row]objectForKey:@"restaurant_name"];
+    self.menuViewController.menuList = [Model getMenuFromRestaurantName:self.menuViewController.restaurantName];
+    [self.navigationController pushViewController:self.menuViewController animated:YES];
 }
 
 @end

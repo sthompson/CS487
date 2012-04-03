@@ -10,4 +10,7 @@
 
 @interface MenuViewController : UITableViewController
 
+@property (strong, nonatomic) NSString *restaurantName;
+@property (strong, nonatomic) NSArray *menuList;
+
 @end
