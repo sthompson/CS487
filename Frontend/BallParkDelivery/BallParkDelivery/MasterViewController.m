@@ -9,16 +9,18 @@
 #import "MasterViewController.h"
 
 #import "DetailViewController.h"
+#import "Model.h"
 
 @implementation MasterViewController
 
 @synthesize detailViewController = _detailViewController;
+@synthesize restaurants, menus,names;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        self.title = NSLocalizedString(@"Master", @"Master");
+        self.title = @"Restaurants";
     }
     return self;
 }
@@ -35,6 +37,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    restaurants = [Model getRestaurantsFromStadiumName:@"Comiskey Park"];
 }
 
 - (void)viewDidUnload
@@ -93,7 +96,8 @@
     }
 
     // Configure the cell.
-    cell.textLabel.text = NSLocalizedString(@"Detail", @"Detail");
+    cell.textLabel.text = [[restaurants objectAtIndex:[indexPath row]] 
+                           valueForKey:@"restaurant_name"];
     return cell;
 }
 
