@@ -149,7 +149,7 @@
         self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
     }
     self.menuViewController.restaurantName = [[restaurants objectAtIndex:indexPath.row]objectForKey:@"restaurant_name"];
-    self.menuViewController.menuList = [Model getMenuFromStadiumName:stadiumName RestaurantName:
+    self.menuViewController.menuList = [Model getMenuFromStadiumName:stadiumName andRestaurantName:
                                         [[restaurants objectAtIndex:indexPath.row]objectForKey:
                                          @"restaurant_name"]];
     self.menuViewController.stadiumName = self.stadiumName;

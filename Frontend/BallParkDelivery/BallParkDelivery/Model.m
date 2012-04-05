@@ -21,7 +21,7 @@
     return restaurants;
 }
 
-+(NSArray *) getMenuFromStadiumName:(NSString *) stadiumName RestaurantName:(NSString *)restaurantName
++(NSArray *) getMenuFromStadiumName:(NSString *) stadiumName andRestaurantName:(NSString *)restaurantName
 {
     NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/menu_item/"];
     NSString *post = [NSString stringWithFormat:@"stadium_name=%@&restaurant_name=%@",
@@ -41,10 +41,11 @@
     return stadiums;
 }
 
-+(NSArray *) getExtrasFromRestaurantName:(NSString *) restaurantName
++(NSArray *) getExtrasFromStadiumName:(NSString *) stadiumName andRestaurantName:(NSString *) restaurantName
 {
     NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/extra_item/"];
-    NSString *post = [NSString stringWithFormat:@"restaurant_name=%@",restaurantName];
+    NSString *post = [NSString stringWithFormat:@"stadium_name=%@&restaurant_name=%@",
+                      stadiumName,restaurantName];
     
     NSArray *extras = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
     return extras;

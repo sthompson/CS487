@@ -15,7 +15,7 @@
 +(NSData *) getImageFromURL:(NSString *) urlString;
 +(NSArray *) getStadiumsWithLongitude:(NSString *)lon andLatitude:(NSString *)lat;
 +(NSArray *) getRestaurantsFromStadiumName: (NSString *)stadiumName;
-+(NSArray *) getMenuFromStadiumName:(NSString *) stadiumName RestaurantName:(NSString *)restaurantName;
-+(NSArray *) getExtrasFromRestaurantName:(NSString *) restaurantName;
++(NSArray *) getMenuFromStadiumName:(NSString *) stadiumName andRestaurantName:(NSString *)restaurantName;
++(NSArray *) getExtrasFromStadiumName:(NSString *) stadiumName andRestaurantName:(NSString *) restaurantName;
 
 @end
