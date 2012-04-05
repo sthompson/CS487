@@ -30,6 +30,7 @@
 		723094DF152B7E0E00C3CDD8 /* ExtrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */; };
 		723094E0152B7E0E00C3CDD8 /* ExtrasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */; };
 		72FDB560152E3D0600CF34DE /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB55F152E3D0600CF34DE /* LocationViewController.m */; };
+		72FDB563152E469300CF34DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FDB562152E469300CF34DE /* CoreLocation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +74,7 @@
 		723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtrasViewController.xib; sourceTree = "<group>"; };
 		72FDB55E152E3D0600CF34DE /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		72FDB55F152E3D0600CF34DE /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
+		72FDB562152E469300CF34DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72FDB563152E469300CF34DE /* CoreLocation.framework in Frameworks */,
 				7224BCD0152AA25A00707C3A /* UIKit.framework in Frameworks */,
 				7224BCD2152AA25A00707C3A /* Foundation.framework in Frameworks */,
 				7224BCD4152AA25A00707C3A /* CoreGraphics.framework in Frameworks */,
@@ -92,6 +95,7 @@
 		7224BCC0152AA25A00707C3A = {
 			isa = PBXGroup;
 			children = (
+				72FDB562152E469300CF34DE /* CoreLocation.framework */,
 				7224BCD5152AA25A00707C3A /* BallParkDelivery */,
 				7224BCCE152AA25A00707C3A /* Frameworks */,
 				7224BCCC152AA25A00707C3A /* Products */,

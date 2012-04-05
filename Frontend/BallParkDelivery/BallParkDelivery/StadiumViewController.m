@@ -114,8 +114,8 @@
 {
     longitude = self.locationViewController.longitude;
     latitude = self.locationViewController.latitude;
-    
-    
+    stadiums = [Model getStadiumsWithLongitude:longitude andLatitude:latitude];
+    [self.tableView reloadData];
 }
 
 
