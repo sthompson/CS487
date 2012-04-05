@@ -27,6 +27,7 @@ class StadiumAdmin(admin.ModelAdmin):
     list_display = ['stadium_name']
     ordering = ['stadium_name']
 
+"""
 class ItemTypeAdmin(admin.ModelAdmin):
     list_display = ['item_type']
     ordering = ['item_type']
@@ -34,10 +35,12 @@ class ItemTypeAdmin(admin.ModelAdmin):
 class StatusDescriptionAdmin(admin.ModelAdmin):
     list_display = ['order_status_description']
     ordering = ['order_status_description']
+"""
 
 class OrderAdmin(admin.ModelAdmin):
     list_display = ('order_number','item_number','item_name','item_quantity')
     ordering = ('order_number','item_number', 'item_name', 'item_quantity')
+    fields = ('order_number', 'item_name', 'item_price', 'item_quantity')
     list_filter = ('order_number__restaurant', 'order_number__date_of_order', 'order_number__order_number')
 
 class OrderExtraAdmin(admin.ModelAdmin):
@@ -47,10 +50,10 @@ class OrderExtraAdmin(admin.ModelAdmin):
 
 admin.site.register(Stadium, StadiumAdmin)
 admin.site.register(Restaurant, RestaurantAdmin)
-admin.site.register(Item_type, ItemTypeAdmin)
+#admin.site.register(Item_type, ItemTypeAdmin)
 admin.site.register(Menu_item, MenuItemAdmin)
 admin.site.register(Extra_item, ExtraItemAdmin)
-admin.site.register(Status_description, StatusDescriptionAdmin)
+#admin.site.register(Status_description, StatusDescriptionAdmin)
 admin.site.register(Order_status,OrderStatusAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(Order_extra,OrderExtraAdmin)
