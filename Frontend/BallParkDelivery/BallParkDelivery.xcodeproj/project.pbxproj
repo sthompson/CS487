@@ -29,6 +29,7 @@
 		723094D2152B507F00C3CDD8 /* StadiumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094D0152B507F00C3CDD8 /* StadiumViewController.xib */; };
 		723094DF152B7E0E00C3CDD8 /* ExtrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */; };
 		723094E0152B7E0E00C3CDD8 /* ExtrasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */; };
+		72FDB560152E3D0600CF34DE /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB55F152E3D0600CF34DE /* LocationViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,8 @@
 		723094DC152B7E0E00C3CDD8 /* ExtrasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrasViewController.h; sourceTree = "<group>"; };
 		723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtrasViewController.m; sourceTree = "<group>"; };
 		723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtrasViewController.xib; sourceTree = "<group>"; };
+		72FDB55E152E3D0600CF34DE /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
+		72FDB55F152E3D0600CF34DE /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +124,8 @@
 				7224BCDF152AA25A00707C3A /* AppDelegate.m */,
 				7224BCF2152AA33A00707C3A /* Model.h */,
 				7224BCF3152AA33A00707C3A /* Model.m */,
+				72FDB55E152E3D0600CF34DE /* LocationViewController.h */,
+				72FDB55F152E3D0600CF34DE /* LocationViewController.m */,
 				723094CE152B507F00C3CDD8 /* StadiumViewController.h */,
 				723094CF152B507F00C3CDD8 /* StadiumViewController.m */,
 				7224BCE1152AA25A00707C3A /* RestaurantViewController.h */,
@@ -250,6 +255,7 @@
 				7224BD0D152ABB3400707C3A /* MenuViewController.m in Sources */,
 				723094D1152B507F00C3CDD8 /* StadiumViewController.m in Sources */,
 				723094DF152B7E0E00C3CDD8 /* ExtrasViewController.m in Sources */,
+				72FDB560152E3D0600CF34DE /* LocationViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
