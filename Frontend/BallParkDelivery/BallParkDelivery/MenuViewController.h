@@ -13,6 +13,7 @@
 
 @property (strong, nonatomic) DetailViewController *detailViewController;
 @property (strong, nonatomic) NSString *restaurantName;
+@property (strong, nonatomic) NSString *stadiumName;
 @property (strong, nonatomic) NSArray *menuList;
 
 @end

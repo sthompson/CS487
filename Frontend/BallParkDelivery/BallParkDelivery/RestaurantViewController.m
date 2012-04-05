@@ -152,6 +152,7 @@
     self.menuViewController.menuList = [Model getMenuFromStadiumName:stadiumName RestaurantName:
                                         [[restaurants objectAtIndex:indexPath.row]objectForKey:
                                          @"restaurant_name"]];
+    self.menuViewController.stadiumName = self.stadiumName;
     [self.navigationController pushViewController:self.menuViewController animated:YES];
 }
 

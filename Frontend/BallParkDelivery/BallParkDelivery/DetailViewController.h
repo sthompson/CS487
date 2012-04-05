@@ -20,6 +20,7 @@
 
 @property (strong, nonatomic) NSDictionary *menuItem;
 @property (strong, nonatomic) NSString *restaurantName;
+@property (strong, nonatomic) NSString *stadiumName;
 
 -(IBAction)extras:(id)sender;
 

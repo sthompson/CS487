@@ -12,7 +12,7 @@
 @implementation MenuViewController
 
 @synthesize detailViewController = _detailViewController;
-@synthesize restaurantName,menuList;
+@synthesize restaurantName,menuList,stadiumName;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -158,6 +158,7 @@
 
     self.detailViewController.menuItem = [menuList objectAtIndex:indexPath.row];
     self.detailViewController.restaurantName = self.restaurantName;
+    self.detailViewController.stadiumName = self.stadiumName;
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }
 
