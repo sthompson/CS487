@@ -39,6 +39,7 @@
     [super viewDidLoad];
     self.title = @"Stadiums";
     self.locationViewController = [[LocationViewController alloc] init];
+    self.locationViewController.delegate = self;
     [self.locationViewController startStandardUpdates];
 
     // Uncomment the following line to preserve selection between presentations.

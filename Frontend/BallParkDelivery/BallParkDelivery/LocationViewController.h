@@ -21,6 +21,8 @@
 @property(strong, nonatomic) NSString *longitude;
 @property(strong, nonatomic) NSString *latitude;
 
+@property(nonatomic, assign) id<LocationDelegate> delegate;
+
 -(void) startStandardUpdates;
 
 

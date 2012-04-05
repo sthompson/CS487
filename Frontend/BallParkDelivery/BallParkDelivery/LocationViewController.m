@@ -10,7 +10,7 @@
 
 @implementation LocationViewController
 
-@synthesize locationManager,latitude,longitude;
+@synthesize locationManager,latitude,longitude,delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -44,6 +44,7 @@
               newLocation.coordinate.longitude);
         latitude = [NSString stringWithFormat:@"%f", newLocation.coordinate.latitude];
         longitude = [NSString stringWithFormat:@"%f", newLocation.coordinate.longitude];
+        
     }
 }
 
