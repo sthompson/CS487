@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
-@protocol ModalViewDelegate
+@protocol LocationDelegate
 
 - (void) locationFinishedUpdating:(id)sender; 
 

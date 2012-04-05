@@ -13,7 +13,8 @@
 @implementation StadiumViewController
 
 @synthesize restaurantViewController = _restaurantViewController;
-@synthesize stadiums;
+@synthesize locationViewController = _locationtViewController;
+@synthesize stadiums,latitude,longitude;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -37,7 +38,8 @@
 {
     [super viewDidLoad];
     self.title = @"Stadiums";
-    stadiums = [Model getStadiums];
+    self.locationViewController = [[LocationViewController alloc] init];
+    [self.locationViewController startStandardUpdates];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -107,6 +109,15 @@
     cell.textLabel.text = [[stadiums objectAtIndex:indexPath.row]objectForKey:@"stadium_name"];
     return cell;
 }
+
+- (void) locationFinishedUpdating:(id)sender
+{
+    longitude = self.locationViewController.longitude;
+    latitude = self.locationViewController.latitude;
+    
+    
+}
+
 
 /*
 // Override to support conditional editing of the table view.
