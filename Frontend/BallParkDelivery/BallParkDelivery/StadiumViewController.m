@@ -9,12 +9,13 @@
 #import "StadiumViewController.h"
 #import "Model.h"
 #import "RestaurantViewController.h"
+#import "AlertViewWithIndicator.h"
 
 @implementation StadiumViewController
 
 @synthesize restaurantViewController = _restaurantViewController;
 @synthesize locationViewController = _locationtViewController;
-@synthesize stadiums,latitude,longitude;
+@synthesize stadiums,latitude,longitude,locationAlert;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -40,6 +41,7 @@
     self.title = @"Stadiums";
     self.locationViewController = [[LocationViewController alloc] init];
     self.locationViewController.delegate = self;
+    [self startLocationAlert];
     [self.locationViewController startStandardUpdates];
 
     // Uncomment the following line to preserve selection between presentations.
@@ -82,6 +84,34 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+//Alert
+-(void) startLocationAlert
+{
+    if (locationAlert == nil)
+    {
+        locationAlert = [[AlertViewWithIndicator alloc] initWithTitle:@"Searching for Nearby Stadiums\nPlease Wait..." 
+                                                          message:nil delegate:self cancelButtonTitle:nil otherButtonTitles: nil];
+        self.locationAlert.indicator = [[UIActivityIndicatorView alloc]
+                                        initWithActivityIndicatorStyle:
+                                        UIActivityIndicatorViewStyleWhiteLarge];
+        [self.locationAlert addSubview:self.locationAlert.indicator];
+    }
+    locationAlert.shouldAnimate = YES;
+    [locationAlert show];
+}
+
+
+- (void)willPresentAlertView:(AlertViewWithIndicator *)alertView
+{
+    if(alertView.shouldAnimate)
+    {
+        alertView.indicator.center = CGPointMake(alertView.bounds.size.width / 2, alertView.bounds.size.height - 50);
+        [alertView.indicator startAnimating];
+    }
+}
+    
+    
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -117,6 +147,8 @@
     latitude = self.locationViewController.latitude;
     stadiums = [Model getStadiumsWithLongitude:longitude andLatitude:latitude];
     [self.tableView reloadData];
+    [self.locationAlert dismissWithClickedButtonIndex:0 animated:YES];
+    [self.locationAlert.indicator stopAnimating];
 }
 
 

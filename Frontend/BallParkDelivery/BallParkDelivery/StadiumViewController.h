@@ -13,7 +13,7 @@
 @class RestaurantViewController;
 
 
-@interface StadiumViewController : UITableViewController<LocationDelegate>
+@interface StadiumViewController : UITableViewController<LocationDelegate,UIAlertViewDelegate>
 
 @property (strong, nonatomic) RestaurantViewController *restaurantViewController;
 @property (strong, nonatomic) LocationViewController *locationViewController;
@@ -21,6 +21,8 @@
 @property (strong, nonatomic) NSArray *stadiums;
 @property (strong, nonatomic) NSString *longitude;
 @property (strong, nonatomic) NSString *latitude;
+
+-(void) startLocationAlert;
 
 
 @end
