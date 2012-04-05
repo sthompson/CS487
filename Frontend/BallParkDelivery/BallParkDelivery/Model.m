@@ -31,10 +31,12 @@
 }
 
 
-+(NSArray *) getStadiums
++(NSArray *) getStadiumsWithLongitude:(NSString *)lon andLatitude:(NSString *)lat
 {
     NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/stadium/"];
-    NSArray *stadiums = (NSArray *)[Model getDataFromURLString:urlString];
+    NSString *post = [NSString stringWithFormat:@"longitude=%@&latitude=%@",lon,lat];
+    
+    NSArray *stadiums = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
     return stadiums;
 }
 
