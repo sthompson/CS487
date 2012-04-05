@@ -11,4 +11,13 @@
 
 @interface LocationViewController : UIViewController<CLLocationManagerDelegate>
 
+@property(strong, nonatomic) CLLocationManager *locationManager;
+@property(strong, nonatomic) NSString *longitude;
+@property(strong, nonatomic) NSString *latitude;
+
+-(void) startStandardUpdates;
+
+
+
+
 @end

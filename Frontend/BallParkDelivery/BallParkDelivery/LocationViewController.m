@@ -10,6 +10,8 @@
 
 @implementation LocationViewController
 
+@synthesize locationManager,latitude,longitude;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -40,12 +42,23 @@
         NSLog(@"latitude %+.6f, longitude %+.6f\n",
               newLocation.coordinate.latitude,
               newLocation.coordinate.longitude);
-        NSString *currentLat = [NSString stringWithFormat:@"%f", newLocation.coordinate.latitude];
-        NSString *currentLong = [NSString stringWithFormat:@"%f", newLocation.coordinate.longitude];
-        
-        
-        
+        latitude = [NSString stringWithFormat:@"%f", newLocation.coordinate.latitude];
+        longitude = [NSString stringWithFormat:@"%f", newLocation.coordinate.longitude];
     }
+}
+
+-(IBAction) startStandardUpdates
+{
+    if (nil == locationManager)
+        locationManager = [[CLLocationManager alloc] init];
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters;
+    
+    // Set a movement threshold for new events.
+    locationManager.distanceFilter = 10;
+    
+    [locationManager startUpdatingLocation];
 }
 
 - (void)didReceiveMemoryWarning
