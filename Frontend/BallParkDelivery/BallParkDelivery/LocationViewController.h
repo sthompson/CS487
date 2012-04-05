@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 #import <CoreLocation/CoreLocation.h>
 
+@protocol ModalViewDelegate
+
+- (void) locationFinishedUpdating:(id)sender; 
+
+@end
+
 @interface LocationViewController : UIViewController<CLLocationManagerDelegate>
 
 @property(strong, nonatomic) CLLocationManager *locationManager;
