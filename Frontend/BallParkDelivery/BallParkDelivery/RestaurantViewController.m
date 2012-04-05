@@ -98,6 +98,9 @@
     // Configure the cell.
     cell.textLabel.text = [[restaurants objectAtIndex:[indexPath row]] 
                            valueForKey:@"restaurant_name"];
+    NSData *imageData = [Model getImageFromURL:[[restaurants objectAtIndex:[indexPath row]]
+                                                valueForKey:@"logo_url"]];
+    cell.imageView.image = [UIImage imageWithData:imageData];
     
     return cell;
 }
