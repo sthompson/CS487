@@ -31,6 +31,7 @@
 		723094E0152B7E0E00C3CDD8 /* ExtrasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */; };
 		72FDB560152E3D0600CF34DE /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB55F152E3D0600CF34DE /* LocationViewController.m */; };
 		72FDB563152E469300CF34DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FDB562152E469300CF34DE /* CoreLocation.framework */; };
+		72FDB566152E4A9800CF34DE /* AlertViewWithIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,8 @@
 		72FDB55E152E3D0600CF34DE /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		72FDB55F152E3D0600CF34DE /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		72FDB562152E469300CF34DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		72FDB564152E4A9800CF34DE /* AlertViewWithIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewWithIndicator.h; sourceTree = "<group>"; };
+		72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewWithIndicator.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +134,8 @@
 				72FDB55E152E3D0600CF34DE /* LocationViewController.h */,
 				72FDB55F152E3D0600CF34DE /* LocationViewController.m */,
 				723094CE152B507F00C3CDD8 /* StadiumViewController.h */,
+				72FDB564152E4A9800CF34DE /* AlertViewWithIndicator.h */,
+				72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */,
 				723094CF152B507F00C3CDD8 /* StadiumViewController.m */,
 				7224BCE1152AA25A00707C3A /* RestaurantViewController.h */,
 				7224BCE2152AA25A00707C3A /* RestaurantViewController.m */,
@@ -260,6 +265,7 @@
 				723094D1152B507F00C3CDD8 /* StadiumViewController.m in Sources */,
 				723094DF152B7E0E00C3CDD8 /* ExtrasViewController.m in Sources */,
 				72FDB560152E3D0600CF34DE /* LocationViewController.m in Sources */,
+				72FDB566152E4A9800CF34DE /* AlertViewWithIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

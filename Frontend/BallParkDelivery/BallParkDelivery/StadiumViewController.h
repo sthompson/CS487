@@ -15,6 +15,7 @@
 
 @property (strong, nonatomic) RestaurantViewController *restaurantViewController;
 @property (strong, nonatomic) LocationViewController *locationViewController;
+@property (strong, nonatomic) AlertViewWithIndicator *locationAlert;
 @property (strong, nonatomic) NSArray *stadiums;
 @property (strong, nonatomic) NSString *longitude;
 @property (strong, nonatomic) NSString *latitude;
