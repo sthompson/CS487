@@ -33,6 +33,8 @@
     
     [price setText:[NSString stringWithFormat:@"$%@",
                     [menuItem valueForKey:@"item_price"]]];
+    NSData *imageData = [Model getImageFromURL:[menuItem valueForKey:@"picture_url"]];
+    logo.image = [UIImage imageWithData:imageData];
     
     // Set Image
     /*NSData *imageData = [[NSData alloc] initWithContentsOfURL:
