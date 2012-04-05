@@ -45,17 +45,17 @@ def order_submission(request):
     for item in post_items:
         if(item[0]!= 'restaurant_name' and item[0]!='seat_number' and item[0]!='stadium_name'):
             arr = item[0].split(',')
-            itemnumber = arr[0]
-            menuitem = arr[1]
-            quantity = arr[2]
+            menuitem = arr[0]
+            quantity = arr[1]
             menu_item_price = Menu_item.objects.get(restaurant=restaurantPK, item_name=menuitem).item_price
-            Order.objects.create(order_number_id=new_transaction_number,item_name=menuitem, item_price=menu_item_price, item_quantity=quantity, item_number=itemnumber)
-            ordernumber = Order.objects.all().aggregate(Max('pk'))['pk__max']
-            extra_items = item[1][0].split(',')
-            for extra in extra_items:
-                if len(extra) != 0:
-                    extra_item_price = Extra_item.objects.get(restaurant=restaurantPK, extra_name=extra).extra_price
-                    Order_extra.objects.create(order_number_id=ordernumber,extra_name=extra,extra_price=extra_item_price)
+            for same_item_name in item[1]:
+                extra_items = same_item_name.split(',')
+                Order.objects.create(order_number_id=new_transaction_number,item_name=menuitem, item_price=menu_item_price, item_quantity=quantity)
+                ordernumber = Order.objects.all().aggregate(Max('pk'))['pk__max']
+                for extra in extra_items:
+                    if len(extra) != 0:
+                        extra_item_price = Extra_item.objects.get(restaurant=restaurantPK, extra_name=extra).extra_price
+                        Order_extra.objects.create(order_number_id=ordernumber,extra_name=extra,extra_price=extra_item_price)
     return HttpResponse(new_transaction_number)
 
 def payment_verification(request):
