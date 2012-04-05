@@ -10,4 +10,7 @@
 
 @implementation AlertViewWithIndicator
 
+@synthesize indicator;
+@synthesize shouldAnimate;
+
 @end

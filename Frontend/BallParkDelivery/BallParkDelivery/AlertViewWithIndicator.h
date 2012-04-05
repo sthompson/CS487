@@ -10,4 +10,7 @@
 
 @interface AlertViewWithIndicator : UIAlertView
 
+@property (nonatomic, retain) UIActivityIndicatorView *indicator;
+@property BOOL shouldAnimate;
+
 @end

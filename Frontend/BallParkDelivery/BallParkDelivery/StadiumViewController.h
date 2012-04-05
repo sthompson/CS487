@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "LocationViewController.h"
+
+@class AlertViewWithIndicator;
 @class RestaurantViewController;
 
 
