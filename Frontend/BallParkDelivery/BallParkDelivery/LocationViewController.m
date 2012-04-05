@@ -44,6 +44,7 @@
               newLocation.coordinate.longitude);
         latitude = [NSString stringWithFormat:@"%f", newLocation.coordinate.latitude];
         longitude = [NSString stringWithFormat:@"%f", newLocation.coordinate.longitude];
+        [delegate locationFinishedUpdating:self];
         
     }
 }
