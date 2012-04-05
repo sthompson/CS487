@@ -12,6 +12,7 @@
 
 +(id) getPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post;
 +(id) getDataFromURLString:(NSString *) urlString;
++(NSData *) getImageFromURL:(NSString *) urlString;
 +(NSArray *) getStadiumsWithLongitude:(NSString *)lon andLatitude:(NSString *)lat;
 +(NSArray *) getRestaurantsFromStadiumName: (NSString *)stadiumName;
 +(NSArray *) getMenuFromRestaurantName:(NSString *)restaurantName;

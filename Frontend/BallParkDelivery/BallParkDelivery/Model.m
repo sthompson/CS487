@@ -80,6 +80,12 @@
     return [theDeserializer deserialize:data error:&theError];
 }
 
++(NSData *) getImageFromURL:(NSString *) urlString
+{
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlString]];
+    return imageData;
+}
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

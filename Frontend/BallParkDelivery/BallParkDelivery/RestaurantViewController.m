@@ -98,6 +98,7 @@
     // Configure the cell.
     cell.textLabel.text = [[restaurants objectAtIndex:[indexPath row]] 
                            valueForKey:@"restaurant_name"];
+    
     return cell;
 }
 
