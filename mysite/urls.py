@@ -3,8 +3,8 @@ from django.conf.urls.defaults import*
 from ballpark.views import*
 
 # Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from django.contrib import admin 
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
@@ -15,13 +15,13 @@ urlpatterns = patterns('',
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
 
     # Uncomment the next line to enable the admin:
-    # url(r'^admin/', include(admin.site.urls)),
+    (r'^admin/', include(admin.site.urls)),
     ('^stadium/$', stadium),
     ('^restaurant/$', restaurant),
     ('^menu_item/$', menu_item),
     ('^extra_item/$', extra_item),
     ('^order_status_retrieval/$', order_status_retrieval),
-    ('^order_status_change/$', order_status_change),
     ('^order_submission/$', order_submission),
-    ('^order_retrieval/$', order_retrieval),
+    ('^payment_verification/$', payment_verification), 
+                       
 )
