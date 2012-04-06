@@ -10,4 +10,6 @@
 
 @implementation Cart
 
+@synthesize orders;
+
 @end

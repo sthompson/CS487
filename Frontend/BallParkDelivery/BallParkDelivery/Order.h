@@ -15,6 +15,6 @@
 @property(strong, nonatomic) NSString *itemName;
 @property(strong, nonatomic) NSNumber *quantity;
 @property(strong, nonatomic) NSString *seatNumber;
-@property(strong, nonatomic) NSArray  *extras;
+@property(strong, nonatomic) NSMutableArray  *extras;
 
 @end

@@ -10,4 +10,6 @@
 
 @interface Cart : NSObject
 
+@property(strong, nonatomic) NSMutableArray *orders;
+
 @end
