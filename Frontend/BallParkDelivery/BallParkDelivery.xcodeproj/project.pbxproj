@@ -38,6 +38,7 @@
 		72FDB575152E96B600CF34DE /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB573152E96B400CF34DE /* CartViewController.m */; };
 		72FDB576152E96B600CF34DE /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72FDB574152E96B500CF34DE /* CartViewController.xib */; };
 		72FDB57C152EA95E00CF34DE /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72FDB57B152EA95E00CF34DE /* CartCell.xib */; };
+		72FDB57F152EAAB900CF34DE /* CartCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB57E152EAAB800CF34DE /* CartCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +95,8 @@
 		72FDB573152E96B400CF34DE /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
 		72FDB574152E96B500CF34DE /* CartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
 		72FDB57B152EA95E00CF34DE /* CartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
+		72FDB57D152EAAB700CF34DE /* CartCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartCell.h; sourceTree = "<group>"; };
+		72FDB57E152EAAB800CF34DE /* CartCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +160,8 @@
 				72FDB55F152E3D0600CF34DE /* LocationViewController.m */,
 				72FDB569152E75F100CF34DE /* CustomCell.h */,
 				72FDB56A152E75F100CF34DE /* CustomCell.m */,
+				72FDB57D152EAAB700CF34DE /* CartCell.h */,
+				72FDB57E152EAAB800CF34DE /* CartCell.m */,
 				723094CE152B507F00C3CDD8 /* StadiumViewController.h */,
 				723094CF152B507F00C3CDD8 /* StadiumViewController.m */,
 				7224BCE1152AA25A00707C3A /* RestaurantViewController.h */,
@@ -298,6 +303,7 @@
 				72FDB56E152E848B00CF34DE /* Order.m in Sources */,
 				72FDB571152E84AC00CF34DE /* Cart.m in Sources */,
 				72FDB575152E96B600CF34DE /* CartViewController.m in Sources */,
+				72FDB57F152EAAB900CF34DE /* CartCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
