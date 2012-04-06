@@ -102,6 +102,7 @@
                                                 valueForKey:@"logo_url"]];
     cell.imageView.image = [UIImage imageWithData:imageData];
     
+    
     return cell;
 }
 
