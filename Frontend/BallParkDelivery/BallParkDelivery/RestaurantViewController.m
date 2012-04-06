@@ -10,6 +10,7 @@
 
 #import "MenuViewController.h"
 #import "Model.h"
+#import "CustomCell.h"
 
 @implementation RestaurantViewController
 
@@ -89,9 +90,9 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
 
@@ -101,6 +102,7 @@
     NSData *imageData = [Model getImageFromURL:[[restaurants objectAtIndex:[indexPath row]]
                                                 valueForKey:@"logo_url"]];
     cell.imageView.image = [UIImage imageWithData:imageData];
+    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
     
     return cell;

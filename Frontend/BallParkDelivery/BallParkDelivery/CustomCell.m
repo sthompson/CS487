@@ -28,7 +28,8 @@
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    self.imageView.frame = CGRectMake(0.0f , 0.0f, 32.0f, 32.0f);
+    self.imageView.frame = CGRectMake(0.0f , 0.0f, 44.0f, 44.0f);
+    self.textLabel.frame = CGRectMake(50.0f, 0.0f, 300.0f, 44.0f);
 }
 
 @end
