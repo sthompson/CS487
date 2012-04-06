@@ -35,6 +35,7 @@
                     [menuItem valueForKey:@"item_price"]]];
     NSData *imageData = [Model getImageFromURL:[menuItem valueForKey:@"picture_url"]];
     logo.image = [UIImage imageWithData:imageData];
+    logo.contentMode = UIViewContentModeScaleAspectFill;
     
     // Set Image
     /*NSData *imageData = [[NSData alloc] initWithContentsOfURL:
