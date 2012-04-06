@@ -163,11 +163,11 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
-						<object class="IBUIFontDescription" key="IBUIFontDescription" id="734355386">
+						<object class="IBUIFontDescription" key="IBUIFontDescription" id="895349428">
 							<int key="type">1</int>
 							<double key="pointSize">14</double>
 						</object>
-						<object class="NSFont" key="IBUIFont" id="1010818068">
+						<object class="NSFont" key="IBUIFont" id="958301435">
 							<string key="NSName">Helvetica</string>
 							<double key="NSSize">14</double>
 							<int key="NSfFlags">16</int>
@@ -207,7 +207,7 @@
 						<string key="NSFrame">{{134, 266}, {42, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView" ref="325399262"/>
+						<reference key="NSNextKeyView" ref="265487042"/>
 						<string key="NSReuseIdentifierKey">_NS:328</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -245,7 +245,7 @@
 						<reference key="IBUIFontDescription" ref="368288338"/>
 						<reference key="IBUIFont" ref="565835973"/>
 					</object>
-					<object class="IBUILabel" id="325399262">
+					<object class="IBUILabel" id="265487042">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{185, 266}, {69, 21}}</string>
@@ -266,7 +266,7 @@
 						<reference key="IBUIFontDescription" ref="250143327"/>
 						<reference key="IBUIFont" ref="809395051"/>
 					</object>
-					<object class="IBUITextField" id="69742229">
+					<object class="IBUITextField" id="524845205">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{262, 262}, {33, 31}}</string>
@@ -289,8 +289,8 @@
 						<object class="IBUITextInputTraits" key="IBUITextInputTraits">
 							<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 						</object>
-						<reference key="IBUIFontDescription" ref="734355386"/>
-						<reference key="IBUIFont" ref="1010818068"/>
+						<reference key="IBUIFontDescription" ref="895349428"/>
+						<reference key="IBUIFont" ref="958301435"/>
 					</object>
 				</array>
 				<string key="NSFrame">{{0, 20}, {320, 460}}</string>
@@ -344,7 +344,7 @@
 					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">quantity</string>
 						<reference key="source" ref="372490531"/>
-						<reference key="destination" ref="69742229"/>
+						<reference key="destination" ref="524845205"/>
 					</object>
 					<int key="connectionID">22</int>
 				</object>
@@ -382,6 +382,14 @@
 					</object>
 					<int key="connectionID">18</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">delegate</string>
+						<reference key="source" ref="524845205"/>
+						<reference key="destination" ref="372490531"/>
+					</object>
+					<int key="connectionID">25</int>
+				</object>
 			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
@@ -403,8 +411,8 @@
 							<reference ref="160556321"/>
 							<reference ref="736515516"/>
 							<reference ref="554117833"/>
-							<reference ref="325399262"/>
-							<reference ref="69742229"/>
+							<reference ref="265487042"/>
+							<reference ref="524845205"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -461,12 +469,12 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">20</int>
-						<reference key="object" ref="325399262"/>
+						<reference key="object" ref="265487042"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">21</int>
-						<reference key="object" ref="69742229"/>
+						<reference key="object" ref="524845205"/>
 						<reference key="parent" ref="191373211"/>
 					</object>
 				</array>
@@ -492,7 +500,7 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">24</int>
+			<int key="maxID">25</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
