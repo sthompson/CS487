@@ -13,7 +13,7 @@
 
 @implementation CartViewController
 
-@synthesize total,order,tableview,cart,delegate;
+@synthesize total,order,tableview,cart,delegate,cancel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -118,6 +118,11 @@
     [cart placeOrder];
     [cart.orders removeAllObjects];
     [delegate orderPlaced:self];
+}
+
+-(IBAction)cancelOrder:(id)sender
+{
+    [delegate orderCancelled:self];
 }
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation

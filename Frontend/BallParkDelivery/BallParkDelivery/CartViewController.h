@@ -14,6 +14,7 @@
 @protocol CartDelegate
 
 - (void) orderPlaced:(id)sender;  
+- (void) orderCancelled:(id)sender;
 
 @end
 
@@ -21,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *total;
 @property (weak, nonatomic) IBOutlet UIButton *order;
+@property (weak, nonatomic) IBOutlet UIButton *cancel;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
 @property (strong, nonatomic) Cart *cart;
@@ -28,6 +30,7 @@
 @property(nonatomic, assign) id<CartDelegate> delegate;
 
 -(IBAction)placeOrder:(id)sender;
+-(IBAction)cancelOrder:(id)sender;
 -(float) getPriceTotal;
 
 @end
