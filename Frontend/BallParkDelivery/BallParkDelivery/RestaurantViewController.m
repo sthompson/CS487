@@ -44,6 +44,8 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] 
                                                 initWithTitle:@"Cart" style:UIBarButtonItemStyleBordered target:self action:@selector(checkout)];
+    
+    [[UIBarButtonItem alloc] init
 
 }
 
