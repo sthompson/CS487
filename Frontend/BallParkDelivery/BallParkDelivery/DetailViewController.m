@@ -133,6 +133,10 @@
         order.extras = nil;
     else
         order.extras = self.extrasViewController.extraNames;
+    if (cart.orders == nil) 
+    {
+        cart.orders = [[NSMutableArray alloc]init];
+    }
     [cart.orders addObject:order];
 }
 
