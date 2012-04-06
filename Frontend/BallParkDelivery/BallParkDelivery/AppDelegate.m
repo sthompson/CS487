@@ -25,6 +25,7 @@
     // Override point for customization after application launch.
 
     StadiumViewController *stadiumViewController = [[StadiumViewController alloc] initWithNibName:@"StadiumViewController" bundle:nil];
+    stadiumViewController.managedObjectContext = self.managedObjectContext;
     stadiumViewController.cart = [[Cart alloc]init];
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:stadiumViewController];
     self.window.rootViewController = self.navigationController;
