@@ -52,7 +52,7 @@
 					<object class="IBUILabel" id="160556321">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{59, 266}, {46, 21}}</string>
+						<string key="NSFrame">{{39, 266}, {46, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="554117833"/>
@@ -204,7 +204,7 @@
 					<object class="IBUILabel" id="554117833">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{134, 266}, {42, 21}}</string>
+						<string key="NSFrame">{{88, 267}, {42, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="117150366"/>
@@ -228,7 +228,6 @@
 						<string key="NSFrame">{{202, 361}, {72, 37}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
-						<reference key="NSNextKeyView"/>
 						<string key="NSReuseIdentifierKey">_NS:225</string>
 						<bool key="IBUIOpaque">NO</bool>
 						<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
@@ -248,7 +247,7 @@
 					<object class="IBUILabel" id="117150366">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{185, 266}, {69, 21}}</string>
+						<string key="NSFrame">{{157, 267}, {69, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<reference key="NSNextKeyView" ref="472581721"/>
@@ -269,7 +268,7 @@
 					<object class="IBUITextField" id="184662012">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{262, 262}, {33, 31}}</string>
+						<string key="NSFrame">{{234, 262}, {33, 31}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<reference key="NSWindow"/>
 						<string key="NSReuseIdentifierKey">_NS:304</string>
@@ -408,8 +407,8 @@
 							<reference ref="13051589"/>
 							<reference ref="974164314"/>
 							<reference ref="880016076"/>
-							<reference ref="160556321"/>
 							<reference ref="736515516"/>
+							<reference ref="160556321"/>
 							<reference ref="554117833"/>
 							<reference ref="117150366"/>
 							<reference ref="184662012"/>
