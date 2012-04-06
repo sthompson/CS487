@@ -52,7 +52,7 @@
     NSData *imageData;
     
     if (results == nil || ([results count]==0)) 
-        imageData = [Model getImageFromURL:[menuItem valueForKey:@"logo_url"] inContext:self.managedObjectContext];
+        imageData = [Model getImageFromURL:[menuItem valueForKey:@"picture_url"] inContext:self.managedObjectContext];
     else
     {
         NSManagedObject *object = [results objectAtIndex:0];
