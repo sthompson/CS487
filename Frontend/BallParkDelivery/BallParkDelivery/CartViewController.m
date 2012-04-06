@@ -38,6 +38,10 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    
+    total.text = [formatter stringFromNumber:[NSNumber numberWithFloat:[self getPriceTotal]]];
 }
 
 - (void)viewDidUnload
@@ -47,12 +51,36 @@
     // e.g. self.myOutlet = nil;
 }
 
+-(float) priceWithExtrasOfOrder: (Order *)ord
+{
+    float price = [ord.price floatValue];
+    for (NSDictionary *extra in ord.extras)
+    {
+        price += [[extra objectForKey:@"extra_price"] floatValue];
+    }
+    return price;
+}
+
+-(float) getPriceTotal
+{
+    float price = 0;
+    for (Order *ord in cart.orders)
+    {
+        float priceInt = [self priceWithExtrasOfOrder:ord];
+        priceInt *= ord.quantity.intValue;
+        price += priceInt;
+    }
+    return price;
+}
+
+
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *CellIdentifier = @"Cell";
-    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
     CartCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"CartCell" owner:self options:nil];
@@ -61,9 +89,16 @@
     
     // Configure the cell...
     Order *thisOrder = [cart.orders objectAtIndex:indexPath.row];
-    cell.name.text = thisOrder.itemName;
+    if (thisOrder.extras == nil)
+        cell.name.text = thisOrder.itemName;
+    else
+        cell.name.text = [NSString stringWithFormat:@"%@ w/ extra(s)",thisOrder.itemName];
     cell.quantity.text = [NSString stringWithFormat:@"x%@",thisOrder.quantity];
-    cell.price.text = [NSString stringWithFormat:@"$%@",thisOrder.price];
+    
+
+    
+    cell.price.text = [formatter stringFromNumber:[NSNumber numberWithFloat:
+                                                   [self priceWithExtrasOfOrder:thisOrder]]];
     return cell;
 }
 

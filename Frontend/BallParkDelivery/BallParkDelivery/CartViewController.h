@@ -28,5 +28,6 @@
 @property(nonatomic, assign) id<CartDelegate> delegate;
 
 -(IBAction)placeOrder:(id)sender;
+-(float) getPriceTotal;
 
 @end
