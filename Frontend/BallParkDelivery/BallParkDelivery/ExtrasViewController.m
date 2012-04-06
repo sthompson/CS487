@@ -36,6 +36,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     selectedRows = [[NSMutableArray alloc] init];
+    extraNames = [[NSMutableArray alloc] init];
     for (int i = 0; i<[extras count]; i++) 
     {
         [selectedRows addObject:[NSNumber numberWithBool:NO]];
