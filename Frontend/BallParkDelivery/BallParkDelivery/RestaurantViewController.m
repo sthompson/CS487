@@ -166,7 +166,7 @@
     
     NSData *imageData;
     
-    if (results == nil) 
+    if (results == nil || ([results count]==0)) 
         imageData = [Model getImageFromURL:[[restaurants objectAtIndex:[indexPath row]]
                                                     valueForKey:@"logo_url"] inContext:self.managedObjectContext];
     else
