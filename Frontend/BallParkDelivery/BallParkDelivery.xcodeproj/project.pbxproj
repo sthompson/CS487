@@ -29,6 +29,8 @@
 		723094D2152B507F00C3CDD8 /* StadiumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094D0152B507F00C3CDD8 /* StadiumViewController.xib */; };
 		723094DF152B7E0E00C3CDD8 /* ExtrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */; };
 		723094E0152B7E0E00C3CDD8 /* ExtrasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */; };
+		72B10A8C152F3AD50010D14D /* Images.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72B10A8A152F3AD50010D14D /* Images.xcdatamodeld */; };
+		72B10A8E152F3BAF0010D14D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B10A8D152F3BAF0010D14D /* CoreData.framework */; };
 		72FDB560152E3D0600CF34DE /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB55F152E3D0600CF34DE /* LocationViewController.m */; };
 		72FDB563152E469300CF34DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FDB562152E469300CF34DE /* CoreLocation.framework */; };
 		72FDB566152E4A9800CF34DE /* AlertViewWithIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */; };
@@ -80,6 +82,8 @@
 		723094DC152B7E0E00C3CDD8 /* ExtrasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrasViewController.h; sourceTree = "<group>"; };
 		723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtrasViewController.m; sourceTree = "<group>"; };
 		723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtrasViewController.xib; sourceTree = "<group>"; };
+		72B10A8B152F3AD50010D14D /* Images.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Images.xcdatamodel; sourceTree = "<group>"; };
+		72B10A8D152F3BAF0010D14D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		72FDB55E152E3D0600CF34DE /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		72FDB55F152E3D0600CF34DE /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		72FDB562152E469300CF34DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -104,6 +108,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				72B10A8E152F3BAF0010D14D /* CoreData.framework in Frameworks */,
 				72FDB563152E469300CF34DE /* CoreLocation.framework in Frameworks */,
 				7224BCD0152AA25A00707C3A /* UIKit.framework in Frameworks */,
 				7224BCD2152AA25A00707C3A /* Foundation.framework in Frameworks */,
@@ -117,7 +122,6 @@
 		7224BCC0152AA25A00707C3A = {
 			isa = PBXGroup;
 			children = (
-				72FDB562152E469300CF34DE /* CoreLocation.framework */,
 				7224BCD5152AA25A00707C3A /* BallParkDelivery */,
 				7224BCCE152AA25A00707C3A /* Frameworks */,
 				7224BCCC152AA25A00707C3A /* Products */,
@@ -135,6 +139,8 @@
 		7224BCCE152AA25A00707C3A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				72B10A8D152F3BAF0010D14D /* CoreData.framework */,
+				72FDB562152E469300CF34DE /* CoreLocation.framework */,
 				7224BCCF152AA25A00707C3A /* UIKit.framework */,
 				7224BCD1152AA25A00707C3A /* Foundation.framework */,
 				7224BCD3152AA25A00707C3A /* CoreGraphics.framework */,
@@ -181,6 +187,7 @@
 				723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */,
 				72FDB574152E96B500CF34DE /* CartViewController.xib */,
 				72FDB57B152EA95E00CF34DE /* CartCell.xib */,
+				72B10A8A152F3AD50010D14D /* Images.xcdatamodeld */,
 				7224BCD6152AA25A00707C3A /* Supporting Files */,
 			);
 			path = BallParkDelivery;
@@ -304,6 +311,7 @@
 				72FDB571152E84AC00CF34DE /* Cart.m in Sources */,
 				72FDB575152E96B600CF34DE /* CartViewController.m in Sources */,
 				72FDB57F152EAAB900CF34DE /* CartCell.m in Sources */,
+				72B10A8C152F3AD50010D14D /* Images.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,6 +434,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		72B10A8A152F3AD50010D14D /* Images.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				72B10A8B152F3AD50010D14D /* Images.xcdatamodel */,
+			);
+			currentVersion = 72B10A8B152F3AD50010D14D /* Images.xcdatamodel */;
+			name = Images.xcdatamodeld;
+			path = ../Images.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 7224BCC2152AA25A00707C3A /* Project object */;
 }
