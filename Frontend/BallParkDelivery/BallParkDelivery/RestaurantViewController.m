@@ -175,6 +175,7 @@
                                          @"restaurant_name"]];
     self.menuViewController.stadiumName = self.stadiumName;
     self.menuViewController.cart = self.cart;
+    self.menuViewController.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
     [self.navigationController pushViewController:self.menuViewController animated:YES];
 }
 
