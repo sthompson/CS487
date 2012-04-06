@@ -10,7 +10,7 @@
 
 @implementation ExtrasViewController
 
-@synthesize tableview,finished,extras,delegate,selectedRows,extraNames;
+@synthesize tableview,finished,extras,delegate,selectedRows,extrasChosen;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,7 +36,7 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     selectedRows = [[NSMutableArray alloc] init];
-    extraNames = [[NSMutableArray alloc] init];
+    extrasChosen = [[NSMutableArray alloc] init];
     for (int i = 0; i<[extras count]; i++) 
     {
         [selectedRows addObject:[NSNumber numberWithBool:NO]];
@@ -63,7 +63,7 @@
     {
         if ([[selectedRows objectAtIndex:i] boolValue]) 
         {
-            [extraNames addObject:[[NSString alloc]initWithString: [[extras objectAtIndex:i] objectForKey:@"extra_name"]]];
+            [extrasChosen addObject:[extras objectAtIndex:i]];
         }
     }
     [delegate userFinished:self withInfo:nil];

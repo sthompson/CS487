@@ -132,7 +132,7 @@
     if (self.extrasViewController == nil)
         order.extras = nil;
     else
-        order.extras = self.extrasViewController.extraNames;
+        order.extras = self.extrasViewController.extrasChosen;
     if (cart.orders == nil) 
     {
         cart.orders = [[NSMutableArray alloc]init];
