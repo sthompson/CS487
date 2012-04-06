@@ -116,6 +116,7 @@
 -(IBAction)placeOrder:(id)sender
 {
     [cart placeOrder];
+    [cart.orders removeAllObjects];
     [delegate orderPlaced:self];
 }
 
