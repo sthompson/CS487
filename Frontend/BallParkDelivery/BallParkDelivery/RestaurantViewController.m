@@ -170,8 +170,7 @@
         imageData = [Model getImageFromURL:[[restaurants objectAtIndex:[indexPath row]]
                                                     valueForKey:@"logo_url"] inContext:self.managedObjectContext];
     else
-
-        imageData = [[results objectAtIndex:0] data];
+        imageData = [[[results objectAtIndex:0] valueForKey:@"image"] data];
         
     cell.imageView.image = [UIImage imageWithData:imageData];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
