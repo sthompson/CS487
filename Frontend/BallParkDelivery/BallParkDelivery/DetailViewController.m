@@ -19,7 +19,7 @@
 @implementation DetailViewController
 
 @synthesize extrasViewController = _extrasViewController;
-@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,seatNumber,alertView;
+@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,seatNumber,stepper,alertView;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 
@@ -125,7 +125,10 @@
     return self;
 }
 
-
+-(IBAction)clickStepper:(id)sender
+{
+    quantity.text = [[NSNumber numberWithDouble:stepper.value] stringValue];
+}
 
 - (IBAction) extras:(id)sender
 {

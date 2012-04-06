@@ -20,8 +20,9 @@
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
 @property (weak, nonatomic) IBOutlet UILabel *itemName;
 @property (weak, nonatomic) IBOutlet UILabel *price;
-@property (weak, nonatomic) IBOutlet UITextField *quantity;
+@property (weak, nonatomic) IBOutlet UILabel *quantity;
 @property (weak, nonatomic) IBOutlet UITextField *seatNumber;
+@property (weak, nonatomic) IBOutlet UIStepper *stepper;
 
 @property (strong, nonatomic) UIAlertView *alertView;
 @property (strong, nonatomic) NSDictionary *menuItem;
@@ -33,5 +34,6 @@
 
 -(IBAction)extras:(id)sender;
 -(IBAction)addItemToCart:(id)sender;
+-(IBAction)clickStepper:(id)sender;
 
 @end
