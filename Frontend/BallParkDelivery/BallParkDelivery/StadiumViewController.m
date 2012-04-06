@@ -10,12 +10,13 @@
 #import "Model.h"
 #import "RestaurantViewController.h"
 #import "AlertViewWithIndicator.h"
+#import "Cart.h"
 
 @implementation StadiumViewController
 
 @synthesize restaurantViewController = _restaurantViewController;
 @synthesize locationViewController = _locationtViewController;
-@synthesize stadiums,latitude,longitude,locationAlert;
+@synthesize stadiums,latitude,longitude,locationAlert,cart;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -199,6 +200,7 @@
     if (!self.restaurantViewController) {
         self.restaurantViewController = [[RestaurantViewController alloc] initWithNibName:@"RestaurantViewController" bundle:nil];
     }
+    self.restaurantViewController.cart = self.cart;
     self.restaurantViewController.stadiumName = [[stadiums objectAtIndex:indexPath.row]objectForKey:@"stadium_name"];
     self.restaurantViewController.restaurants = [Model getRestaurantsFromStadiumName:
                                                  [[stadiums objectAtIndex:indexPath.row]

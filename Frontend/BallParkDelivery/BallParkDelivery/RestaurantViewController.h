@@ -9,10 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @class MenuViewController;
+@class Cart;
 
 @interface RestaurantViewController : UITableViewController
 
 @property (strong, nonatomic) MenuViewController *menuViewController;
+@property (strong, nonatomic) Cart *cart;
 @property (strong, nonatomic) NSArray *restaurants;
 @property (strong, nonatomic) NSString *stadiumName;
 

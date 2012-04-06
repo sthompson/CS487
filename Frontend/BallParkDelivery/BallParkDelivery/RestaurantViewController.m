@@ -15,7 +15,7 @@
 @implementation RestaurantViewController
 
 @synthesize menuViewController = _menuViewController;
-@synthesize restaurants,stadiumName;
+@synthesize restaurants,stadiumName,cart;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -156,6 +156,7 @@
                                         [[restaurants objectAtIndex:indexPath.row]objectForKey:
                                          @"restaurant_name"]];
     self.menuViewController.stadiumName = self.stadiumName;
+    self.menuViewController.cart = self.cart;
     [self.navigationController pushViewController:self.menuViewController animated:YES];
 }
 

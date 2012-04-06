@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "ExtrasViewController.h"
 
+@class Cart;
+
 @interface DetailViewController : UIViewController<UITextFieldDelegate, ModalViewDelegate>
 
 
 @property (strong, nonatomic) ExtrasViewController *extrasViewController;
+@property (strong, nonatomic) Cart *cart;
 
 @property (weak, nonatomic) IBOutlet UIImageView *logo;
 @property (weak, nonatomic) IBOutlet UILabel *itemName;

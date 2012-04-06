@@ -17,7 +17,7 @@
 @implementation DetailViewController
 
 @synthesize extrasViewController = _extrasViewController;
-@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName;
+@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart;
 
 #pragma mark - Managing the detail item
 
