@@ -20,6 +20,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *finished;
 
 @property (strong, nonatomic) NSArray *extras;
+@property (strong, nonatomic) NSMutableArray *extraNames;
 @property (strong, nonatomic) NSMutableArray *selectedRows;
 
 @property(nonatomic, assign) id<ModalViewDelegate> delegate;

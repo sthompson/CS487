@@ -10,7 +10,7 @@
 
 @implementation ExtrasViewController
 
-@synthesize tableview,finished,extras,delegate,selectedRows;
+@synthesize tableview,finished,extras,delegate,selectedRows,extraNames;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -58,6 +58,13 @@
 
 -(IBAction)finished:(id)sender
 {
+    for (int i = 0; i<[extras count]; i++) 
+    {
+        if ([[selectedRows objectAtIndex:i] boolValue]) 
+        {
+            [extraNames addObject:[[NSString alloc]initWithString: [[extras objectAtIndex:i] objectForKey:@"extra_name"]]];
+        }
+    }
     [delegate userFinished:self withInfo:nil];
 }
 

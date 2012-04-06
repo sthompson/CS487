@@ -10,6 +10,7 @@
 #import "ExtrasViewController.h"
 #import "Model.h"
 #import "Order.h"
+#import "Cart.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -128,8 +129,11 @@
     order.itemName = [menuItem objectForKey:@"item_name"];
     order.quantity = quantity.text;
     order.seatNumber = seatNumber.text;
-    
-    
+    if (self.extrasViewController == nil)
+        order.extras = nil;
+    else
+        order.extras = self.extrasViewController.extraNames;
+    [cart.orders addObject:order];
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
