@@ -8,6 +8,7 @@
 
 #import "CartViewController.h"
 #import "Cart.h"
+#import "Order.h"
 
 @implementation CartViewController
 
@@ -58,7 +59,7 @@
     }
     
     // Configure the cell...
-    cell.textLabel.text = [[cart.orders objectAtIndex:indexPath.row] objectForKey:@"item_name"];
+    cell.textLabel.text = [[cart.orders objectAtIndex:indexPath.row]itemName];
     return cell;
 }
 
