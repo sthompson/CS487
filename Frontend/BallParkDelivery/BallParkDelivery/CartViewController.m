@@ -9,6 +9,7 @@
 #import "CartViewController.h"
 #import "Cart.h"
 #import "Order.h"
+#import "CartCell.h"
 
 @implementation CartViewController
 
@@ -52,14 +53,17 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    CartCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        NSArray *topLevelObjects = [[NSBundle mainBundle] loadNibNamed:@"CartCell" owner:self options:nil];
+        cell = [topLevelObjects objectAtIndex:0];
     }
     
     // Configure the cell...
-    cell.textLabel.text = [[cart.orders objectAtIndex:indexPath.row]itemName];
+    Order *thisOrder = [cart.orders objectAtIndex:indexPath.row];
+    cell.name.text = thisOrder.itemName;
+    cell.quantity.text = [NSString stringWithFormat:@"x%@",thisOrder.quantity];
+    cell.price.text = [NSString stringWithFormat:@"$%@",thisOrder.price];
     return cell;
 }
 

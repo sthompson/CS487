@@ -129,6 +129,7 @@
     order.itemName = [menuItem objectForKey:@"item_name"];
     order.quantity = quantity.text;
     order.seatNumber = seatNumber.text;
+    order.price = [menuItem objectForKey:@"item_price"];
     if (self.extrasViewController == nil)
         order.extras = nil;
     else
