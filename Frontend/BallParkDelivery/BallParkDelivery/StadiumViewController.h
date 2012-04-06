@@ -24,6 +24,9 @@
 @property (strong, nonatomic) NSString *longitude;
 @property (strong, nonatomic) NSString *latitude;
 
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 -(void) startLocationAlert;
 
 

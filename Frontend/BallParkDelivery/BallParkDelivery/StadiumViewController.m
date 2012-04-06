@@ -17,6 +17,8 @@
 @synthesize restaurantViewController = _restaurantViewController;
 @synthesize locationViewController = _locationtViewController;
 @synthesize stadiums,latitude,longitude,locationAlert,cart;
+@synthesize fetchedResultsController = __fetchedResultsController;
+@synthesize managedObjectContext = __managedObjectContext;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

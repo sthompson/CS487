@@ -17,6 +17,8 @@
 
 @synthesize menuViewController = _menuViewController;
 @synthesize restaurants,stadiumName,cart;
+@synthesize fetchedResultsController = __fetchedResultsController;
+@synthesize managedObjectContext = __managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

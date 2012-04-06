@@ -27,6 +27,9 @@
 @property (strong, nonatomic) NSString *restaurantName;
 @property (strong, nonatomic) NSString *stadiumName;
 
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 -(IBAction)extras:(id)sender;
 -(IBAction)addItemToCart:(id)sender;
 

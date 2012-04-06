@@ -18,4 +18,7 @@
 @property (strong, nonatomic) NSString *stadiumName;
 @property (strong, nonatomic) NSArray *menuList;
 
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 @end

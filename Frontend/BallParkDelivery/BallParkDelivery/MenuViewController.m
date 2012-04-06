@@ -13,6 +13,8 @@
 
 @synthesize detailViewController = _detailViewController;
 @synthesize restaurantName,menuList,stadiumName,cart;
+@synthesize fetchedResultsController = __fetchedResultsController;
+@synthesize managedObjectContext = __managedObjectContext;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {

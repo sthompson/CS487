@@ -20,6 +20,8 @@
 
 @synthesize extrasViewController = _extrasViewController;
 @synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,seatNumber;
+@synthesize fetchedResultsController = __fetchedResultsController;
+@synthesize managedObjectContext = __managedObjectContext;
 
 #pragma mark - Managing the detail item
 
