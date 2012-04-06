@@ -16,9 +16,10 @@
 @implementation RestaurantViewController
 
 @synthesize menuViewController = _menuViewController;
-@synthesize restaurants,stadiumName,cart;
+@synthesize restaurants,stadiumName,cart, currentURL;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -80,6 +81,55 @@
     return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 }
 
+#pragma mark - Fetched results controller
+
+/*- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (__fetchedResultsController != nil) {
+        return __fetchedResultsController;
+    }
+    
+    // Set up the fetched results controller.
+    // Create the fetch request for the entity.
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    // Edit the entity name as appropriate.
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Image" inManagedObjectContext:self.managedObjectContext];
+    
+    [fetchRequest setEntity:entity];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"url == %@",currentURL];
+    
+    [fetchRequest setPredicate:pred];
+    
+    // Set the batch size to a suitable number.
+    [fetchRequest setFetchBatchSize:20];
+    
+    // Edit the sort key as appropriate.
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"url" ascending:YES];
+    NSArray *sortDescriptors = [NSArray arrayWithObjects:sortDescriptor, nil];
+    
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    // Edit the section name key path and cache name if appropriate.
+    // nil for section name key path means "no sections".
+    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:self.managedObjectContext sectionNameKeyPath:nil cacheName:nil];
+    aFetchedResultsController.delegate = self;
+    self.fetchedResultsController = aFetchedResultsController;
+    
+	NSError *error = nil;
+	if (![self.fetchedResultsController performFetch:&error]) {
+	    
+	     Replace this implementation with code to handle the error appropriately.
+         
+	     abort() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development. 
+	     
+	    NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+	    abort();
+	}
+    return __fetchedResultsController;
+}    */
+
+
+
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
@@ -105,8 +155,24 @@
     // Configure the cell.
     cell.textLabel.text = [[restaurants objectAtIndex:[indexPath row]] 
                            valueForKey:@"restaurant_name"];
-    NSData *imageData = [Model getImageFromURL:[[restaurants objectAtIndex:[indexPath row]]
-                                                valueForKey:@"logo_url"]];
+    
+    currentURL = [[restaurants objectAtIndex:[indexPath row]]valueForKey:@"logo_url"];
+    NSFetchRequest *fetchrequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Image" inManagedObjectContext:self.managedObjectContext];
+    [fetchrequest setEntity:entity];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"url == %@",currentURL];
+    [fetchrequest setPredicate:pred];
+    NSArray *results = [self.managedObjectContext executeFetchRequest:fetchrequest error:nil];
+    
+    NSData *imageData;
+    
+    if (results == nil) 
+        imageData = [Model getImageFromURL:[[restaurants objectAtIndex:[indexPath row]]
+                                                    valueForKey:@"logo_url"]];
+    else
+
+        imageData = [[results objectAtIndex:0] data];
+        
     cell.imageView.image = [UIImage imageWithData:imageData];
     cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
     
