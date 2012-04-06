@@ -100,9 +100,27 @@
     return [theDeserializer deserialize:data error:&theError];
 }
 
++(NSData *) getImageFromURL:(NSString *) urlString inContext:(NSManagedObjectContext *)ctx
+{
+    
+    
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlString]];
+    
+    NSManagedObject *newObject = [NSEntityDescription insertNewObjectForEntityForName:@"Image" inManagedObjectContext:ctx];
+    UIImage *image = [UIImage imageWithData:imageData];
+    NSData *pngData = UIImagePNGRepresentation(image);
+    [newObject setValue:pngData forKey:@"image"];
+    [newObject setValue:urlString forKey:@"url"];
+    [ctx save:nil];
+    
+    return imageData;
+}
+
 +(NSData *) getImageFromURL:(NSString *) urlString
 {
-    NSData *imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlString]];
+    
+    
+    NSData *imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: urlString]];    
     return imageData;
 }
 
