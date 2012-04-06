@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CartViewController.h"
 
 @class MenuViewController;
 @class Cart;
 
-@interface RestaurantViewController : UITableViewController
+@interface RestaurantViewController : UITableViewController<CartDelegate>
 
 @property (strong, nonatomic) MenuViewController *menuViewController;
 @property (strong, nonatomic) Cart *cart;

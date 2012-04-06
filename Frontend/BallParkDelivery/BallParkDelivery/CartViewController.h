@@ -25,6 +25,8 @@
 
 @property (strong, nonatomic) Cart *cart;
 
+@property(nonatomic, assign) id<CartDelegate> delegate;
+
 -(IBAction)placeOrder:(id)sender;
 
 @end

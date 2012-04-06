@@ -11,6 +11,7 @@
 #import "MenuViewController.h"
 #import "Model.h"
 #import "CustomCell.h"
+#import "CartViewController.h"
 
 @implementation RestaurantViewController
 
@@ -38,6 +39,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] 
+                                                initWithBarButtonSystemItem:(UIBarButtonSystemItemAdd)
+                                                target:self action:@selector(checkout)];
+
 }
 
 - (void)viewDidUnload
@@ -106,6 +111,19 @@
     
     
     return cell;
+}
+
+-(void) checkout
+{
+    CartViewController *cartVC = [[CartViewController alloc] init];
+    cartVC.cart = self.cart;
+    cartVC.delegate = self;
+    [self presentViewController:cartVC animated:YES completion:nil];
+}
+
+-(void) orderPlaced:(id)sender
+{
+    [sender dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

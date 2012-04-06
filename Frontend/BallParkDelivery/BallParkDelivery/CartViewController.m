@@ -10,7 +10,7 @@
 
 @implementation CartViewController
 
-@synthesize total,order,tableview,cart;
+@synthesize total,order,tableview,cart,delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
