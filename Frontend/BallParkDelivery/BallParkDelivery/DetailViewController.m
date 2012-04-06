@@ -162,6 +162,11 @@
     [alertView show];
 }
 
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
 {
     return [textField resignFirstResponder];
