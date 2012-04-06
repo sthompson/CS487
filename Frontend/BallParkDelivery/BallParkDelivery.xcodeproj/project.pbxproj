@@ -32,7 +32,6 @@
 		72FDB560152E3D0600CF34DE /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB55F152E3D0600CF34DE /* LocationViewController.m */; };
 		72FDB563152E469300CF34DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FDB562152E469300CF34DE /* CoreLocation.framework */; };
 		72FDB566152E4A9800CF34DE /* AlertViewWithIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */; };
-		72FDB568152E756B00CF34DE /* CellCustom.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72FDB567152E756B00CF34DE /* CellCustom.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +78,6 @@
 		72FDB562152E469300CF34DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		72FDB564152E4A9800CF34DE /* AlertViewWithIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewWithIndicator.h; sourceTree = "<group>"; };
 		72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewWithIndicator.m; sourceTree = "<group>"; };
-		72FDB567152E756B00CF34DE /* CellCustom.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellCustom.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,7 +145,6 @@
 				7224BCE5152AA25A00707C3A /* DetailViewController.m */,
 				723094DC152B7E0E00C3CDD8 /* ExtrasViewController.h */,
 				723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */,
-				72FDB567152E756B00CF34DE /* CellCustom.xib */,
 				723094D0152B507F00C3CDD8 /* StadiumViewController.xib */,
 				7224BCE7152AA25A00707C3A /* RestaurantViewController.xib */,
 				7224BCEA152AA25A00707C3A /* DetailViewController.xib */,
@@ -244,7 +241,6 @@
 				7224BD0E152ABB3400707C3A /* MenuViewController.xib in Resources */,
 				723094D2152B507F00C3CDD8 /* StadiumViewController.xib in Resources */,
 				723094E0152B7E0E00C3CDD8 /* ExtrasViewController.xib in Resources */,
-				72FDB568152E756B00CF34DE /* CellCustom.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
