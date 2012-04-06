@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "ExtrasViewController.h"
 #import "Model.h"
+#import "Order.h"
 
 @interface DetailViewController ()
 - (void)configureView;
@@ -17,7 +18,7 @@
 @implementation DetailViewController
 
 @synthesize extrasViewController = _extrasViewController;
-@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart;
+@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,seatNumber;
 
 #pragma mark - Managing the detail item
 
@@ -117,6 +118,18 @@
     self.extrasViewController.extras = [Model getExtrasFromStadiumName:stadiumName andRestaurantName:restaurantName];
     self.extrasViewController.delegate = self;
     [self presentViewController:self.extrasViewController animated:YES completion:nil];
+}
+
+- (IBAction)addItemToCart:(id)sender
+{
+    Order *order = [[Order alloc]init];
+    order.stadiumName = self.stadiumName;
+    order.restaurantName = self.restaurantName;
+    order.itemName = [menuItem objectForKey:@"item_name"];
+    order.quantity = quantity.text;
+    order.seatNumber = seatNumber.text;
+    
+    
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField
