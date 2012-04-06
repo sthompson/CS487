@@ -10,4 +10,11 @@
 
 @interface Order : NSObject
 
+@property(strong, nonatomic) NSString *stadiumName;
+@property(strong, nonatomic) NSString *restaurantName;
+@property(strong, nonatomic) NSString *itemName;
+@property(strong, nonatomic) NSNumber *quantity;
+@property(strong, nonatomic) NSString *seatNumber;
+@property(strong, nonatomic) NSArray  *extras;
+
 @end
