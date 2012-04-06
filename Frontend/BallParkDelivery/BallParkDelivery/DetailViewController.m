@@ -37,16 +37,30 @@
     
     [price setText:[NSString stringWithFormat:@"$%@",
                     [menuItem valueForKey:@"item_price"]]];
-    NSData *imageData = [Model getImageFromURL:[menuItem valueForKey:@"picture_url"]];
+    
+    
+    
+    
+    NSString *currentURL = [menuItem valueForKey:@"picture_url"];
+    NSFetchRequest *fetchrequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Image" inManagedObjectContext:self.managedObjectContext];
+    [fetchrequest setEntity:entity];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"url == %@",currentURL];
+    [fetchrequest setPredicate:pred];
+    NSArray *results = [self.managedObjectContext executeFetchRequest:fetchrequest error:nil];
+    
+    NSData *imageData;
+    
+    if (results == nil || ([results count]==0)) 
+        imageData = [Model getImageFromURL:[menuItem valueForKey:@"logo_url"] inContext:self.managedObjectContext];
+    else
+    {
+        NSManagedObject *object = [results objectAtIndex:0];
+        imageData = [object valueForKey:@"image"];
+    }
+    
     logo.image = [UIImage imageWithData:imageData];
     logo.contentMode = UIViewContentModeScaleAspectFill;
-    
-    // Set Image
-    /*NSData *imageData = [[NSData alloc] initWithContentsOfURL:
-                         [NSURL URLWithString:[menuItem objectForKey:@"itemURL"]]];
-    logo.image = [UIImage imageWithData:imageData];*/
-
-
 }
 
 - (void) userFinished:(id)sender withInfo:(NSArray*) info
