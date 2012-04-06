@@ -34,6 +34,7 @@
 		72FDB566152E4A9800CF34DE /* AlertViewWithIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */; };
 		72FDB56B152E75F200CF34DE /* CustomCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB56A152E75F100CF34DE /* CustomCell.m */; };
 		72FDB56E152E848B00CF34DE /* Order.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB56D152E848B00CF34DE /* Order.m */; };
+		72FDB571152E84AC00CF34DE /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB570152E84AC00CF34DE /* Cart.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +85,8 @@
 		72FDB56A152E75F100CF34DE /* CustomCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomCell.m; sourceTree = "<group>"; };
 		72FDB56C152E848B00CF34DE /* Order.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Order.h; sourceTree = "<group>"; };
 		72FDB56D152E848B00CF34DE /* Order.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Order.m; sourceTree = "<group>"; };
+		72FDB56F152E84AB00CF34DE /* Cart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cart.h; sourceTree = "<group>"; };
+		72FDB570152E84AC00CF34DE /* Cart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cart.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +142,8 @@
 				7224BCF3152AA33A00707C3A /* Model.m */,
 				72FDB56C152E848B00CF34DE /* Order.h */,
 				72FDB56D152E848B00CF34DE /* Order.m */,
+				72FDB56F152E84AB00CF34DE /* Cart.h */,
+				72FDB570152E84AC00CF34DE /* Cart.m */,
 				72FDB564152E4A9800CF34DE /* AlertViewWithIndicator.h */,
 				72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */,
 				72FDB55E152E3D0600CF34DE /* LocationViewController.h */,
@@ -278,6 +283,7 @@
 				72FDB566152E4A9800CF34DE /* AlertViewWithIndicator.m in Sources */,
 				72FDB56B152E75F200CF34DE /* CustomCell.m in Sources */,
 				72FDB56E152E848B00CF34DE /* Order.m in Sources */,
+				72FDB571152E84AC00CF34DE /* Cart.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
