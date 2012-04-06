@@ -17,5 +17,6 @@
 +(NSArray *) getRestaurantsFromStadiumName: (NSString *)stadiumName;
 +(NSArray *) getMenuFromStadiumName:(NSString *) stadiumName andRestaurantName:(NSString *)restaurantName;
 +(NSArray *) getExtrasFromStadiumName:(NSString *) stadiumName andRestaurantName:(NSString *) restaurantName;
++(NSArray *) placeOrderWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andSeatNumber: (NSString *) seatNumber andQuantity: (NSString *) quantity;
 
 @end

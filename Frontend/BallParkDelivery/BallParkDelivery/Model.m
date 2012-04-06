@@ -51,6 +51,24 @@
     return extras;
 }
 
++(NSArray *) placeOrderWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andSeatNumber: (NSString *) seatNumber andQuantity: (NSString *) quantity
+{
+    NSString *urlString = [NSString stringWithFormat:@"http://69.210.242.101:8080/order_submission/"];
+    NSString *post = [NSString stringWithFormat:@"stadium_name=%@&restaurant_name=%@&%@,%@=",
+                      stadiumName,restaurantName,itemName,quantity];
+    for (int i = 0; i<[extras count]; i++)
+    {
+        if (i==0)
+            post = [post stringByAppendingFormat:@"%@",[extras objectAtIndex:i]];
+        else
+            post = [post stringByAppendingFormat:@",%@",[extras objectAtIndex:i]];
+    }
+    post = [post stringByAppendingFormat:@"&seat_number=%@",seatNumber];
+    NSArray *result = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
+    return result;
+
+}
+
 +(id) getPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post
 {
     NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:
