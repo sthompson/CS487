@@ -10,6 +10,8 @@
 
 @implementation CartCell
 
+@synthesize name,quantity,price;
+
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
 {
     self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
