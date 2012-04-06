@@ -207,6 +207,7 @@
     self.restaurantViewController.restaurants = [Model getRestaurantsFromStadiumName:
                                                  [[stadiums objectAtIndex:indexPath.row]
                                                   objectForKey:@"stadium_name"]];
+    self.restaurantViewController.managedObjectContext = self.managedObjectContext;
     [self.navigationController pushViewController:self.restaurantViewController animated:YES];
 
 

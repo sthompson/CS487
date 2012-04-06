@@ -168,7 +168,7 @@
     
     if (results == nil) 
         imageData = [Model getImageFromURL:[[restaurants objectAtIndex:[indexPath row]]
-                                                    valueForKey:@"logo_url"]];
+                                                    valueForKey:@"logo_url"] inContext:self.managedObjectContext];
     else
 
         imageData = [[results objectAtIndex:0] data];
@@ -248,6 +248,7 @@
     self.menuViewController.stadiumName = self.stadiumName;
     self.menuViewController.cart = self.cart;
     self.menuViewController.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
+    self.menuViewController.managedObjectContext = self.managedObjectContext;
     [self.navigationController pushViewController:self.menuViewController animated:YES];
 }
 
