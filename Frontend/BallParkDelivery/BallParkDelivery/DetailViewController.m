@@ -19,7 +19,7 @@
 @implementation DetailViewController
 
 @synthesize extrasViewController = _extrasViewController;
-@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,seatNumber;
+@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,seatNumber,alertView;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 
@@ -155,6 +155,11 @@
         cart.orders = [[NSMutableArray alloc]init];
     }
     [cart.orders addObject:order];
+    if (self.alertView == nil) 
+    {
+        self.alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Added %@ to Cart",order.itemName] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+    }
+    [alertView show];
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField

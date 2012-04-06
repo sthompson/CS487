@@ -11,7 +11,7 @@
 
 @class Cart;
 
-@interface DetailViewController : UIViewController<UITextFieldDelegate, ModalViewDelegate>
+@interface DetailViewController : UIViewController<UITextFieldDelegate, ModalViewDelegate, UIAlertViewDelegate>
 
 
 @property (strong, nonatomic) ExtrasViewController *extrasViewController;
@@ -23,6 +23,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *quantity;
 @property (weak, nonatomic) IBOutlet UITextField *seatNumber;
 
+@property (strong, nonatomic) UIAlertView *alertView;
 @property (strong, nonatomic) NSDictionary *menuItem;
 @property (strong, nonatomic) NSString *restaurantName;
 @property (strong, nonatomic) NSString *stadiumName;
