@@ -37,6 +37,7 @@
 		72FDB571152E84AC00CF34DE /* Cart.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB570152E84AC00CF34DE /* Cart.m */; };
 		72FDB575152E96B600CF34DE /* CartViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB573152E96B400CF34DE /* CartViewController.m */; };
 		72FDB576152E96B600CF34DE /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72FDB574152E96B500CF34DE /* CartViewController.xib */; };
+		72FDB57C152EA95E00CF34DE /* CartCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72FDB57B152EA95E00CF34DE /* CartCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +93,7 @@
 		72FDB572152E96B400CF34DE /* CartViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CartViewController.h; sourceTree = "<group>"; };
 		72FDB573152E96B400CF34DE /* CartViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CartViewController.m; sourceTree = "<group>"; };
 		72FDB574152E96B500CF34DE /* CartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
+		72FDB57B152EA95E00CF34DE /* CartCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				7224BD0C152ABB3400707C3A /* MenuViewController.xib */,
 				723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */,
 				72FDB574152E96B500CF34DE /* CartViewController.xib */,
+				72FDB57B152EA95E00CF34DE /* CartCell.xib */,
 				7224BCD6152AA25A00707C3A /* Supporting Files */,
 			);
 			path = BallParkDelivery;
@@ -265,6 +268,7 @@
 				723094D2152B507F00C3CDD8 /* StadiumViewController.xib in Resources */,
 				723094E0152B7E0E00C3CDD8 /* ExtrasViewController.xib in Resources */,
 				72FDB576152E96B600CF34DE /* CartViewController.xib in Resources */,
+				72FDB57C152EA95E00CF34DE /* CartCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
