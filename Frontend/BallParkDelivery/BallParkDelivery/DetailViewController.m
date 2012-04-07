@@ -19,7 +19,7 @@
 @implementation DetailViewController
 
 @synthesize extrasViewController = _extrasViewController;
-@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,seatNumber,stepper,alertView;
+@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,seatNumber,stepper,addAlert,seatAlert;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 
@@ -142,6 +142,15 @@
 
 - (IBAction)addItemToCart:(id)sender
 {
+    if ([seatNumber.text isEqualToString:@""]) 
+    {
+        if (self.seatAlert == nil) 
+        {
+            self.seatAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Enter a Seat Number" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        }
+        [seatAlert show];
+        return;
+    }
     Order *order = [[Order alloc]init];
     order.stadiumName = self.stadiumName;
     order.restaurantName = self.restaurantName;
@@ -158,16 +167,19 @@
         cart.orders = [[NSMutableArray alloc]init];
     }
     [cart.orders addObject:order];
-    if (self.alertView == nil) 
+    if (self.addAlert == nil) 
     {
-        self.alertView = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Added %@ to Cart",order.itemName] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        self.addAlert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Added %@ to Cart",order.itemName] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];
     }
-    [alertView show];
+    [addAlert show];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    [self.navigationController popViewControllerAnimated:YES];
+    if (alertView == self.addAlert) 
+    {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 -(BOOL) textFieldShouldReturn:(UITextField *)textField

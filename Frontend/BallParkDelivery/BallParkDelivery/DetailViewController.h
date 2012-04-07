@@ -24,7 +24,8 @@
 @property (weak, nonatomic) IBOutlet UITextField *seatNumber;
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
 
-@property (strong, nonatomic) UIAlertView *alertView;
+@property (strong, nonatomic) UIAlertView *addAlert;
+@property (strong, nonatomic) UIAlertView *seatAlert;
 @property (strong, nonatomic) NSDictionary *menuItem;
 @property (strong, nonatomic) NSString *restaurantName;
 @property (strong, nonatomic) NSString *stadiumName;
