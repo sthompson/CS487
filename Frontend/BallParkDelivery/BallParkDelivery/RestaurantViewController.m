@@ -13,6 +13,7 @@
 #import "CustomCell.h"
 #import "CartViewController.h"
 
+
 @implementation RestaurantViewController
 
 @synthesize menuViewController = _menuViewController;
@@ -41,12 +42,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] 
-                                                initWithTitle:@"Cart" style:UIBarButtonItemStyleBordered target:self action:@selector(checkout)];
-    
-    [[UIBarButtonItem alloc] init
 
+    UIBarButtonItem *shoppingCart = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shoppingcart.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(checkout)];
+    self.navigationItem.rightBarButtonItem = shoppingCart;
+    
 }
 
 - (void)viewDidUnload
