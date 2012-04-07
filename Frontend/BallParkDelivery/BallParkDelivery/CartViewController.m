@@ -13,7 +13,7 @@
 
 @implementation CartViewController
 
-@synthesize total,order,tableview,cart,delegate,cancel;
+@synthesize total,order,tableview,cart,delegate,cancel,emptyAlert;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -141,9 +141,26 @@
 
 -(IBAction)placeOrder:(id)sender
 {
+    if ([cart.orders count]==0) 
+    {
+        if (self.emptyAlert == nil)
+        {
+            self.emptyAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Your Cart is Empty" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        }
+        [self.emptyAlert show];
+        return;
+    }
     [cart placeOrder];
     [cart.orders removeAllObjects];
     [delegate orderPlaced:self];
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (alertView == self.emptyAlert) 
+    {
+        [delegate orderCancelled:self];
+    }
 }
 
 -(IBAction)cancelOrder:(id)sender

@@ -18,12 +18,14 @@
 
 @end
 
-@interface CartViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@interface CartViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,UIAlertViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *total;
 @property (weak, nonatomic) IBOutlet UIButton *order;
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
+
+@property (strong, nonatomic) UIAlertView *emptyAlert;
 
 @property (strong, nonatomic) Cart *cart;
 
