@@ -32,5 +32,6 @@
 -(IBAction)placeOrder:(id)sender;
 -(IBAction)cancelOrder:(id)sender;
 -(float) getPriceTotal;
+-(void) setTotalPrice;
 
 @end

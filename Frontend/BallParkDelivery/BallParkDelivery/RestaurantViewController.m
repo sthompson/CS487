@@ -98,6 +98,7 @@
     return [restaurants count];
 }
 
+
 // Customize the appearance of table view cells.
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -108,6 +109,8 @@
         cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
+
+    
 
     // Configure the cell.
     cell.textLabel.text = [[restaurants objectAtIndex:[indexPath row]] 
@@ -144,7 +147,8 @@
     CartViewController *cartVC = [[CartViewController alloc] init];
     cartVC.cart = self.cart;
     cartVC.delegate = self;
-    [self presentViewController:cartVC animated:YES completion:nil];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cartVC];
+    [self presentViewController:nav animated:YES completion:nil];
 }
 
 -(void) orderPlaced:(id)sender
@@ -208,6 +212,7 @@
     self.menuViewController.cart = self.cart;
     self.menuViewController.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
     self.menuViewController.managedObjectContext = self.managedObjectContext;
+    
     [self.navigationController pushViewController:self.menuViewController animated:YES];
 }
 
