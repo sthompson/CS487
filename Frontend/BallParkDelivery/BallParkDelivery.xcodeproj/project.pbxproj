@@ -29,6 +29,7 @@
 		723094D2152B507F00C3CDD8 /* StadiumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094D0152B507F00C3CDD8 /* StadiumViewController.xib */; };
 		723094DF152B7E0E00C3CDD8 /* ExtrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */; };
 		723094E0152B7E0E00C3CDD8 /* ExtrasViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */; };
+		72626ECE1534D009003D4C0C /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72626ECD1534D009003D4C0C /* RestaurantCell.xib */; };
 		72B10A8C152F3AD50010D14D /* Images.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72B10A8A152F3AD50010D14D /* Images.xcdatamodeld */; };
 		72B10A8E152F3BAF0010D14D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B10A8D152F3BAF0010D14D /* CoreData.framework */; };
 		72B10A9A152F709D0010D14D /* shoppingcart.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B10A99152F709D0010D14D /* shoppingcart.png */; };
@@ -83,6 +84,7 @@
 		723094DC152B7E0E00C3CDD8 /* ExtrasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExtrasViewController.h; sourceTree = "<group>"; };
 		723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExtrasViewController.m; sourceTree = "<group>"; };
 		723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtrasViewController.xib; sourceTree = "<group>"; };
+		72626ECD1534D009003D4C0C /* RestaurantCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RestaurantCell.xib; sourceTree = "<group>"; };
 		72B10A8B152F3AD50010D14D /* Images.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Images.xcdatamodel; sourceTree = "<group>"; };
 		72B10A8D152F3BAF0010D14D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		72B10A99152F709D0010D14D /* shoppingcart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoppingcart.png; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 				723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */,
 				72FDB572152E96B400CF34DE /* CartViewController.h */,
 				72FDB573152E96B400CF34DE /* CartViewController.m */,
+				72626ECD1534D009003D4C0C /* RestaurantCell.xib */,
 				723094D0152B507F00C3CDD8 /* StadiumViewController.xib */,
 				7224BCE7152AA25A00707C3A /* RestaurantViewController.xib */,
 				7224BCEA152AA25A00707C3A /* DetailViewController.xib */,
@@ -293,6 +296,7 @@
 				72FDB576152E96B600CF34DE /* CartViewController.xib in Resources */,
 				72FDB57C152EA95E00CF34DE /* CartCell.xib in Resources */,
 				72B10A9A152F709D0010D14D /* shoppingcart.png in Resources */,
+				72626ECE1534D009003D4C0C /* RestaurantCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
