@@ -32,31 +32,33 @@
 				<string key="IBProxiedObjectIdentifier">IBFirstResponder</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 			</object>
-			<object class="IBUITableViewCell" id="141083935">
+			<object class="IBUITableViewCell" id="98211423">
 				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<array class="NSMutableArray" key="NSSubviews">
-					<object class="IBUIView" id="237652191">
-						<reference key="NSNextResponder" ref="141083935"/>
+					<object class="IBUIView" id="320992235">
+						<reference key="NSNextResponder" ref="98211423"/>
 						<int key="NSvFlags">256</int>
 						<array class="NSMutableArray" key="NSSubviews">
-							<object class="IBUIImageView" id="611813014">
-								<reference key="NSNextResponder" ref="237652191"/>
+							<object class="IBUIImageView" id="473202628">
+								<reference key="NSNextResponder" ref="320992235"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{8, 4}, {92, 92}}</string>
-								<reference key="NSSuperview" ref="237652191"/>
+								<reference key="NSSuperview" ref="320992235"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView" ref="787992323"/>
 								<string key="NSReuseIdentifierKey">_NS:567</string>
 								<int key="IBUITag">1</int>
 								<bool key="IBUIUserInteractionEnabled">NO</bool>
 								<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
 							</object>
-							<object class="IBUILabel" id="187662899">
-								<reference key="NSNextResponder" ref="237652191"/>
+							<object class="IBUILabel" id="787992323">
+								<reference key="NSNextResponder" ref="320992235"/>
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{121, 21}, {157, 57}}</string>
-								<reference key="NSSuperview" ref="237652191"/>
+								<reference key="NSSuperview" ref="320992235"/>
 								<reference key="NSWindow"/>
+								<reference key="NSNextKeyView"/>
 								<string key="NSReuseIdentifierKey">_NS:328</string>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
@@ -84,8 +86,9 @@
 							</object>
 						</array>
 						<string key="NSFrameSize">{320, 100}</string>
-						<reference key="NSSuperview" ref="141083935"/>
+						<reference key="NSSuperview" ref="98211423"/>
 						<reference key="NSWindow"/>
+						<reference key="NSNextKeyView" ref="473202628"/>
 						<string key="NSReuseIdentifierKey">_NS:395</string>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">3</int>
@@ -101,15 +104,24 @@
 				<string key="NSFrameSize">{320, 101}</string>
 				<reference key="NSSuperview"/>
 				<reference key="NSWindow"/>
-				<reference key="NSNextKeyView" ref="237652191"/>
+				<reference key="NSNextKeyView" ref="320992235"/>
 				<string key="NSReuseIdentifierKey">_NS:384</string>
 				<string key="targetRuntimeIdentifier">IBCocoaTouchFramework</string>
-				<reference key="IBUIContentView" ref="237652191"/>
+				<reference key="IBUIContentView" ref="320992235"/>
 				<real value="101" key="IBUIRowHeight"/>
 			</object>
 		</array>
 		<object class="IBObjectContainer" key="IBDocument.Objects">
-			<array class="NSMutableArray" key="connectionRecords"/>
+			<array class="NSMutableArray" key="connectionRecords">
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">tableViewCell</string>
+						<reference key="source" ref="841351856"/>
+						<reference key="destination" ref="98211423"/>
+					</object>
+					<int key="connectionID">5</int>
+				</object>
+			</array>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<array key="orderedObjects">
 					<object class="IBObjectRecord">
@@ -131,26 +143,27 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">2</int>
-						<reference key="object" ref="141083935"/>
+						<reference key="object" ref="98211423"/>
 						<array class="NSMutableArray" key="children">
-							<reference ref="611813014"/>
-							<reference ref="187662899"/>
+							<reference ref="473202628"/>
+							<reference ref="787992323"/>
 						</array>
 						<reference key="parent" ref="0"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">3</int>
-						<reference key="object" ref="611813014"/>
-						<reference key="parent" ref="141083935"/>
+						<reference key="object" ref="473202628"/>
+						<reference key="parent" ref="98211423"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">4</int>
-						<reference key="object" ref="187662899"/>
-						<reference key="parent" ref="141083935"/>
+						<reference key="object" ref="787992323"/>
+						<reference key="parent" ref="98211423"/>
 					</object>
 				</array>
 			</object>
 			<dictionary class="NSMutableDictionary" key="flattenedProperties">
+				<string key="-1.CustomClassName">RestaurantViewController</string>
 				<string key="-1.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				<string key="-2.CustomClassName">UIResponder</string>
 				<string key="-2.IBPluginDependency">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -162,9 +175,31 @@
 			<nil key="activeLocalization"/>
 			<dictionary class="NSMutableDictionary" key="localizations"/>
 			<nil key="sourceID"/>
-			<int key="maxID">4</int>
+			<int key="maxID">5</int>
 		</object>
-		<object class="IBClassDescriber" key="IBDocument.Classes"/>
+		<object class="IBClassDescriber" key="IBDocument.Classes">
+			<array class="NSMutableArray" key="referencedPartialClassDescriptions">
+				<object class="IBPartialClassDescription">
+					<string key="className">RestaurantViewController</string>
+					<string key="superclassName">UITableViewController</string>
+					<object class="NSMutableDictionary" key="outlets">
+						<string key="NS.key.0">tableViewCell</string>
+						<string key="NS.object.0">UITableViewCell</string>
+					</object>
+					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
+						<string key="NS.key.0">tableViewCell</string>
+						<object class="IBToOneOutletInfo" key="NS.object.0">
+							<string key="name">tableViewCell</string>
+							<string key="candidateClassName">UITableViewCell</string>
+						</object>
+					</object>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">./Classes/RestaurantViewController.h</string>
+					</object>
+				</object>
+			</array>
+		</object>
 		<int key="IBDocument.localizationMode">0</int>
 		<string key="IBDocument.TargetRuntimeIdentifier">IBCocoaTouchFramework</string>
 		<bool key="IBDocument.PluginDeclaredDependenciesTrackSystemTargetVersion">YES</bool>
