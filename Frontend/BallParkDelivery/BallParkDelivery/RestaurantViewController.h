@@ -22,6 +22,8 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
+@property (strong) IBOutlet UITableViewCell *tableViewCell;
+
 
 
 @end

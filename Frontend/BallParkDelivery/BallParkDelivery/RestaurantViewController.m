@@ -20,6 +20,7 @@
 @synthesize restaurants,stadiumName,cart;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
+@synthesize tableViewCell;
 
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -104,16 +105,17 @@
 {
     static NSString *CellIdentifier = @"Cell";
     
-    CustomCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[CustomCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [[NSBundle mainBundle] loadNibNamed:@"RestaurantCell" owner:self options:nil];
+        cell = tableViewCell;
+        self.tableViewCell = nil;
     }
 
     
 
     // Configure the cell.
-    cell.textLabel.text = [[restaurants objectAtIndex:[indexPath row]] 
+    ((UILabel *)[cell viewWithTag:2]).text = [[restaurants objectAtIndex:[indexPath row]] 
                            valueForKey:@"restaurant_name"];
     
     NSString *currentURL = [[restaurants objectAtIndex:[indexPath row]]valueForKey:@"logo_url"];
@@ -135,8 +137,8 @@
         imageData = [object valueForKey:@"image"];
     }
         
-    cell.imageView.image = [UIImage imageWithData:imageData];
-    cell.imageView.contentMode = UIViewContentModeScaleAspectFit;
+    ((UIImageView *)[cell viewWithTag:1]).image = [UIImage imageWithData:imageData];
+    ((UIImageView *)[cell viewWithTag:1]).contentMode = UIViewContentModeScaleAspectFit;
     
     
     return cell;
