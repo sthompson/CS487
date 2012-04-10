@@ -86,7 +86,10 @@
 #pragma mark - Fetched results controller
 
 
-
+- (CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath: (NSIndexPath *) indexPath 
+{
+    return 99;
+}
 
 // Customize the number of sections in the table view.
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -139,6 +142,7 @@
         
     ((UIImageView *)[cell viewWithTag:1]).image = [UIImage imageWithData:imageData];
     ((UIImageView *)[cell viewWithTag:1]).contentMode = UIViewContentModeScaleAspectFit;
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     
     
     return cell;
