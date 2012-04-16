@@ -36,6 +36,8 @@
 		72B10A8C152F3AD50010D14D /* Images.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72B10A8A152F3AD50010D14D /* Images.xcdatamodeld */; };
 		72B10A8E152F3BAF0010D14D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B10A8D152F3BAF0010D14D /* CoreData.framework */; };
 		72B10A9A152F709D0010D14D /* shoppingcart.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B10A99152F709D0010D14D /* shoppingcart.png */; };
+		72B2529F153CA1C8003A0103 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B2529D153CA1C7003A0103 /* RegisterViewController.m */; };
+		72B252A0153CA1C8003A0103 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72B2529E153CA1C7003A0103 /* RegisterViewController.xib */; };
 		72FDB560152E3D0600CF34DE /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB55F152E3D0600CF34DE /* LocationViewController.m */; };
 		72FDB563152E469300CF34DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FDB562152E469300CF34DE /* CoreLocation.framework */; };
 		72FDB566152E4A9800CF34DE /* AlertViewWithIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */; };
@@ -95,6 +97,9 @@
 		72B10A8B152F3AD50010D14D /* Images.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Images.xcdatamodel; sourceTree = "<group>"; };
 		72B10A8D152F3BAF0010D14D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		72B10A99152F709D0010D14D /* shoppingcart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoppingcart.png; sourceTree = "<group>"; };
+		72B2529C153CA1C7003A0103 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
+		72B2529D153CA1C7003A0103 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
+		72B2529E153CA1C7003A0103 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
 		72FDB55E152E3D0600CF34DE /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		72FDB55F152E3D0600CF34DE /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		72FDB562152E469300CF34DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -174,6 +179,9 @@
 				72FDB570152E84AC00CF34DE /* Cart.m */,
 				7271D467153C7B9C007ED535 /* LoginViewController.h */,
 				7271D468153C7B9C007ED535 /* LoginViewController.m */,
+				72B2529C153CA1C7003A0103 /* RegisterViewController.h */,
+				72B2529D153CA1C7003A0103 /* RegisterViewController.m */,
+				72B2529E153CA1C7003A0103 /* RegisterViewController.xib */,
 				72FDB564152E4A9800CF34DE /* AlertViewWithIndicator.h */,
 				72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */,
 				72FDB55E152E3D0600CF34DE /* LocationViewController.h */,
@@ -310,6 +318,7 @@
 				72626ECE1534D009003D4C0C /* RestaurantCell.xib in Resources */,
 				7271D46B153C7B9C007ED535 /* LoginViewController.xib in Resources */,
 				7271D46E153C7C05007ED535 /* logo.png in Resources */,
+				72B252A0153CA1C8003A0103 /* RegisterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +351,7 @@
 				72FDB57F152EAAB900CF34DE /* CartCell.m in Sources */,
 				72B10A8C152F3AD50010D14D /* Images.xcdatamodeld in Sources */,
 				7271D46A153C7B9C007ED535 /* LoginViewController.m in Sources */,
+				72B2529F153CA1C8003A0103 /* RegisterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
