@@ -19,7 +19,9 @@
     NSString *urlString = [NSString stringWithFormat:@"%@login/",ROOT];
     NSString *post = [NSString stringWithFormat:@"username=%@&password=%@",
                       username,password];
-    NSString *user = (NSString *) [Model getPostDataFromURLString:urlString andPost:post];
+    NSData *response = [Model getNonJSONPostDataFromURLString:urlString 
+                                                      andPost:post];
+    NSString *user = [[NSString alloc] initWithData:response encoding:NSUTF8StringEncoding];
     return user;
 }
 
@@ -28,8 +30,11 @@
     NSString *urlString = [NSString stringWithFormat:@"%@update_seat_number/",ROOT];
     NSString *post = [NSString stringWithFormat:@"username=%@&seat_number=%@",
                       username,seatNumber];
-    NSString *response = (NSString *) [Model getPostDataFromURLString:urlString andPost:post];
-    return response;
+    NSData *response = [Model getNonJSONPostDataFromURLString:urlString 
+                                                                     andPost:post];
+    NSString *stringResponse = [[NSString alloc] initWithData:response 
+                                                     encoding:NSUTF8StringEncoding];
+    return stringResponse;
 }
 
 +(NSArray *) getRestaurantsFromStadiumName:(NSString *)stadiumName
@@ -108,6 +113,25 @@
     theDeserializer.nullObject = NULL;
     NSError *theError = nil;
     return [theDeserializer deserialize:data error:&theError];
+}
+
++(id) getNonJSONPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post
+{
+    NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:
+                                    NSASCIIStringEncoding];
+    NSURL *url = [[NSURL alloc] initWithString:urlFormattedString];
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%d", [postData length]];
+    NSMutableURLRequest *request = [[NSMutableURLRequest alloc] initWithURL:url];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setHTTPBody:postData];
+    NSURLResponse *response;
+    NSData *data;
+    
+    data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:nil];
+
+    return data;
 }
 
 +(id) getDataFromURLString:(NSString *) urlString

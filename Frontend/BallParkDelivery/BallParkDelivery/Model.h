@@ -11,6 +11,7 @@
 @interface Model : UIViewController
 
 +(id) getPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post;
++(id) getNonJSONPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post;
 +(id) getDataFromURLString:(NSString *) urlString;
 +(NSData *) getImageFromURL:(NSString *) urlString;
 +(NSData *) getImageFromURL:(NSString *) urlString inContext:(NSManagedObjectContext *)ctx;
