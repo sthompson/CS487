@@ -99,7 +99,7 @@
         NSString *response = [Model loginWithUsername:username.text andPassword:password.text];
         if ([response isEqual:@"False"]) 
         {
-            UIAlertView *badLogin = [[UIAlertView alloc] initWithTitle:nil message:@"Invalid Username or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            UIAlertView *badLogin = [[UIAlertView alloc] initWithTitle:nil message:@"Invalid Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
             [badLogin show];
         }
         else
