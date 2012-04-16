@@ -9,10 +9,11 @@
 #import <UIKit/UIKit.h>
 
 #import "StadiumViewController.h"
+#import "RegisterViewController.h"
 
 @class RestaurantViewController;
 
-@interface LoginViewController : UIViewController<UITextFieldDelegate,UIAlertViewDelegate,StadiumDelegate>
+@interface LoginViewController : UIViewController<UITextFieldDelegate,UIAlertViewDelegate,StadiumDelegate,RegisterDelegate>
 
 @property(weak, nonatomic) IBOutlet UITextField *username;
 @property(weak, nonatomic) IBOutlet UITextField *password;
@@ -28,5 +29,6 @@
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 -(IBAction)attemptLogin:(id)sender;
+-(IBAction)registerClicked:(id)sender;
 
 @end

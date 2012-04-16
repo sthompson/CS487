@@ -7,10 +7,11 @@
 //
 
 #import "RegisterViewController.h"
+#import "Model.h"
 
 @implementation RegisterViewController
 
-@synthesize username,password,name,ccnumber,year,month,stepper,registerButton;
+@synthesize username,password,name,ccnumber,year,month,stepper,registerButton,delegate;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -57,7 +58,15 @@
 
 -(IBAction)registerUser:(id)sender
 {
-    
+    NSString *response = [Model registerUser:name.text withUsername:username.text andPassword:password.text andCCNum:ccnumber.text andCCYear:year.text andCCMonth:month.text];
+    if ([response isEqualToString:@"True"]) 
+        [delegate userRegistered:self];
+    else
+    {
+        UIAlertView *userTaken = [[UIAlertView alloc] initWithTitle:nil message:@"Username Taken" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [userTaken show];
+    }
+
 }
 
 @end

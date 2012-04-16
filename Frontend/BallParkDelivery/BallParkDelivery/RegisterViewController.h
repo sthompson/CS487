@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol RegisterDelegate <NSObject>
+
+-(void) userRegistered:(id)sender;
+
+@end
+
 @interface RegisterViewController : UIViewController<UITextFieldDelegate>
 
 @property(weak, nonatomic) IBOutlet UITextField *username;
@@ -18,6 +24,8 @@
 @property(weak, nonatomic) IBOutlet UILabel *month;
 @property(weak, nonatomic) IBOutlet UIStepper *stepper;
 @property(weak, nonatomic) IBOutlet UIButton *registerButton;
+
+@property (nonatomic, assign) id<RegisterDelegate> delegate;
 
 -(IBAction)registerUser:(id)sender;
 -(IBAction)clickStepper:(id)sender;
