@@ -19,4 +19,8 @@
 @property(weak, nonatomic) IBOutlet UIStepper *stepper;
 @property(weak, nonatomic) IBOutlet UIButton *registerButton;
 
+-(IBAction)registerUser:(id)sender;
+-(IBAction)clickStepper:(id)sender;
+
+
 @end

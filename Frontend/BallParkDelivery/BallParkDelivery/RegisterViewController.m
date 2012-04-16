@@ -50,4 +50,14 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
+-(IBAction)clickStepper:(id)sender
+{
+    month.text = [[NSNumber numberWithDouble:stepper.value] stringValue];
+}
+
+-(IBAction)registerUser:(id)sender
+{
+    
+}
+
 @end
