@@ -37,6 +37,13 @@
     return stringResponse;
 }
 
++(void) emptyCart:(NSString *) username
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@empty_cart/",ROOT];
+    NSString *post = [NSString stringWithFormat:@"username=%@",username];
+    [Model getNonJSONPostDataFromURLString:urlString andPost:post];
+}
+
 +(NSArray *) getRestaurantsFromStadiumName:(NSString *)stadiumName
 {
     NSString *urlString = [NSString stringWithFormat:@"%@restaurant/",ROOT];

@@ -8,9 +8,8 @@
 
 #import "StadiumViewController.h"
 #import "Model.h"
-#import "RestaurantViewController.h"
 #import "AlertViewWithIndicator.h"
-#import "Cart.h"
+
 
 @implementation StadiumViewController
 
@@ -196,23 +195,6 @@
 */
 
 #pragma mark - Table view delegate
-
-/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Navigation logic may go here. Create and push another view controller.
-    if (!self.restaurantViewController) {
-        self.restaurantViewController = [[RestaurantViewController alloc] initWithNibName:@"RestaurantViewController" bundle:nil];
-    }
-    self.restaurantViewController.cart = self.cart;
-    self.restaurantViewController.stadiumName = [[stadiums objectAtIndex:indexPath.row]objectForKey:@"stadium_name"];
-    self.restaurantViewController.restaurants = [Model getRestaurantsFromStadiumName:
-                                                 [[stadiums objectAtIndex:indexPath.row]
-                                                  objectForKey:@"stadium_name"]];
-    [self.navigationController pushViewController:self.restaurantViewController animated:YES];
-
-
-    
-}*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
