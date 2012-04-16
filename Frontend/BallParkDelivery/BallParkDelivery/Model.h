@@ -16,6 +16,7 @@
 +(NSData *) getImageFromURL:(NSString *) urlString;
 +(NSData *) getImageFromURL:(NSString *) urlString inContext:(NSManagedObjectContext *)ctx;
 +(NSString *) loginWithUsername:(NSString *)username andPassword:(NSString *)password;
++(NSString *) registerUser:(NSString *) name withUsername:(NSString *)username andPassword:(NSString *) password andCCNum:(NSString *) ccNum andCCYear:(NSString *) ccYear andCCMonth:(NSString *) ccMonth;
 +(NSString *) updateSeatNumber:(NSString *)seatNumber WithUser:(NSString *) username;
 +(void) emptyCart:(NSString *) username;
 +(NSArray *) getStadiumsWithLongitude:(NSString *)lon andLatitude:(NSString *)lat;

@@ -44,6 +44,18 @@
     [Model getNonJSONPostDataFromURLString:urlString andPost:post];
 }
 
++(NSString *) registerUser:(NSString *) name withUsername:(NSString *)username andPassword:(NSString *) password andCCNum:(NSString *) ccNum andCCYear:(NSString *) ccYear andCCMonth:(NSString *) ccMonth
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@create_username/",ROOT];
+    NSString *post = [NSString stringWithFormat:@"cc_name=%@&cc_number=%@&cc_exp_month=%@&cc_exp_year=%@&username=%@&password=%@",
+                      name,ccNum,ccMonth,ccYear,username,password];
+    NSData *response = [Model getNonJSONPostDataFromURLString:urlString 
+                                                      andPost:post];
+    NSString *stringResponse = [[NSString alloc] initWithData:response 
+                                                     encoding:NSUTF8StringEncoding];
+    return stringResponse;
+}
+
 +(NSArray *) getRestaurantsFromStadiumName:(NSString *)stadiumName
 {
     NSString *urlString = [NSString stringWithFormat:@"%@restaurant/",ROOT];
