@@ -14,7 +14,14 @@
 
 @implementation Model
 
-
++(NSString *) loginWithUsername:(NSString *)username andPassword:(NSString *)password
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@login/",ROOT];
+    NSString *post = [NSString stringWithFormat:@"username=%@&password=%@",
+                      username,password];
+    NSString *user = (NSString *) [Model getPostDataFromURLString:urlString andPost:post];
+    return user;
+}
 
 +(NSArray *) getRestaurantsFromStadiumName:(NSString *)stadiumName
 {

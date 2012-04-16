@@ -14,6 +14,7 @@
 +(id) getDataFromURLString:(NSString *) urlString;
 +(NSData *) getImageFromURL:(NSString *) urlString;
 +(NSData *) getImageFromURL:(NSString *) urlString inContext:(NSManagedObjectContext *)ctx;
++(NSString *) loginWithUsername:(NSString *)username andPassword:(NSString *)password;
 +(NSArray *) getStadiumsWithLongitude:(NSString *)lon andLatitude:(NSString *)lat;
 +(NSArray *) getRestaurantsFromStadiumName: (NSString *)stadiumName;
 +(NSArray *) getMenuFromStadiumName:(NSString *) stadiumName andRestaurantName:(NSString *)restaurantName;
