@@ -7,10 +7,11 @@
 //
 
 #import "LoginViewController.h"
+#import "Model.h"
 
 @implementation LoginViewController
 
-@synthesize username,password,loginButton,registerButton;
+@synthesize username,password,loginButton,registerButton,seatNumber;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -52,7 +53,16 @@
 
 -(IBAction)attemptLogin:(id)sender
 {
-    
+    NSString *response = [Model loginWithUsername:username.text andPassword:password.text];
+    if ([response isEqual:@"False"]) 
+    {
+        UIAlertView *badLogin = [[UIAlertView alloc] initWithTitle:nil message:@"Invalid Username or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [badLogin show];
+    }
+    else
+    {
+        
+    }
 }
 
 @end

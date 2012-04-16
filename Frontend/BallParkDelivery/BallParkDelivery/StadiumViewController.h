@@ -23,6 +23,7 @@
 @property (strong, nonatomic) NSArray *stadiums;
 @property (strong, nonatomic) NSString *longitude;
 @property (strong, nonatomic) NSString *latitude;
+@property (strong, nonatomic) NSString *userKey;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
