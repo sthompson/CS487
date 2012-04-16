@@ -181,7 +181,6 @@
 				7271D468153C7B9C007ED535 /* LoginViewController.m */,
 				72B2529C153CA1C7003A0103 /* RegisterViewController.h */,
 				72B2529D153CA1C7003A0103 /* RegisterViewController.m */,
-				72B2529E153CA1C7003A0103 /* RegisterViewController.xib */,
 				72FDB564152E4A9800CF34DE /* AlertViewWithIndicator.h */,
 				72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */,
 				72FDB55E152E3D0600CF34DE /* LocationViewController.h */,
@@ -211,6 +210,7 @@
 				72FDB574152E96B500CF34DE /* CartViewController.xib */,
 				7271D469153C7B9C007ED535 /* LoginViewController.xib */,
 				72FDB57B152EA95E00CF34DE /* CartCell.xib */,
+				72B2529E153CA1C7003A0103 /* RegisterViewController.xib */,
 				72B10A8A152F3AD50010D14D /* Images.xcdatamodeld */,
 				7224BCD6152AA25A00707C3A /* Supporting Files */,
 			);

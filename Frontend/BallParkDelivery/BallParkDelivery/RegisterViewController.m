@@ -10,6 +10,8 @@
 
 @implementation RegisterViewController
 
+@synthesize username,password,name,ccnumber,year,month,stepper,registerButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
