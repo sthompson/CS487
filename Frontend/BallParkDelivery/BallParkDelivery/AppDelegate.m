@@ -10,6 +10,7 @@
 
 #import "StadiumViewController.h"
 #import "Cart.h"
+#import "LoginViewController.h"
 
 @implementation AppDelegate
 
@@ -23,11 +24,11 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
-
-    StadiumViewController *stadiumViewController = [[StadiumViewController alloc] initWithNibName:@"StadiumViewController" bundle:nil];
-    stadiumViewController.managedObjectContext = self.managedObjectContext;
-    stadiumViewController.cart = [[Cart alloc]init];
-    self.navigationController = [[UINavigationController alloc] initWithRootViewController:stadiumViewController];
+    LoginViewController *loginVC = [[LoginViewController alloc] initWithNibName:@"LoginViewController" bundle:nil];
+    loginVC.managedObjectContext = self.managedObjectContext;
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:loginVC];
+    
     self.window.rootViewController = self.navigationController;
     [self.window makeKeyAndVisible];
     return YES;
