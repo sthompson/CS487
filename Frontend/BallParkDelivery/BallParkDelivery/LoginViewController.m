@@ -10,11 +10,14 @@
 #import "Model.h"
 #import "StadiumViewController.h"
 #import "Cart.h"
+#import "RestaurantViewController.h"
 
 @implementation LoginViewController
 
 @synthesize username,password,loginButton,registerButton,seatNumber,scroller;
-@synthesize managedObjectContext;
+@synthesize restaurantViewController;
+//@synthesize fetchedResultsController = __fetchedResultsController;
+@synthesize managedObjectContext = __managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -105,10 +108,11 @@
         else
         {
             StadiumViewController *stadiumViewController = [[StadiumViewController alloc] initWithNibName:@"StadiumViewController" bundle:nil];
-            stadiumViewController.managedObjectContext = self.managedObjectContext;
             stadiumViewController.cart = [[Cart alloc]init];
             stadiumViewController.userKey = response;
-            [self.navigationController pushViewController:stadiumViewController animated:YES];
+            stadiumViewController.delegate = self;
+            
+            [self presentViewController:stadiumViewController animated:YES completion:nil];
         }
     }
 
@@ -129,6 +133,29 @@
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
     [scroller setFrame:CGRectMake(0, 0, scroller.frame.size.width, scroller.frame.size.height + kbSize.height)];
+}
+
+-(void)selectedStadium:(NSString *)stadiumName fromSender:(id)sender
+{
+    [sender dismissViewControllerAnimated:YES completion:nil];
+    if (stadiumName != nil) 
+    {
+        if (!self.restaurantViewController) {
+            self.restaurantViewController = [[RestaurantViewController alloc] initWithNibName:@"RestaurantViewController" bundle:nil];
+        }
+        self.restaurantViewController.stadiumName = stadiumName;
+        self.restaurantViewController.restaurants = [Model getRestaurantsFromStadiumName:
+                                                     stadiumName];
+        self.restaurantViewController.cart = [[Cart alloc]init];
+        self.restaurantViewController.managedObjectContext =self.managedObjectContext;
+        [self.navigationController pushViewController:self.restaurantViewController animated:YES];
+
+    }
+    else
+    {
+        UIAlertView *noStadiums = [[UIAlertView alloc] initWithTitle:nil message:@"No Stadiums Selected!" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [noStadiums show];
+    }
 }
 
 @end

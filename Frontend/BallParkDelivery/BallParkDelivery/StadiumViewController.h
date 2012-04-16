@@ -13,8 +13,15 @@
 @class RestaurantViewController;
 @class Cart;
 
+@protocol StadiumDelegate <NSObject>
 
-@interface StadiumViewController : UITableViewController<LocationDelegate,UIAlertViewDelegate>
+-(void) selectedStadium:(NSString *)stadiumName fromSender:(id)sender;
+
+@end
+
+
+@interface StadiumViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,LocationDelegate,UIAlertViewDelegate>
+
 
 @property (strong, nonatomic) RestaurantViewController *restaurantViewController;
 @property (strong, nonatomic) LocationViewController *locationViewController;
@@ -25,9 +32,16 @@
 @property (strong, nonatomic) NSString *latitude;
 @property (strong, nonatomic) NSString *userKey;
 
-@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
-@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+@property (strong, nonatomic) IBOutlet UITableView *tableview;
+@property (weak, nonatomic) IBOutlet UIButton *finishedButton;
 
+@property (strong, nonatomic) NSIndexPath *lastIndexPath;
+
+@property (nonatomic, assign) id<StadiumDelegate> delegate;
+
+
+
+-(IBAction)finished:(id)sender;
 -(void) startLocationAlert;
 
 

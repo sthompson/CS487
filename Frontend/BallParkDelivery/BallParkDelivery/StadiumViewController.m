@@ -16,14 +16,15 @@
 
 @synthesize restaurantViewController = _restaurantViewController;
 @synthesize locationViewController = _locationtViewController;
-@synthesize stadiums,latitude,longitude,locationAlert,cart,userKey;
-@synthesize fetchedResultsController = __fetchedResultsController;
-@synthesize managedObjectContext = __managedObjectContext;
+@synthesize stadiums,latitude,longitude,locationAlert,cart,userKey,delegate,tableview,lastIndexPath;
+@synthesize finishedButton;
 
-- (id)initWithStyle:(UITableViewStyle)style
+
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
-    self = [super initWithStyle:style];
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
+        // Custom initialization
     }
     return self;
 }
@@ -136,7 +137,7 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
     // Configure the cell...
@@ -149,7 +150,7 @@
     longitude = self.locationViewController.longitude;
     latitude = self.locationViewController.latitude;
     stadiums = [Model getStadiumsWithLongitude:longitude andLatitude:latitude];
-    [self.tableView reloadData];
+    [self.tableview reloadData];
     [self.locationAlert dismissWithClickedButtonIndex:0 animated:YES];
     [self.locationAlert.indicator stopAnimating];
 }
@@ -196,7 +197,7 @@
 
 #pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+/*- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // Navigation logic may go here. Create and push another view controller.
     if (!self.restaurantViewController) {
@@ -207,11 +208,39 @@
     self.restaurantViewController.restaurants = [Model getRestaurantsFromStadiumName:
                                                  [[stadiums objectAtIndex:indexPath.row]
                                                   objectForKey:@"stadium_name"]];
-    self.restaurantViewController.managedObjectContext = self.managedObjectContext;
     [self.navigationController pushViewController:self.restaurantViewController animated:YES];
 
 
     
+}*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UITableViewCell* newCell = [tableView cellForRowAtIndexPath:indexPath]; 
+    int newRow = [indexPath row]; 
+    int oldRow = (lastIndexPath != nil) ? [lastIndexPath row] : -1; 
+    
+    if(newRow != oldRow) 
+    { 
+        newCell.accessoryType = UITableViewCellAccessoryCheckmark; 
+        UITableViewCell* oldCell = [tableView cellForRowAtIndexPath:lastIndexPath]; 
+        oldCell.accessoryType = UITableViewCellAccessoryNone;
+        lastIndexPath = indexPath; 
+    } 
+    else
+    {
+        newCell.accessoryType = UITableViewCellAccessoryNone;
+        lastIndexPath = nil;
+    }
 }
+
+-(IBAction)finished:(id)sender
+{
+    if(lastIndexPath == nil)
+        [delegate selectedStadium:nil fromSender:self];
+    else
+        [delegate selectedStadium:[[stadiums objectAtIndex:lastIndexPath.row]objectForKey:@"stadium_name"]  fromSender:self];
+}
+
 
 @end
