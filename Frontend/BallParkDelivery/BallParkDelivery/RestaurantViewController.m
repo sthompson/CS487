@@ -17,7 +17,7 @@
 @implementation RestaurantViewController
 
 @synthesize menuViewController = _menuViewController;
-@synthesize restaurants,stadiumName,cart;
+@synthesize restaurants,stadiumName,cart,userKey;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 @synthesize tableViewCell;
@@ -67,9 +67,11 @@
     [super viewDidAppear:animated];
 }
 
-- (void)viewWillDisappear:(BOOL)animated
-{
-	[super viewWillDisappear:animated];
+-(void) viewWillDisappear:(BOOL)animated {
+    if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+        [Model emptyCart:self.userKey];
+    }
+    [super viewWillDisappear:animated];
 }
 
 - (void)viewDidDisappear:(BOOL)animated

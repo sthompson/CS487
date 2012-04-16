@@ -18,6 +18,7 @@
 @property (strong, nonatomic) Cart *cart;
 @property (strong, nonatomic) NSArray *restaurants;
 @property (strong, nonatomic) NSString *stadiumName;
+@property (strong, nonatomic) NSString *userKey;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;

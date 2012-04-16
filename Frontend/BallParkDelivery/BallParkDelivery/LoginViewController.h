@@ -21,6 +21,7 @@
 @property(weak, nonatomic) IBOutlet UIButton *registerButton;
 @property (nonatomic, retain) IBOutlet UIScrollView *scroller;
 
+@property (strong, nonatomic) NSString *userKey;
 @property (strong, nonatomic) RestaurantViewController *restaurantViewController;
 
 //@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;

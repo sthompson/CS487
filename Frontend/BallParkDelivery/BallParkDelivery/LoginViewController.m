@@ -14,7 +14,7 @@
 
 @implementation LoginViewController
 
-@synthesize username,password,loginButton,registerButton,seatNumber,scroller;
+@synthesize username,password,loginButton,registerButton,seatNumber,scroller,userKey;
 @synthesize restaurantViewController;
 //@synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
@@ -148,6 +148,7 @@
                                                      stadiumName];
         self.restaurantViewController.cart = [[Cart alloc]init];
         self.restaurantViewController.managedObjectContext =self.managedObjectContext;
+        self.restaurantViewController.userKey = self.userKey; 
         [self.navigationController pushViewController:self.restaurantViewController animated:YES];
 
     }
