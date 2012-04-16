@@ -8,10 +8,13 @@
 
 #import "LoginViewController.h"
 #import "Model.h"
+#import "StadiumViewController.h"
+#import "Cart.h"
 
 @implementation LoginViewController
 
 @synthesize username,password,loginButton,registerButton,seatNumber;
+@synthesize managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -53,16 +56,30 @@
 
 -(IBAction)attemptLogin:(id)sender
 {
-    NSString *response = [Model loginWithUsername:username.text andPassword:password.text];
-    if ([response isEqual:@"False"]) 
+    NSString *seatResponse = [Model updateSeatNumber:seatNumber.text WithUser:username.text];
+    if ([seatResponse isEqual:@"False"])
     {
-        UIAlertView *badLogin = [[UIAlertView alloc] initWithTitle:nil message:@"Invalid Username or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [badLogin show];
+        UIAlertView *badUsername = [[UIAlertView alloc] initWithTitle:nil message:@"Invalid Username" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [badUsername show];
     }
     else
     {
-        
+        NSString *response = [Model loginWithUsername:username.text andPassword:password.text];
+        if ([response isEqual:@"False"]) 
+        {
+            UIAlertView *badLogin = [[UIAlertView alloc] initWithTitle:nil message:@"Invalid Username or Password" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [badLogin show];
+        }
+        else
+        {
+            StadiumViewController *stadiumViewController = [[StadiumViewController alloc] initWithNibName:@"StadiumViewController" bundle:nil];
+            stadiumViewController.managedObjectContext = self.managedObjectContext;
+            stadiumViewController.cart = [[Cart alloc]init];
+            stadiumViewController.userKey = response;
+            [self.navigationController pushViewController:stadiumViewController animated:YES];
+        }
     }
+
 }
 
 @end

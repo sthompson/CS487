@@ -16,6 +16,8 @@
 @property(weak, nonatomic) IBOutlet UIButton *loginButton;
 @property(weak, nonatomic) IBOutlet UIButton *registerButton;
 
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
+
 -(IBAction)attemptLogin:(id)sender;
 
 @end
