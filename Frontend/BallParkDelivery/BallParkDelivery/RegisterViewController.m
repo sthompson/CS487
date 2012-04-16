@@ -107,6 +107,7 @@
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     scroller.contentSize = scroller.frame.size;
     [scroller setFrame:CGRectMake(0, 0, scroller.frame.size.width, scroller.frame.size.height - kbSize.height)];
+    [stepper setFrame:CGRectMake(stepper.frame.origin.x,stepper.frame.origin.y + kbSize.height, stepper.frame.size.width, stepper.frame.size.height)];
 }
 
 
@@ -116,6 +117,7 @@
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
     [scroller setFrame:CGRectMake(0, 0, scroller.frame.size.width, scroller.frame.size.height + kbSize.height)];
+    [stepper setFrame:CGRectMake(stepper.frame.origin.x,stepper.frame.origin.y - kbSize.height, stepper.frame.size.width, stepper.frame.size.height)];
 }
 
 @end
