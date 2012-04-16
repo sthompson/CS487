@@ -32,6 +32,7 @@
 		72626ECE1534D009003D4C0C /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72626ECD1534D009003D4C0C /* RestaurantCell.xib */; };
 		7271D46A153C7B9C007ED535 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7271D468153C7B9C007ED535 /* LoginViewController.m */; };
 		7271D46B153C7B9C007ED535 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7271D469153C7B9C007ED535 /* LoginViewController.xib */; };
+		7271D46E153C7C05007ED535 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7271D46D153C7C05007ED535 /* logo.png */; };
 		72B10A8C152F3AD50010D14D /* Images.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72B10A8A152F3AD50010D14D /* Images.xcdatamodeld */; };
 		72B10A8E152F3BAF0010D14D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B10A8D152F3BAF0010D14D /* CoreData.framework */; };
 		72B10A9A152F709D0010D14D /* shoppingcart.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B10A99152F709D0010D14D /* shoppingcart.png */; };
@@ -90,6 +91,7 @@
 		7271D467153C7B9C007ED535 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		7271D468153C7B9C007ED535 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7271D469153C7B9C007ED535 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		7271D46D153C7C05007ED535 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 		72B10A8B152F3AD50010D14D /* Images.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Images.xcdatamodel; sourceTree = "<group>"; };
 		72B10A8D152F3BAF0010D14D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		72B10A99152F709D0010D14D /* shoppingcart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoppingcart.png; sourceTree = "<group>"; };
@@ -239,6 +241,7 @@
 		72B10A97152F708D0010D14D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7271D46D153C7C05007ED535 /* logo.png */,
 				72B10A99152F709D0010D14D /* shoppingcart.png */,
 			);
 			name = Images;
@@ -306,6 +309,7 @@
 				72B10A9A152F709D0010D14D /* shoppingcart.png in Resources */,
 				72626ECE1534D009003D4C0C /* RestaurantCell.xib in Resources */,
 				7271D46B153C7B9C007ED535 /* LoginViewController.xib in Resources */,
+				7271D46E153C7C05007ED535 /* logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
