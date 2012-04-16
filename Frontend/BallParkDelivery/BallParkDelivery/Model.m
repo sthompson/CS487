@@ -10,7 +10,7 @@
 #import "Model.h"
 #import "CJSONDeserializer.h"
 
-#define ROOT @"http://69.211.15.170:8080/"
+#define ROOT @"http://69.210.254.67:8080"
 
 @implementation Model
 
