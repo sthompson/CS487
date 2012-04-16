@@ -51,6 +51,13 @@
     // e.g. self.myOutlet = nil;
 }
 
+-(void) viewWillAppear:(BOOL)animated
+{
+    username.text = @"";
+    password.text = @"";
+    seatNumber.text = @"";
+}
+
 - (void) viewDidAppear:(BOOL)animated
 {
     [[NSNotificationCenter defaultCenter]
