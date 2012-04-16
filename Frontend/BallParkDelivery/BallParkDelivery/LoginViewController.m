@@ -149,6 +149,8 @@
         self.restaurantViewController.cart = [[Cart alloc]init];
         self.restaurantViewController.managedObjectContext =self.managedObjectContext;
         self.restaurantViewController.userKey = self.userKey; 
+        UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Logout" style:UIBarButtonItemStylePlain target:nil action:nil];
+        self.navigationItem.backBarButtonItem = backButton;
         [self.navigationController pushViewController:self.restaurantViewController animated:YES];
 
     }
