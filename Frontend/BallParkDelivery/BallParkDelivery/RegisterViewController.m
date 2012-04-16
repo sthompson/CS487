@@ -11,7 +11,7 @@
 
 @implementation RegisterViewController
 
-@synthesize username,password,name,ccnumber,year,month,stepper,registerButton,delegate;
+@synthesize username,password,name,ccnumber,year,month,stepper,registerButton,delegate,scroller;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -45,6 +45,38 @@
     // e.g. self.myOutlet = nil;
 }
 
+- (void) viewDidAppear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(keyboardWasShown:)
+     name:UIKeyboardDidShowNotification
+     object:nil];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self
+     selector:@selector(keyboardWillHide:)
+     name:UIKeyboardWillHideNotification
+     object:nil];
+}
+
+-(void) viewDidDisappear:(BOOL)animated
+{
+    [[NSNotificationCenter defaultCenter]
+     removeObserver:self
+     name:UIKeyboardDidShowNotification
+     object:nil];
+    
+    [[NSNotificationCenter defaultCenter]
+     removeObserver:self
+     name:UIKeyboardWillHideNotification
+     object:nil];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField { 
+    [textField resignFirstResponder];
+    return YES;
+}
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
     // Return YES for supported orientations
@@ -67,6 +99,23 @@
         [userTaken show];
     }
 
+}
+
+-(void) keyboardWasShown:(NSNotification *)aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    scroller.contentSize = scroller.frame.size;
+    [scroller setFrame:CGRectMake(0, 0, scroller.frame.size.width, scroller.frame.size.height - kbSize.height)];
+}
+
+
+- (void) keyboardWillHide: (NSNotification *) aNotification
+{
+    NSDictionary* info = [aNotification userInfo];
+    CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
+    
+    [scroller setFrame:CGRectMake(0, 0, scroller.frame.size.width, scroller.frame.size.height + kbSize.height)];
 }
 
 @end

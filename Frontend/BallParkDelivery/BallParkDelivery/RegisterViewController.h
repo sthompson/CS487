@@ -24,6 +24,7 @@
 @property(weak, nonatomic) IBOutlet UILabel *month;
 @property(weak, nonatomic) IBOutlet UIStepper *stepper;
 @property(weak, nonatomic) IBOutlet UIButton *registerButton;
+@property (nonatomic, retain) IBOutlet UIScrollView *scroller;
 
 @property (nonatomic, assign) id<RegisterDelegate> delegate;
 
