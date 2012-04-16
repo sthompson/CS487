@@ -26,8 +26,8 @@
 +(NSString *) updateSeatNumber:(NSString *)seatNumber WithUser:(NSString *) username
 {
     NSString *urlString = [NSString stringWithFormat:@"%@update_seat_number/",ROOT];
-    NSString *post = [NSString stringWithFormat:@"username=%@",
-                      username];
+    NSString *post = [NSString stringWithFormat:@"username=%@&seat_number=%@",
+                      username,seatNumber];
     NSString *response = (NSString *) [Model getPostDataFromURLString:urlString andPost:post];
     return response;
 }
