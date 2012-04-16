@@ -22,6 +22,12 @@ urlpatterns = patterns('',
     ('^extra_item/$', extra_item),
     ('^order_status_retrieval/$', order_status_retrieval),
     ('^order_submission/$', order_submission),
-    ('^payment_verification/$', payment_verification), 
+    ('^create_username/$', create_username),
+    ('^update_seat_number/$', update_seat_number),
+    ('^add_to_cart/$', add_to_cart),
+    ('^view_cart/$', view_cart),
+    ('^empty_cart/$', empty_cart),
+    ('^delete_item/$', delete_item),
+    ('^login/$', login),
                        
 )
