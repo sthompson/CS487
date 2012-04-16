@@ -14,6 +14,8 @@
 
 @implementation Model
 
+
+
 +(NSArray *) getRestaurantsFromStadiumName:(NSString *)stadiumName
 {
     NSString *urlString = [NSString stringWithFormat:@"%@restaurant/",ROOT];

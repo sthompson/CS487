@@ -10,6 +10,8 @@
 
 @implementation LoginViewController
 
+@synthesize username,password,loginButton,registerButton;
+
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -46,6 +48,11 @@
 {
     // Return YES for supported orientations
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
+}
+
+-(IBAction)attemptLogin:(id)sender
+{
+    
 }
 
 @end
