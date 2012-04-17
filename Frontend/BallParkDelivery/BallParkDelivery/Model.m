@@ -128,6 +128,13 @@
     [Model getPostDataFromURLString:urlString andPost:post];
 }
 
++(void) submitOrder:(NSString *) username
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@order_submission/",ROOT];
+    NSString *post = [NSString stringWithFormat:@"username=%@",username];
+    [Model getPostDataFromURLString:urlString andPost:post];
+}
+
 +(id) getPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post
 {
     NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:

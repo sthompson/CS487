@@ -143,7 +143,7 @@
 
 -(IBAction)placeOrder:(id)sender
 {
-    /*if ([cart.orders count]==0) 
+    if ([orders count]==0) 
     {
         if (self.emptyAlert == nil)
         {
@@ -154,7 +154,7 @@
     }
     [cart placeOrder];
     [cart.orders removeAllObjects];
-    [delegate orderPlaced:self];*/
+    [delegate orderPlaced:self];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex

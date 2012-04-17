@@ -26,5 +26,6 @@
 +(NSArray *) addToCartWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andQuantity: (NSString *) quantity andUsername:(NSString *) username;
 +(NSArray *) getCartItemsFromUsername: (NSString *) username;
 +(void) removeItem:(NSString *)itemPK fromUser:(NSString *) username;
++(void) submitOrder:(NSString *) username;
 
 @end
