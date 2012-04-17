@@ -12,7 +12,7 @@
 @implementation MenuViewController
 
 @synthesize detailViewController = _detailViewController;
-@synthesize restaurantName,menuList,stadiumName,cart;
+@synthesize restaurantName,menuList,stadiumName,cart,userKey;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 
@@ -162,6 +162,7 @@
     self.detailViewController.restaurantName = self.restaurantName;
     self.detailViewController.stadiumName = self.stadiumName;
     self.detailViewController.cart = self.cart;
+    self.detailViewController.userKey = self.userKey;
     self.detailViewController.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
     self.detailViewController.managedObjectContext = self.managedObjectContext;
     [self.navigationController pushViewController:self.detailViewController animated:YES];

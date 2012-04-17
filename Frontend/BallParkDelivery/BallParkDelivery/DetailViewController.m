@@ -19,7 +19,7 @@
 @implementation DetailViewController
 
 @synthesize extrasViewController = _extrasViewController;
-@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,stepper,addAlert,seatAlert;
+@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,stepper,addAlert,seatAlert,userKey;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 
@@ -149,6 +149,7 @@
     order.itemName = [menuItem objectForKey:@"item_name"];
     order.quantity = quantity.text;
     order.price = [menuItem objectForKey:@"item_price"];
+    order.userKey = self.userKey;
     if (self.extrasViewController == nil)
         order.extras = nil;
     else

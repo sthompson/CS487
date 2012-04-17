@@ -95,7 +95,7 @@
     return extras;
 }
 
-+(NSArray *) addToCartWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andQuantity: (NSString *) quantity
++(NSArray *) addToCartWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andQuantity: (NSString *) quantity andUsername:(NSString *)username
 {
     NSString *urlString = [NSString stringWithFormat:@"%@add_to_cart/",ROOT];
     NSString *post = [NSString stringWithFormat:@"stadium_name=%@&restaurant_name=%@&%@,%@=",

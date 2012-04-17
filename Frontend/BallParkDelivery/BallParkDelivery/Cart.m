@@ -23,7 +23,7 @@
     }
     NSArray *result = [Model addToCartWithStadiumName:order.stadiumName 
                                         andRestaurantName:order.restaurantName 
-                                            andItemName:order.itemName andExtras:extraNames andQuantity:order.quantity];
+                                            andItemName:order.itemName andExtras:extraNames andQuantity:order.quantity andUsername:order.userKey];
     
 }
 

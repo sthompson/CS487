@@ -10,6 +10,6 @@
 
 @implementation Order
 
-@synthesize stadiumName, restaurantName, itemName, quantity, seatNumber,price, extras;
+@synthesize stadiumName, restaurantName, itemName, quantity, seatNumber,price, extras,userKey;
 
 @end

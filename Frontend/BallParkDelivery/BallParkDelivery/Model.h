@@ -23,7 +23,7 @@
 +(NSArray *) getRestaurantsFromStadiumName: (NSString *)stadiumName;
 +(NSArray *) getMenuFromStadiumName:(NSString *) stadiumName andRestaurantName:(NSString *)restaurantName;
 +(NSArray *) getExtrasFromStadiumName:(NSString *) stadiumName andRestaurantName:(NSString *) restaurantName;
-+(NSArray *) addToCartWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andQuantity: (NSString *) quantity;
++(NSArray *) addToCartWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andQuantity: (NSString *) quantity andUsername:(NSString *) username;
 +(NSArray *) getCartItemsFromUsername: (NSString *) username;
 +(void) removeItem:(NSString *)itemPK fromUser:(NSString *) username;
 

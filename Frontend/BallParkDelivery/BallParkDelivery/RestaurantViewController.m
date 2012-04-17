@@ -222,6 +222,7 @@
     self.menuViewController.cart = self.cart;
     self.menuViewController.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
     self.menuViewController.managedObjectContext = self.managedObjectContext;
+    self.menuViewController.userKey = self.userKey;
     
     [self.navigationController pushViewController:self.menuViewController animated:YES];
 }
