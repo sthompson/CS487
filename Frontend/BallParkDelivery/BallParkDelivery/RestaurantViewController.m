@@ -12,6 +12,7 @@
 #import "Model.h"
 #import "CustomCell.h"
 #import "CartViewController.h"
+#import "CategoryViewController.h"
 
 
 @implementation RestaurantViewController
@@ -212,20 +213,20 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.menuViewController) {
-        self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    if (!self.categoryVC) {
+        self.categoryVC = [[CategoryViewController alloc] initWithNibName:@"CategoryViewController" bundle:nil];
     }
-    self.menuViewController.restaurantName = [[restaurants objectAtIndex:indexPath.row]objectForKey:@"restaurant_name"];
-    self.menuViewController.menuList = [Model getMenuFromStadiumName:stadiumName andRestaurantName:
+    self.categoryVC.restaurantName = [[restaurants objectAtIndex:indexPath.row]objectForKey:@"restaurant_name"];
+    self.categoryVC.menu = [Model getMenuFromStadiumName:stadiumName andRestaurantName:
                                         [[restaurants objectAtIndex:indexPath.row]objectForKey:
                                          @"restaurant_name"]];
-    self.menuViewController.stadiumName = self.stadiumName;
-    self.menuViewController.cart = self.cart;
-    self.menuViewController.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
-    self.menuViewController.managedObjectContext = self.managedObjectContext;
-    self.menuViewController.userKey = self.userKey;
+    self.categoryVC.stadiumName = self.stadiumName;
+    self.categoryVC.cart = self.cart;
+    self.categoryVC.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
+    self.categoryVC.managedObjectContext = self.managedObjectContext;
+    self.categoryVC.userKey = self.userKey;
     
-    [self.navigationController pushViewController:self.menuViewController animated:YES];
+    [self.navigationController pushViewController:self.categoryVC animated:YES];
 }
 
 @end

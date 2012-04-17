@@ -20,7 +20,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        self.menu = [[NSArray alloc] initWithObjects:@"Appetizers",@"Desserts",@"Drinks",@"Main Dishes",@"Side Dishes", nil];
+
     }
     return self;
 }
@@ -38,6 +38,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    self.categories = [[NSArray alloc] initWithObjects:@"Appetizers",@"Desserts",@"Drinks",@"Main Dishes",@"Side Dishes", nil];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
