@@ -62,11 +62,9 @@
 -(float) getPriceTotal
 {
     float price = 0;
-    for (Order *ord in cart.orders)
+    for (order in self.orders)
     {
-        float priceInt = [self priceWithExtrasOfOrder:ord];
-        priceInt *= ord.quantity.intValue;
-        price += priceInt;
+        price += [[order valueForKey:@"price"]floatValue];
     }
     return price;
 }

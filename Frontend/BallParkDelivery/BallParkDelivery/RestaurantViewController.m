@@ -155,6 +155,7 @@
     CartViewController *cartVC = [[CartViewController alloc] init];
     cartVC.cart = self.cart;
     cartVC.delegate = self;
+    cartVC.orders = [Model getCartItemsFromUsername:self.userKey];
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cartVC];
     [self presentViewController:nav animated:YES completion:nil];
 }
