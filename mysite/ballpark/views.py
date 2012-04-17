@@ -86,7 +86,8 @@ def view_cart(request):
     cart = list(Cart.objects.values('has_extra', 'item_name', 'item_quantity', 'item_price', 'pk').filter(username__exact= request.POST.__getitem__('username')))
     for item in cart:
         extraprice = Cart_extra.objects.filter(cart_item = item['pk']).aggregate(Sum('extra_price')).values()[0]
-        item['item_price'] = item['item_price'] + extraprice
+        if extraprice != None:
+            item['item_price'] = item['item_price'] + extraprice
         item['item_price'] = str(item['item_price'])
     return HttpResponse(simplejson.dumps(cart))
 
