@@ -95,9 +95,9 @@
     return extras;
 }
 
-+(NSArray *) placeOrderWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andSeatNumber: (NSString *) seatNumber andQuantity: (NSString *) quantity
++(NSArray *) addToCartWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andQuantity: (NSString *) quantity
 {
-    NSString *urlString = [NSString stringWithFormat:@"%@order_submission/",ROOT];
+    NSString *urlString = [NSString stringWithFormat:@"%@add_to_cart/",ROOT];
     NSString *post = [NSString stringWithFormat:@"stadium_name=%@&restaurant_name=%@&%@,%@=",
                       stadiumName,restaurantName,itemName,quantity];
     for (int i = 0; i<[extras count]; i++)
@@ -107,7 +107,6 @@
         else
             post = [post stringByAppendingFormat:@",%@",[extras objectAtIndex:i]];
     }
-    post = [post stringByAppendingFormat:@"&seat_number=%@",seatNumber];
     NSArray *result = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
     return result;
 

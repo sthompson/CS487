@@ -12,6 +12,6 @@
 
 @property(strong, nonatomic) NSMutableArray *orders;
 
--(void) placeOrder;
+-(void) addToCart;
 
 @end

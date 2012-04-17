@@ -19,7 +19,7 @@
 @implementation DetailViewController
 
 @synthesize extrasViewController = _extrasViewController;
-@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,seatNumber,stepper,addAlert,seatAlert;
+@synthesize logo,menuItem,itemName,price,restaurantName,stadiumName,cart,quantity,stepper,addAlert,seatAlert;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 
@@ -142,21 +142,12 @@
 
 - (IBAction)addItemToCart:(id)sender
 {
-    if ([seatNumber.text isEqualToString:@""]) 
-    {
-        if (self.seatAlert == nil) 
-        {
-            self.seatAlert = [[UIAlertView alloc] initWithTitle:nil message:@"Enter a Seat Number" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        }
-        [seatAlert show];
-        return;
-    }
+
     Order *order = [[Order alloc]init];
     order.stadiumName = self.stadiumName;
     order.restaurantName = self.restaurantName;
     order.itemName = [menuItem objectForKey:@"item_name"];
     order.quantity = quantity.text;
-    order.seatNumber = seatNumber.text;
     order.price = [menuItem objectForKey:@"item_price"];
     if (self.extrasViewController == nil)
         order.extras = nil;

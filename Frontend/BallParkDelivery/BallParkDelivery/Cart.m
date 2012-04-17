@@ -14,7 +14,7 @@
 
 @synthesize orders;
 
-- (void) placeOrder
+- (void) addToCart
 {
     for(Order * order in orders)
     {
@@ -23,9 +23,9 @@
         {
             [extraNames addObject:[extra objectForKey:@"extra_name"]];
         }
-        NSArray *result = [Model placeOrderWithStadiumName:order.stadiumName 
+        NSArray *result = [Model addToCartWithStadiumName:order.stadiumName 
                                          andRestaurantName:order.restaurantName 
-                                               andItemName:order.itemName andExtras:extraNames andSeatNumber:order.seatNumber andQuantity:order.quantity];
+                                               andItemName:order.itemName andExtras:extraNames  andQuantity:order.quantity];
     }
 }
 

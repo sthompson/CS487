@@ -21,7 +21,6 @@
 @property (weak, nonatomic) IBOutlet UILabel *itemName;
 @property (weak, nonatomic) IBOutlet UILabel *price;
 @property (weak, nonatomic) IBOutlet UILabel *quantity;
-@property (weak, nonatomic) IBOutlet UITextField *seatNumber;
 @property (weak, nonatomic) IBOutlet UIStepper *stepper;
 
 @property (strong, nonatomic) UIAlertView *addAlert;
