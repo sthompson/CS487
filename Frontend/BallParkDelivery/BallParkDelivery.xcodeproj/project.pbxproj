@@ -33,6 +33,8 @@
 		7271D46A153C7B9C007ED535 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7271D468153C7B9C007ED535 /* LoginViewController.m */; };
 		7271D46B153C7B9C007ED535 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7271D469153C7B9C007ED535 /* LoginViewController.xib */; };
 		7271D46E153C7C05007ED535 /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7271D46D153C7C05007ED535 /* logo.png */; };
+		729D5B3A153D50B000BFF569 /* CategoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 729D5B38153D50B000BFF569 /* CategoryViewController.m */; };
+		729D5B3B153D50B000BFF569 /* CategoryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 729D5B39153D50B000BFF569 /* CategoryViewController.xib */; };
 		72B10A8C152F3AD50010D14D /* Images.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 72B10A8A152F3AD50010D14D /* Images.xcdatamodeld */; };
 		72B10A8E152F3BAF0010D14D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72B10A8D152F3BAF0010D14D /* CoreData.framework */; };
 		72B10A9A152F709D0010D14D /* shoppingcart.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B10A99152F709D0010D14D /* shoppingcart.png */; };
@@ -94,6 +96,9 @@
 		7271D468153C7B9C007ED535 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		7271D469153C7B9C007ED535 /* LoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		7271D46D153C7C05007ED535 /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
+		729D5B37153D50AF00BFF569 /* CategoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CategoryViewController.h; sourceTree = "<group>"; };
+		729D5B38153D50B000BFF569 /* CategoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CategoryViewController.m; sourceTree = "<group>"; };
+		729D5B39153D50B000BFF569 /* CategoryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CategoryViewController.xib; sourceTree = "<group>"; };
 		72B10A8B152F3AD50010D14D /* Images.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Images.xcdatamodel; sourceTree = "<group>"; };
 		72B10A8D152F3BAF0010D14D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		72B10A99152F709D0010D14D /* shoppingcart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shoppingcart.png; sourceTree = "<group>"; };
@@ -193,6 +198,8 @@
 				723094CF152B507F00C3CDD8 /* StadiumViewController.m */,
 				7224BCE1152AA25A00707C3A /* RestaurantViewController.h */,
 				7224BCE2152AA25A00707C3A /* RestaurantViewController.m */,
+				729D5B37153D50AF00BFF569 /* CategoryViewController.h */,
+				729D5B38153D50B000BFF569 /* CategoryViewController.m */,
 				7224BD0A152ABB3400707C3A /* MenuViewController.h */,
 				7224BD0B152ABB3400707C3A /* MenuViewController.m */,
 				7224BCE4152AA25A00707C3A /* DetailViewController.h */,
@@ -211,6 +218,7 @@
 				7271D469153C7B9C007ED535 /* LoginViewController.xib */,
 				72FDB57B152EA95E00CF34DE /* CartCell.xib */,
 				72B2529E153CA1C7003A0103 /* RegisterViewController.xib */,
+				729D5B39153D50B000BFF569 /* CategoryViewController.xib */,
 				72B10A8A152F3AD50010D14D /* Images.xcdatamodeld */,
 				7224BCD6152AA25A00707C3A /* Supporting Files */,
 			);
@@ -319,6 +327,7 @@
 				7271D46B153C7B9C007ED535 /* LoginViewController.xib in Resources */,
 				7271D46E153C7C05007ED535 /* logo.png in Resources */,
 				72B252A0153CA1C8003A0103 /* RegisterViewController.xib in Resources */,
+				729D5B3B153D50B000BFF569 /* CategoryViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +361,7 @@
 				72B10A8C152F3AD50010D14D /* Images.xcdatamodeld in Sources */,
 				7271D46A153C7B9C007ED535 /* LoginViewController.m in Sources */,
 				72B2529F153CA1C8003A0103 /* RegisterViewController.m in Sources */,
+				729D5B3A153D50B000BFF569 /* CategoryViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

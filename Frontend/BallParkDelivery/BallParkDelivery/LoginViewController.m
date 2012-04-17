@@ -117,6 +117,7 @@
             StadiumViewController *stadiumViewController = [[StadiumViewController alloc] initWithNibName:@"StadiumViewController" bundle:nil];
             stadiumViewController.cart = [[Cart alloc]init];
             stadiumViewController.userKey = response;
+            self.userKey = response;
             stadiumViewController.delegate = self;
             
             [self presentViewController:stadiumViewController animated:YES completion:nil];
