@@ -25,5 +25,6 @@
 +(NSArray *) getExtrasFromStadiumName:(NSString *) stadiumName andRestaurantName:(NSString *) restaurantName;
 +(NSArray *) addToCartWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andQuantity: (NSString *) quantity;
 +(NSArray *) getCartItemsFromUsername: (NSString *) username;
++(void) removeItem:(NSString *)itemPK fromUser:(NSString *) username;
 
 @end

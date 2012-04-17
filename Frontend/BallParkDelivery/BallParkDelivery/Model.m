@@ -121,6 +121,14 @@
     return items;
 }
 
++(void) removeItem:(NSString *)itemPK fromUser:(NSString *) username
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@delete_item/",ROOT];
+    NSString *post = [NSString stringWithFormat:@"username=%@&pk=%@",
+                      username,itemPK];
+    [Model getPostDataFromURLString:urlString andPost:post];
+}
+
 +(id) getPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post
 {
     NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:

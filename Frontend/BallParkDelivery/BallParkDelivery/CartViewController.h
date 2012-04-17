@@ -25,7 +25,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *cancel;
 @property (weak, nonatomic) IBOutlet UITableView *tableview;
 
-@property (strong, nonatomic) NSArray *orders;
+@property (strong, nonatomic) NSMutableArray *orders;
 
 @property (strong, nonatomic) UIAlertView *emptyAlert;
 

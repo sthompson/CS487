@@ -80,7 +80,9 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        [cart.orders removeObjectAtIndex:indexPath.row];
+        NSString *itemKey = [orders valueForKey:@"pk"];
+        [orders removeObjectAtIndex:indexPath.row];
+        
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [self setTotalPrice];
     }
