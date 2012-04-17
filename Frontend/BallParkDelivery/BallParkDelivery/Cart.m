@@ -12,21 +12,19 @@
 
 @implementation Cart
 
-@synthesize orders;
 
-- (void) addToCart
++ (void) addToCart: (Order *) order
 {
-    for(Order * order in orders)
+
+    NSMutableArray *extraNames = [[NSMutableArray alloc]init];
+    for (NSDictionary *extra in order.extras)
     {
-        NSMutableArray *extraNames = [[NSMutableArray alloc]init];
-        for (NSDictionary *extra in order.extras)
-        {
-            [extraNames addObject:[extra objectForKey:@"extra_name"]];
-        }
-        NSArray *result = [Model addToCartWithStadiumName:order.stadiumName 
-                                         andRestaurantName:order.restaurantName 
-                                               andItemName:order.itemName andExtras:extraNames  andQuantity:order.quantity];
+        [extraNames addObject:[extra objectForKey:@"extra_name"]];
     }
+    NSArray *result = [Model addToCartWithStadiumName:order.stadiumName 
+                                        andRestaurantName:order.restaurantName 
+                                            andItemName:order.itemName andExtras:extraNames andQuantity:order.quantity];
+    
 }
 
 @end

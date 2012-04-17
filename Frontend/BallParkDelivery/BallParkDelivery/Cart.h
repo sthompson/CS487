@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@class Order;
 
 @interface Cart : NSObject
 
-@property(strong, nonatomic) NSMutableArray *orders;
 
--(void) addToCart;
++(void) addToCart:(Order *) order;
 
 @end
