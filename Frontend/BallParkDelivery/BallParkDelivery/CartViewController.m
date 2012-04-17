@@ -14,7 +14,7 @@
 
 @implementation CartViewController
 
-@synthesize total,order,tableview,cart,delegate,cancel,emptyAlert,orders,userKey;
+@synthesize total,order,tableview,cart,delegate,cancel,emptyAlert,orders,userKey,orderAlert;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -154,14 +154,25 @@
     }
     [Model submitOrder:self.userKey];
     [orders removeAllObjects];
-    [delegate orderPlaced:self];
+    
+    if (self.orderAlert == nil)
+    {
+        self.orderAlert = [[UIAlertView alloc] initWithTitle:@"Order Placed" message:@"Your food will be arriving shortly" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    }
+    [self.orderAlert show];
 }
+
+
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
     if (alertView == self.emptyAlert) 
     {
         [delegate orderCancelled:self];
+    }
+    else if(alertView == self.orderAlert)
+    {
+        [delegate orderPlaced:self];
     }
 }
 

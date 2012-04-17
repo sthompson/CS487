@@ -95,7 +95,7 @@
         [delegate userRegistered:self];
     else
     {
-        UIAlertView *userTaken = [[UIAlertView alloc] initWithTitle:nil message:@"Username Taken" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *userTaken = [[UIAlertView alloc] initWithTitle:nil message:@"Invalid Info" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [userTaken show];
     }
 
