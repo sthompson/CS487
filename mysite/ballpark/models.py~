@@ -23,7 +23,7 @@ class Restaurant(models.Model):
     current_business_date = models.DateField(auto_now_add=True)
 
     def __unicode__(self):
-        return u'%s - %s' % (self.restaurant_name, self.stadium_name)
+        return u'%s-%s' % (self.restaurant_name, self.stadium_name)
     
     class Meta:
         verbose_name_plural = "Add/Update Restaurant"
@@ -74,8 +74,24 @@ class Status_description(models.Model):
     class Meta:
         verbose_name_plural = "Status Descriptions"
 
+class Customer(models.Model):
+    username = models.CharField(max_length=30, primary_key=True)
+    password = models.CharField(max_length=30)
+    cc_name = models.CharField(max_length=20, verbose_name='Card holder\'s name', blank=True, default='')
+    cc_number = models.CharField(max_length=20, verbose_name='Credit card number', blank=True, default='')
+    cc_exp_month = models.CharField(max_length=20, verbose_name='Expiration month', blank=True, default='')
+    cc_exp_year = models.CharField(max_length=20, verbose_name='Expiration year', blank=True, default='')
+    seat_number = models.CharField(max_length=20, blank=True,default='')
+    
+    def __unicode__(self):
+        return u'%s' % (self.username)
+    
+    class Meta:
+        verbose_name_plural = "Customers"
+
 class Order_status(models.Model):
     transaction_number = models.AutoField(primary_key=True)
+    user = models.ForeignKey(Customer)
     order_number = models.IntegerField(default = 0)
     restaurant = models.ForeignKey(Restaurant)
     date_of_order = models.DateField()
@@ -95,9 +111,12 @@ class Order_status(models.Model):
 
     def __unicode__(self):
         return u'%s: %s - Order %d' % (self.date_of_order, self.restaurant, self.order_number)
+    
+    def customer(self):
+        return self.user.username
 
     class Meta:
-        verbose_name_plural = "Create Order/Update Status"
+        verbose_name_plural = "Update Order Status"
         unique_together = ('order_number', 'restaurant','date_of_order')
 
 class Order(models.Model):
@@ -118,9 +137,12 @@ class Order(models.Model):
     
     def __unicode__(self):
         return u'%s Item %d - %s' % (self.order_number, self.item_number, self.item_name)
+    
+    def customer(self):
+        return self.order_number.user.username
 
     class Meta:
-        verbose_name_plural = "Existing Order: Add/Update an Item"
+        verbose_name_plural = "Order History: Items"
         unique_together = ('order_number','item_number', 'item_name')
 
 class Order_extra(models.Model):
@@ -131,8 +153,49 @@ class Order_extra(models.Model):
     def __unicode__(self):
         return u'%s Extra: %s' % (self.order_number, self.extra_name)
     
+    def customer(self):
+        return self.order_number.order_number.user.username
+    
     class Meta:
-        verbose_name_plural = "Existing Order: Add/Update Extra for an Item"
+        verbose_name_plural = "Order History: Item Extras"
         unique_together = ('order_number','extra_name')
+
+class Cart(models.Model):
+    restaurant = models.ForeignKey(Restaurant)
+    has_extra = models.IntegerField(default=0)
+    username = models.ForeignKey(Customer)
+    item_name = models.CharField(max_length=20, verbose_name='item')
+    item_quantity = models.IntegerField(verbose_name='quantity')
+    item_price = models.DecimalField(max_digits=6, decimal_places=2, verbose_name='price')
+    
+    def __unicode__(self):
+        return u'%s - Quantity: %d' % (self.item_name, self.item_quantity)
+    
+    def customer(self):
+        return self.username.username
+
+    class Meta:
+        verbose_name_plural = "Existing Cart: Add/Update an Item"
+
+class Cart_extra(models.Model):
+    cart_item = models.ForeignKey(Cart)
+    extra_name = models.CharField(max_length=20, verbose_name='Extra')
+    extra_price = models.DecimalField(max_digits=6, decimal_places=2, verbose_name='price') 
+    
+    def __unicode__(self):
+        return u'%s Extra: %s' % (self.order_number, self.extra_name)
+    
+    def customer(self):
+        return self.cart_item.username.username
+    
+    class Meta:
+        verbose_name_plural = "Existing Cart: Add/Update Extra for an Item"
+        unique_together = ('cart_item','extra_name')
+
+
+
+
+
+
 
 
