@@ -10,10 +10,11 @@
 #import "Cart.h"
 #import "Order.h"
 #import "CartCell.h"
+#import "Model.h"
 
 @implementation CartViewController
 
-@synthesize total,order,tableview,cart,delegate,cancel,emptyAlert,orders;
+@synthesize total,order,tableview,cart,delegate,cancel,emptyAlert,orders,userKey;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -80,8 +81,9 @@
 {
     if (editingStyle == UITableViewCellEditingStyleDelete)
     {
-        NSString *itemKey = [orders valueForKey:@"pk"];
+        NSString *itemKey = [[orders objectAtIndex:indexPath.row ] valueForKey:@"pk"];
         [orders removeObjectAtIndex:indexPath.row];
+        [Model removeItem:itemKey fromUser:self.userKey];
         
         [tableView deleteRowsAtIndexPaths:[NSArray arrayWithObject:indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [self setTotalPrice];

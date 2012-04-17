@@ -33,6 +33,8 @@
 
 @property(nonatomic, assign) id<CartDelegate> delegate;
 
+@property(strong, nonatomic) NSString *userKey;
+
 -(IBAction)placeOrder:(id)sender;
 -(IBAction)cancelOrder:(id)sender;
 -(float) getPriceTotal;
