@@ -152,8 +152,8 @@
         [self.emptyAlert show];
         return;
     }
-    [cart placeOrder];
-    [cart.orders removeAllObjects];
+    [Model submitOrder:self.userKey];
+    [orders removeAllObjects];
     [delegate orderPlaced:self];
 }
 
