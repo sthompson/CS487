@@ -107,9 +107,25 @@ def create_username(request):
     ccexpmonth = request.POST.__getitem__('cc_exp_month')
     ccexpyear = request.POST.__getitem__('cc_exp_year')
     is_valid = not len(Customer.objects.filter(pk=user))
-    if is_valid:
+    if is_valid == False:
+        return HttpResponse("Username taken")
+    elif len(user) < 5:
+        return HttpResponse("Username must be at least 5 characters long")
+    elif len(pw) < 5:
+        return HttpResponse("Password must be at least 6 characters long")
+    elif len(ccname) < 2:
+        return HttpResponse("Invalid name")
+    elif len(ccnumber) < 15 or len(ccnumber) > 16 or not ccnumber.isdigit():
+        return HttpResponse("Invalid credit card number")
+    elif len(ccexpmonth) == 0 or len(ccexpmonth) > 2 or not ccexpmonth.isdigit():
+        return HttpResponse("Invalid expiration month")
+    elif len(ccexpyear) != 4 or not ccexpyear.isdigit():
+        return HttpResponse("Invalid expiration year")
+    elif is_valid:
         Customer.objects.create(username=user, password=pw, cc_name=ccname, cc_number=ccnumber, cc_exp_month = ccexpmonth, cc_exp_year=ccexpyear)
-    return HttpResponse(is_valid)
+        return HttpResponse(is_valid)
+    else:
+        return HttpResponse("Registration process needs more refinement!")
 
 def login(request):
     user = request.POST.__getitem__('username')
