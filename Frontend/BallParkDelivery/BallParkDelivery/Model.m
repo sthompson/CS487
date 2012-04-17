@@ -98,8 +98,7 @@
 +(NSArray *) addToCartWithStadiumName: (NSString *) stadiumName andRestaurantName: (NSString *) restaurantName andItemName: (NSString *) itemName andExtras: (NSArray *) extras andQuantity: (NSString *) quantity andUsername:(NSString *)username
 {
     NSString *urlString = [NSString stringWithFormat:@"%@add_to_cart/",ROOT];
-    NSString *post = [NSString stringWithFormat:@"stadium_name=%@&restaurant_name=%@&%@,%@=",
-                      stadiumName,restaurantName,itemName,quantity];
+    NSString *post = [NSString stringWithFormat:@"username=%@&stadium_name=%@&restaurant_name=%@&%@,%@=",username,stadiumName,restaurantName,itemName,quantity];
     for (int i = 0; i<[extras count]; i++)
     {
         if (i==0)
