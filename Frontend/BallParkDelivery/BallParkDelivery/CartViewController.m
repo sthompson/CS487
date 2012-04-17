@@ -65,7 +65,7 @@
     float price = 0;
     for (order in self.orders)
     {
-        price += [[order valueForKey:@"price"]floatValue];
+        price += ([[order valueForKey:@"item_price"]floatValue] * [[order valueForKey:@"item_quantity"]intValue]);
     }
     return price;
 }
@@ -117,7 +117,7 @@
     
     // Configure the cell...
     NSArray *thisOrder = [orders objectAtIndex:indexPath.row];
-    if ([[thisOrder valueForKey:@"has_extra"]isEqualToString:@"0"])
+    if ([[thisOrder valueForKey:@"has_extra"]intValue] == 0)
         cell.name.text = [thisOrder valueForKey:@"item_name"];
     else
         cell.name.text = [NSString stringWithFormat:@"%@ w/ extra(s)",[thisOrder valueForKey:@"item_name"]];
@@ -126,7 +126,7 @@
     
 
     
-    cell.price.text = [thisOrder valueForKey:@"item_price"];
+    cell.price.text = [formatter stringFromNumber:[NSNumber numberWithFloat:([[thisOrder valueForKey:@"item_price"]floatValue]*[[thisOrder valueForKey:@"item_quantity"]intValue])]];
     return cell;
 }
 
