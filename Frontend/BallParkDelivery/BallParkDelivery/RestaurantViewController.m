@@ -17,6 +17,7 @@
 @implementation RestaurantViewController
 
 @synthesize menuViewController = _menuViewController;
+@synthesize categoryVC = _categoryVC;
 @synthesize restaurants,stadiumName,cart,userKey;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;

@@ -8,6 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
+@class Cart;
+@class MenuViewController;
+
 @interface CategoryViewController : UITableViewController
+
+@property(strong,nonatomic) NSArray *categories;
+@property(strong,nonatomic) NSArray *menu;
+@property (strong, nonatomic) NSString *restaurantName;
+@property (strong, nonatomic) NSString *stadiumName;
+@property (strong, nonatomic) Cart *cart;
+
+@property (strong, nonatomic) NSString *userKey;
+
+@property (strong, nonatomic) MenuViewController *menuViewController;
+
+@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
+@property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 @end

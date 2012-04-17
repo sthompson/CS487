@@ -11,10 +11,12 @@
 
 @class MenuViewController;
 @class Cart;
+@class CategoryViewController;
 
 @interface RestaurantViewController : UITableViewController<CartDelegate,NSFetchedResultsControllerDelegate>
 
 @property (strong, nonatomic) MenuViewController *menuViewController;
+@property (strong, nonatomic) CategoryViewController *categoryVC;
 @property (strong, nonatomic) Cart *cart;
 @property (strong, nonatomic) NSArray *restaurants;
 @property (strong, nonatomic) NSString *stadiumName;

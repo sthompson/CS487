@@ -7,14 +7,20 @@
 //
 
 #import "CategoryViewController.h"
+#import "MenuViewController.h"
 
 @implementation CategoryViewController
+
+@synthesize categories,menu,restaurantName,stadiumName,cart,userKey;
+@synthesize menuViewController = _menuViewController;
+@synthesize fetchedResultsController = __fetchedResultsController;
+@synthesize managedObjectContext = __managedObjectContext;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        self.menu = [[NSArray alloc] initWithObjects:@"Appetizers",@"Desserts",@"Drinks",@"Main Dishes",@"Side Dishes", nil];
     }
     return self;
 }
@@ -77,16 +83,14 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [categories count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -96,9 +100,11 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     // Configure the cell...
+    cell.textLabel.text = [categories objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -146,13 +152,26 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    NSIndexSet *indexSet = [menu indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) 
+    {
+        return [[(NSDictionary *)obj valueForKey:@"item_type"] isEqualToString:[categories objectAtIndex:indexPath.row]];
+    }];
+    
+    NSArray *menuSubset = [menu objectsAtIndexes:indexSet];
+    
+    if (!self.menuViewController) {
+        self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
+    }
+    self.menuViewController.restaurantName = self.restaurantName;
+    self.menuViewController.menuList = menuSubset;
+    self.menuViewController.stadiumName = self.stadiumName;
+    self.menuViewController.cart = self.cart;
+    self.menuViewController.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
+    self.menuViewController.managedObjectContext = self.managedObjectContext;
+    self.menuViewController.userKey = self.userKey;
+    
+    [self.navigationController pushViewController:self.menuViewController animated:YES];
+                        
 }
 
 @end
