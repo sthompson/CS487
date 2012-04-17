@@ -153,11 +153,8 @@
         order.extras = nil;
     else
         order.extras = self.extrasViewController.extrasChosen;
-    if (cart.orders == nil) 
-    {
-        cart.orders = [[NSMutableArray alloc]init];
-    }
-    [cart.orders addObject:order];
+
+    [Cart addToCart:order];
     if (self.addAlert == nil) 
     {
         self.addAlert = [[UIAlertView alloc] initWithTitle:nil message:[NSString stringWithFormat:@"Added %@ to Cart",order.itemName] delegate:self cancelButtonTitle:@"OK" otherButtonTitles: nil];

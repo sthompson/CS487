@@ -112,6 +112,15 @@
 
 }
 
++(NSArray *) getCartItemsFromUsername: (NSString *) username
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@view_cart/",ROOT];
+    NSString *post = [NSString stringWithFormat:@"username=%@",
+                      username];
+    NSArray *items = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
+    return items;
+}
+
 +(id) getPostDataFromURLString:(NSString *) urlString andPost: (NSString *) post
 {
     NSString *urlFormattedString = [urlString stringByAddingPercentEscapesUsingEncoding:
