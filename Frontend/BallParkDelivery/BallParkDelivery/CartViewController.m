@@ -116,17 +116,17 @@
     }
     
     // Configure the cell...
-    Order *thisOrder = [cart.orders objectAtIndex:indexPath.row];
-    if (thisOrder.extras == nil)
-        cell.name.text = thisOrder.itemName;
+    NSArray *thisOrder = [orders objectAtIndex:indexPath.row];
+    if ([[thisOrder valueForKey:@"has_extra"]isEqualToString:@"0"])
+        cell.name.text = [thisOrder valueForKey:@"item_name"];
     else
-        cell.name.text = [NSString stringWithFormat:@"%@ w/ extra(s)",thisOrder.itemName];
-    cell.quantity.text = [NSString stringWithFormat:@"x%@",thisOrder.quantity];
+        cell.name.text = [NSString stringWithFormat:@"%@ w/ extra(s)",[thisOrder valueForKey:@"item_name"]];
+    cell.quantity.text = [NSString stringWithFormat:@"x%@",
+                          [thisOrder valueForKey:@"item_quantity"]];
     
 
     
-    cell.price.text = [formatter stringFromNumber:[NSNumber numberWithFloat:
-                                                   [self priceWithExtrasOfOrder:thisOrder]]];
+    cell.price.text = [thisOrder valueForKey:@"item_price"];
     return cell;
 }
 
@@ -138,7 +138,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [cart.orders count];
+    return [orders count];
 }
 
 -(IBAction)placeOrder:(id)sender
