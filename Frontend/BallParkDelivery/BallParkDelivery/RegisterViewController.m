@@ -12,6 +12,7 @@
 @implementation RegisterViewController
 
 @synthesize username,password,name,ccnumber,year,month,stepper,registerButton,delegate,scroller;
+@synthesize cancelButton;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -88,14 +89,19 @@
     month.text = [[NSNumber numberWithDouble:stepper.value] stringValue];
 }
 
+-(IBAction)cancel:(id)sender
+{
+    [delegate finishedRegistering:self];
+}
+
 -(IBAction)registerUser:(id)sender
 {
     NSString *response = [Model registerUser:name.text withUsername:username.text andPassword:password.text andCCNum:ccnumber.text andCCYear:year.text andCCMonth:month.text];
     if ([response isEqualToString:@"True"]) 
-        [delegate userRegistered:self];
+        [delegate finishedRegistering:self];
     else
     {
-        UIAlertView *userTaken = [[UIAlertView alloc] initWithTitle:nil message:@"Invalid Info" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *userTaken = [[UIAlertView alloc] initWithTitle:nil message:response delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [userTaken show];
     }
 

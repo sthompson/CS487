@@ -176,9 +176,12 @@
     [self presentViewController:regVC animated:YES completion:nil];
 }
 
--(void) userRegistered:(id)sender
+
+-(void) finishedRegistering:(id)sender
 {
     [sender dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 @end
