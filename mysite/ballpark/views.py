@@ -112,7 +112,7 @@ def create_username(request):
     elif len(user) < 5:
         return HttpResponse("Username must be at least 5 characters long")
     elif len(pw) < 5:
-        return HttpResponse("Password must be at least 6 characters long")
+        return HttpResponse("Password must be at least 5 characters long")
     elif len(ccname) < 2:
         return HttpResponse("Invalid name")
     elif len(ccnumber) < 15 or len(ccnumber) > 16 or not ccnumber.isdigit():
