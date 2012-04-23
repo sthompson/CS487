@@ -96,7 +96,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        [[NSBundle mainBundle] loadNibNamed:@"StatusViewController" owner:self options:nil];
+        [[NSBundle mainBundle] loadNibNamed:@"StatusCell" owner:self options:nil];
         cell = self.customCell;
         self.customCell = nil;
     }
