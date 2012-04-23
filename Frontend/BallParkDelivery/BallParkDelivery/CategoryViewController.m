@@ -11,7 +11,7 @@
 
 @implementation CategoryViewController
 
-@synthesize categories,menu,restaurantName,stadiumName,cart,userKey;
+@synthesize categories,menu,restaurantName,stadiumName,cart,userKey,count;
 @synthesize menuViewController = _menuViewController;
 @synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
@@ -33,13 +33,49 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
+-(void) deleteEmptyCategories
+{
+    int corr = 0;
+    int cnt = 0;
+    for (NSNumber *num in self.count) 
+    {
+        if (num.intValue == 0) 
+        {
+            [categories removeObjectAtIndex:(cnt-corr)];
+            corr++;
+        }
+        cnt++;
+    }
+}
+-(void) checkCategories
+{
+    for (NSArray *item in menu)
+    {
+        NSString *cat = [item valueForKey:@"item_type"];
+        NSInteger index = [categories indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) 
+        {
+            return [cat isEqualToString:(NSString *)obj];
+        }];
+        [self.count replaceObjectAtIndex:index withObject:
+         [NSNumber numberWithInt:([[self.count objectAtIndex:index]intValue]+1)]];
+    }
+    [self deleteEmptyCategories];
+}
+
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    self.categories = [[NSArray alloc] initWithObjects:@"Appetizers",@"Desserts",@"Drinks",@"Main Dishes",@"Side Dishes", nil];
+    self.categories = [[NSMutableArray alloc] initWithObjects:@"Appetizers",@"Desserts",@"Drinks",@"Main Dishes",@"Side Dishes", nil];
+    
+    self.count = [[NSMutableArray alloc]init];
+    for (int i = 0; i<[categories count]; i++) 
+    {
+        [self.count addObject:[NSNumber numberWithInt:0]];
+    }
+    [self checkCategories];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

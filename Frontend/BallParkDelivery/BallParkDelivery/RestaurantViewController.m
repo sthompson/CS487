@@ -220,9 +220,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.categoryVC) {
-        self.categoryVC = [[CategoryViewController alloc] initWithNibName:@"CategoryViewController" bundle:nil];
-    }
+    self.categoryVC = [[CategoryViewController alloc] initWithNibName:@"CategoryViewController" bundle:nil];
     self.categoryVC.restaurantName = [[restaurants objectAtIndex:indexPath.row]objectForKey:@"restaurant_name"];
     self.categoryVC.menu = [Model getMenuFromStadiumName:stadiumName andRestaurantName:
                                         [[restaurants objectAtIndex:indexPath.row]objectForKey:

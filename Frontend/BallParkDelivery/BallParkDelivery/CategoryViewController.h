@@ -13,7 +13,8 @@
 
 @interface CategoryViewController : UITableViewController
 
-@property(strong,nonatomic) NSArray *categories;
+@property(strong,nonatomic) NSMutableArray *categories;
+@property(strong,nonatomic) NSMutableArray *count;
 @property(strong,nonatomic) NSArray *menu;
 @property (strong, nonatomic) NSString *restaurantName;
 @property (strong, nonatomic) NSString *stadiumName;
