@@ -100,12 +100,15 @@
         cell = self.customCell;
         self.customCell = nil;
     }
-    restaurantLabel = [[statuses objectAtIndex:indexPath.row]valueForKey:@"restaurant_name"];
-    orderLabel = [NSString stringWithFormat:@"Order %@",
+    restaurantLabel.text = [[statuses objectAtIndex:indexPath.row]valueForKey:@"restaurant_name"];
+    orderLabel.text = [NSString stringWithFormat:@"Order %@",
                   [[statuses objectAtIndex:indexPath.row]valueForKey:@"order_number"]];
-    priceLabel = [NSString stringWithFormat:@"$%@",
+    priceLabel.text = [NSString stringWithFormat:@"$%@",
                   [[statuses objectAtIndex:indexPath.row]valueForKey:@"total_price"]];
-    statusLabel = [[statuses objectAtIndex:indexPath.row]valueForKey:@"order_status_description"];
+    statusLabel.text = [[statuses objectAtIndex:indexPath.row]valueForKey:
+                        @"order_status_description"];
+    
+
     
     // Configure the cell...
     
