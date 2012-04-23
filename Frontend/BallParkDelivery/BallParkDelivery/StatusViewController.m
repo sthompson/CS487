@@ -96,8 +96,16 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [[NSBundle mainBundle] loadNibNamed:@"StatusViewController" owner:self options:nil];
+        cell = self.customCell;
+        self.customCell = nil;
     }
+    restaurantLabel = [[statuses objectAtIndex:indexPath.row]valueForKey:@"restaurant_name"];
+    orderLabel = [NSString stringWithFormat:@"Order %@",
+                  [[statuses objectAtIndex:indexPath.row]valueForKey:@"order_number"]];
+    priceLabel = [NSString stringWithFormat:@"$%@",
+                  [[statuses objectAtIndex:indexPath.row]valueForKey:@"total_price"]];
+    statusLabel = [[statuses objectAtIndex:indexPath.row]valueForKey:@"order_status_description"];
     
     // Configure the cell...
     
