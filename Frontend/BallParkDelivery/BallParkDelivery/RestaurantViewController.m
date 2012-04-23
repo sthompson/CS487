@@ -47,7 +47,8 @@
     [super viewDidLoad];
 
     UIBarButtonItem *shoppingCart = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shoppingcart.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(checkout)];
-    self.navigationItem.rightBarButtonItem = shoppingCart;
+    UIBarButtonItem *status = [[UIBarButtonItem alloc]initWithTitle:@"Status" style:UIBarButtonItemStyleBordered target:self action:@selector(status:)];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:shoppingCart,status,nil];
     
 }
 
