@@ -168,7 +168,7 @@
     self.menuViewController.menuList = menuSubset;
     self.menuViewController.stadiumName = self.stadiumName;
     self.menuViewController.cart = self.cart;
-    self.menuViewController.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
+    self.menuViewController.navigationItem.rightBarButtonItems = self.navigationItem.rightBarButtonItems;
     self.menuViewController.managedObjectContext = self.managedObjectContext;
     self.menuViewController.userKey = self.userKey;
     

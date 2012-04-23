@@ -229,7 +229,7 @@
                                          @"restaurant_name"]];
     self.categoryVC.stadiumName = self.stadiumName;
     self.categoryVC.cart = self.cart;
-    self.categoryVC.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
+    self.categoryVC.navigationItem.rightBarButtonItems = self.navigationItem.rightBarButtonItems;
     self.categoryVC.managedObjectContext = self.managedObjectContext;
     self.categoryVC.userKey = self.userKey;
     
