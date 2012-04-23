@@ -25,6 +25,8 @@
 		7224BD09152AAA7F00707C3A /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BD03152AAA7F00707C3A /* CJSONSerializer.m */; };
 		7224BD0D152ABB3400707C3A /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BD0B152ABB3400707C3A /* MenuViewController.m */; };
 		7224BD0E152ABB3400707C3A /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7224BD0C152ABB3400707C3A /* MenuViewController.xib */; };
+		7225B2461544E90200B7A904 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7225B2441544E90200B7A904 /* StatusViewController.m */; };
+		7225B2471544E90200B7A904 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7225B2451544E90200B7A904 /* StatusViewController.xib */; };
 		723094D1152B507F00C3CDD8 /* StadiumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094CF152B507F00C3CDD8 /* StadiumViewController.m */; };
 		723094D2152B507F00C3CDD8 /* StadiumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094D0152B507F00C3CDD8 /* StadiumViewController.xib */; };
 		723094DF152B7E0E00C3CDD8 /* ExtrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */; };
@@ -86,6 +88,9 @@
 		7224BD0A152ABB3400707C3A /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		7224BD0B152ABB3400707C3A /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		7224BD0C152ABB3400707C3A /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		7225B2431544E90200B7A904 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
+		7225B2441544E90200B7A904 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
+		7225B2451544E90200B7A904 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
 		723094CE152B507F00C3CDD8 /* StadiumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StadiumViewController.h; sourceTree = "<group>"; };
 		723094CF152B507F00C3CDD8 /* StadiumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StadiumViewController.m; sourceTree = "<group>"; };
 		723094D0152B507F00C3CDD8 /* StadiumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StadiumViewController.xib; sourceTree = "<group>"; };
@@ -188,6 +193,8 @@
 				7271D468153C7B9C007ED535 /* LoginViewController.m */,
 				72B2529C153CA1C7003A0103 /* RegisterViewController.h */,
 				72B2529D153CA1C7003A0103 /* RegisterViewController.m */,
+				7225B2431544E90200B7A904 /* StatusViewController.h */,
+				7225B2441544E90200B7A904 /* StatusViewController.m */,
 				72FDB564152E4A9800CF34DE /* AlertViewWithIndicator.h */,
 				72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */,
 				72FDB55E152E3D0600CF34DE /* LocationViewController.h */,
@@ -210,6 +217,7 @@
 				723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */,
 				72FDB572152E96B400CF34DE /* CartViewController.h */,
 				72FDB573152E96B400CF34DE /* CartViewController.m */,
+				7225B2451544E90200B7A904 /* StatusViewController.xib */,
 				72626ECD1534D009003D4C0C /* RestaurantCell.xib */,
 				723094D0152B507F00C3CDD8 /* StadiumViewController.xib */,
 				7224BCE7152AA25A00707C3A /* RestaurantViewController.xib */,
@@ -332,6 +340,7 @@
 				72B252A0153CA1C8003A0103 /* RegisterViewController.xib in Resources */,
 				729D5B3B153D50B000BFF569 /* CategoryViewController.xib in Resources */,
 				72DA24A5153DDC5400425F2C /* ExtraCell.xib in Resources */,
+				7225B2471544E90200B7A904 /* StatusViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -366,6 +375,7 @@
 				7271D46A153C7B9C007ED535 /* LoginViewController.m in Sources */,
 				72B2529F153CA1C8003A0103 /* RegisterViewController.m in Sources */,
 				729D5B3A153D50B000BFF569 /* CategoryViewController.m in Sources */,
+				7225B2461544E90200B7A904 /* StatusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
