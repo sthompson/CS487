@@ -7,13 +7,10 @@
 //
 
 #import "RestaurantViewController.h"
-
 #import "MenuViewController.h"
 #import "Model.h"
 #import "CustomCell.h"
-#import "CartViewController.h"
 #import "CategoryViewController.h"
-
 
 @implementation RestaurantViewController
 
@@ -45,9 +42,10 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.navigationController.navigationBarHidden = NO;
     UIBarButtonItem *shoppingCart = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shoppingcart.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(checkout)];
-    self.navigationItem.rightBarButtonItem = shoppingCart;
+    UIBarButtonItem *status = [[UIBarButtonItem alloc]initWithTitle:@"Status" style:UIBarButtonItemStyleBordered target:self action:@selector(status:)];
+    self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:shoppingCart,status,nil];
     
 }
 
@@ -163,6 +161,15 @@
     [self presentViewController:nav animated:YES completion:nil];
 }
 
+-(void) status:(id)sender
+{
+    StatusViewController *statusVC = [[StatusViewController alloc] init];
+    statusVC.statuses = [Model getStatusFromUsername:self.userKey];
+    statusVC.delegate = self;
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:statusVC];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
 -(void) orderPlaced:(id)sender
 {
     [sender dismissViewControllerAnimated:YES completion:nil];
@@ -213,20 +220,23 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if (!self.categoryVC) {
-        self.categoryVC = [[CategoryViewController alloc] initWithNibName:@"CategoryViewController" bundle:nil];
-    }
+    self.categoryVC = [[CategoryViewController alloc] initWithNibName:@"CategoryViewController" bundle:nil];
     self.categoryVC.restaurantName = [[restaurants objectAtIndex:indexPath.row]objectForKey:@"restaurant_name"];
     self.categoryVC.menu = [Model getMenuFromStadiumName:stadiumName andRestaurantName:
                                         [[restaurants objectAtIndex:indexPath.row]objectForKey:
                                          @"restaurant_name"]];
     self.categoryVC.stadiumName = self.stadiumName;
     self.categoryVC.cart = self.cart;
-    self.categoryVC.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
+    self.categoryVC.navigationItem.rightBarButtonItems = self.navigationItem.rightBarButtonItems;
     self.categoryVC.managedObjectContext = self.managedObjectContext;
     self.categoryVC.userKey = self.userKey;
     
     [self.navigationController pushViewController:self.categoryVC animated:YES];
+}
+
+-(void) finishedWithStatus:(id)sender
+{
+    [sender dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

@@ -163,7 +163,7 @@
     self.detailViewController.stadiumName = self.stadiumName;
     self.detailViewController.cart = self.cart;
     self.detailViewController.userKey = self.userKey;
-    self.detailViewController.navigationItem.rightBarButtonItem = self.navigationItem.rightBarButtonItem;
+    self.detailViewController.navigationItem.rightBarButtonItems = self.navigationItem.rightBarButtonItems;
     self.detailViewController.managedObjectContext = self.managedObjectContext;
     [self.navigationController pushViewController:self.detailViewController animated:YES];
 }

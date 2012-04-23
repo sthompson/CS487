@@ -25,6 +25,10 @@
 		7224BD09152AAA7F00707C3A /* CJSONSerializer.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BD03152AAA7F00707C3A /* CJSONSerializer.m */; };
 		7224BD0D152ABB3400707C3A /* MenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7224BD0B152ABB3400707C3A /* MenuViewController.m */; };
 		7224BD0E152ABB3400707C3A /* MenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7224BD0C152ABB3400707C3A /* MenuViewController.xib */; };
+		7225B2461544E90200B7A904 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7225B2441544E90200B7A904 /* StatusViewController.m */; };
+		7225B2471544E90200B7A904 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7225B2451544E90200B7A904 /* StatusViewController.xib */; };
+		7225B24A1544EC3900B7A904 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7225B2491544EC3900B7A904 /* StatusCell.xib */; };
+		7225B24C1544FBFC00B7A904 /* ballpark_delivery_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7225B24B1544FBFC00B7A904 /* ballpark_delivery_logo.png */; };
 		723094D1152B507F00C3CDD8 /* StadiumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094CF152B507F00C3CDD8 /* StadiumViewController.m */; };
 		723094D2152B507F00C3CDD8 /* StadiumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094D0152B507F00C3CDD8 /* StadiumViewController.xib */; };
 		723094DF152B7E0E00C3CDD8 /* ExtrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */; };
@@ -40,6 +44,7 @@
 		72B10A9A152F709D0010D14D /* shoppingcart.png in Resources */ = {isa = PBXBuildFile; fileRef = 72B10A99152F709D0010D14D /* shoppingcart.png */; };
 		72B2529F153CA1C8003A0103 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72B2529D153CA1C7003A0103 /* RegisterViewController.m */; };
 		72B252A0153CA1C8003A0103 /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72B2529E153CA1C7003A0103 /* RegisterViewController.xib */; };
+		72DA24A5153DDC5400425F2C /* ExtraCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 72DA24A4153DDC5400425F2C /* ExtraCell.xib */; };
 		72FDB560152E3D0600CF34DE /* LocationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB55F152E3D0600CF34DE /* LocationViewController.m */; };
 		72FDB563152E469300CF34DE /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 72FDB562152E469300CF34DE /* CoreLocation.framework */; };
 		72FDB566152E4A9800CF34DE /* AlertViewWithIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */; };
@@ -85,6 +90,11 @@
 		7224BD0A152ABB3400707C3A /* MenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuViewController.h; sourceTree = "<group>"; };
 		7224BD0B152ABB3400707C3A /* MenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuViewController.m; sourceTree = "<group>"; };
 		7224BD0C152ABB3400707C3A /* MenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MenuViewController.xib; sourceTree = "<group>"; };
+		7225B2431544E90200B7A904 /* StatusViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusViewController.h; sourceTree = "<group>"; };
+		7225B2441544E90200B7A904 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
+		7225B2451544E90200B7A904 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
+		7225B2491544EC3900B7A904 /* StatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
+		7225B24B1544FBFC00B7A904 /* ballpark_delivery_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballpark_delivery_logo.png; sourceTree = "<group>"; };
 		723094CE152B507F00C3CDD8 /* StadiumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StadiumViewController.h; sourceTree = "<group>"; };
 		723094CF152B507F00C3CDD8 /* StadiumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StadiumViewController.m; sourceTree = "<group>"; };
 		723094D0152B507F00C3CDD8 /* StadiumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StadiumViewController.xib; sourceTree = "<group>"; };
@@ -105,6 +115,7 @@
 		72B2529C153CA1C7003A0103 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		72B2529D153CA1C7003A0103 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		72B2529E153CA1C7003A0103 /* RegisterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		72DA24A4153DDC5400425F2C /* ExtraCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ExtraCell.xib; sourceTree = "<group>"; };
 		72FDB55E152E3D0600CF34DE /* LocationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationViewController.h; sourceTree = "<group>"; };
 		72FDB55F152E3D0600CF34DE /* LocationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationViewController.m; sourceTree = "<group>"; };
 		72FDB562152E469300CF34DE /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -186,6 +197,8 @@
 				7271D468153C7B9C007ED535 /* LoginViewController.m */,
 				72B2529C153CA1C7003A0103 /* RegisterViewController.h */,
 				72B2529D153CA1C7003A0103 /* RegisterViewController.m */,
+				7225B2431544E90200B7A904 /* StatusViewController.h */,
+				7225B2441544E90200B7A904 /* StatusViewController.m */,
 				72FDB564152E4A9800CF34DE /* AlertViewWithIndicator.h */,
 				72FDB565152E4A9800CF34DE /* AlertViewWithIndicator.m */,
 				72FDB55E152E3D0600CF34DE /* LocationViewController.h */,
@@ -208,12 +221,15 @@
 				723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */,
 				72FDB572152E96B400CF34DE /* CartViewController.h */,
 				72FDB573152E96B400CF34DE /* CartViewController.m */,
+				7225B2451544E90200B7A904 /* StatusViewController.xib */,
+				7225B2491544EC3900B7A904 /* StatusCell.xib */,
 				72626ECD1534D009003D4C0C /* RestaurantCell.xib */,
 				723094D0152B507F00C3CDD8 /* StadiumViewController.xib */,
 				7224BCE7152AA25A00707C3A /* RestaurantViewController.xib */,
 				7224BCEA152AA25A00707C3A /* DetailViewController.xib */,
 				7224BD0C152ABB3400707C3A /* MenuViewController.xib */,
 				723094DE152B7E0E00C3CDD8 /* ExtrasViewController.xib */,
+				72DA24A4153DDC5400425F2C /* ExtraCell.xib */,
 				72FDB574152E96B500CF34DE /* CartViewController.xib */,
 				7271D469153C7B9C007ED535 /* LoginViewController.xib */,
 				72FDB57B152EA95E00CF34DE /* CartCell.xib */,
@@ -257,6 +273,7 @@
 		72B10A97152F708D0010D14D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7225B24B1544FBFC00B7A904 /* ballpark_delivery_logo.png */,
 				7271D46D153C7C05007ED535 /* logo.png */,
 				72B10A99152F709D0010D14D /* shoppingcart.png */,
 			);
@@ -328,6 +345,10 @@
 				7271D46E153C7C05007ED535 /* logo.png in Resources */,
 				72B252A0153CA1C8003A0103 /* RegisterViewController.xib in Resources */,
 				729D5B3B153D50B000BFF569 /* CategoryViewController.xib in Resources */,
+				72DA24A5153DDC5400425F2C /* ExtraCell.xib in Resources */,
+				7225B2471544E90200B7A904 /* StatusViewController.xib in Resources */,
+				7225B24A1544EC3900B7A904 /* StatusCell.xib in Resources */,
+				7225B24C1544FBFC00B7A904 /* ballpark_delivery_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -362,6 +383,7 @@
 				7271D46A153C7B9C007ED535 /* LoginViewController.m in Sources */,
 				72B2529F153CA1C8003A0103 /* RegisterViewController.m in Sources */,
 				729D5B3A153D50B000BFF569 /* CategoryViewController.m in Sources */,
+				7225B2461544E90200B7A904 /* StatusViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

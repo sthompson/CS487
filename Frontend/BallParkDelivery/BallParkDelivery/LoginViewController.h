@@ -25,7 +25,6 @@
 @property (strong, nonatomic) NSString *userKey;
 @property (strong, nonatomic) RestaurantViewController *restaurantViewController;
 
-//@property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) NSManagedObjectContext *managedObjectContext;
 
 -(IBAction)attemptLogin:(id)sender;

@@ -22,6 +22,9 @@
 @property (strong, nonatomic) NSArray *extras;
 @property (strong, nonatomic) NSMutableArray *extrasChosen;
 @property (strong, nonatomic) NSMutableArray *selectedRows;
+@property (strong,nonatomic) IBOutlet UITableViewCell *tableViewCell;
+@property (strong,nonatomic) IBOutlet UILabel *priceLabel;
+@property (strong,nonatomic) IBOutlet UILabel *nameLabel;
 
 @property(nonatomic, assign) id<ModalViewDelegate> delegate;
 

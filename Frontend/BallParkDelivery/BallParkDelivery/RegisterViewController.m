@@ -11,7 +11,9 @@
 
 @implementation RegisterViewController
 
-@synthesize username,password,name,ccnumber,year,month,stepper,registerButton,delegate,scroller;
+@synthesize username,password,name,ccnumber,year,month,registerButton,delegate,scroller;
+@synthesize cancelButton,confirmPassword;
+@synthesize years,months;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -35,6 +37,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    scroller.contentSize = scroller.frame.size;
+    [scroller setFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
+    
+    self.years = [[NSArray alloc] initWithObjects:@"2012",@"2013",@"2014",@"2015",@"2016",@"2017",@"2018",@"2019",@"2020",@"2021",@"2022",@"2023",@"2024",@"2025", nil];
+    self.months = [[NSArray alloc] initWithObjects:@"January",@"February",@"March",@"April",@"May",@"June",@"July",@"August",@"September",@"October",@"November",@"December",nil];
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -83,19 +90,27 @@
     return (interfaceOrientation == UIInterfaceOrientationPortrait);
 }
 
--(IBAction)clickStepper:(id)sender
+-(IBAction)cancel:(id)sender
 {
-    month.text = [[NSNumber numberWithDouble:stepper.value] stringValue];
+    [delegate finishedRegistering:self];
 }
 
 -(IBAction)registerUser:(id)sender
 {
-    NSString *response = [Model registerUser:name.text withUsername:username.text andPassword:password.text andCCNum:ccnumber.text andCCYear:year.text andCCMonth:month.text];
+    if (![confirmPassword.text isEqualToString:password.text]) {
+        UIAlertView *passwordProblem = [[UIAlertView alloc] initWithTitle:nil message:@"Passwords do not match" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [passwordProblem show];
+        return;
+    }
+    NSString *selectedMonth = [NSString stringWithFormat:@"%d",
+                               [month selectedRowInComponent:0]+1];
+    NSString *selectedYear = [years objectAtIndex:[year selectedRowInComponent:0]];
+    NSString *response = [Model registerUser:name.text withUsername:username.text andPassword:password.text andCCNum:ccnumber.text andCCYear:selectedYear andCCMonth:selectedMonth];
     if ([response isEqualToString:@"True"]) 
-        [delegate userRegistered:self];
+        [delegate finishedRegistering:self];
     else
     {
-        UIAlertView *userTaken = [[UIAlertView alloc] initWithTitle:nil message:@"Username Taken" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        UIAlertView *userTaken = [[UIAlertView alloc] initWithTitle:nil message:response delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [userTaken show];
     }
 
@@ -105,9 +120,8 @@
 {
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    scroller.contentSize = scroller.frame.size;
+    //scroller.contentSize = scroller.frame.size;
     [scroller setFrame:CGRectMake(0, 0, scroller.frame.size.width, scroller.frame.size.height - kbSize.height)];
-    [stepper setFrame:CGRectMake(stepper.frame.origin.x,stepper.frame.origin.y + kbSize.height, stepper.frame.size.width, stepper.frame.size.height)];
 }
 
 
@@ -117,7 +131,32 @@
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
     
     [scroller setFrame:CGRectMake(0, 0, scroller.frame.size.width, scroller.frame.size.height + kbSize.height)];
-    [stepper setFrame:CGRectMake(stepper.frame.origin.x,stepper.frame.origin.y - kbSize.height, stepper.frame.size.width, stepper.frame.size.height)];
+}
+
+/*
+ *  Picker view datasource
+ */
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    if (pickerView == year) 
+        return [years count];
+    else
+        return [months count];
+}
+
+-(NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    //set item per row
+    if (pickerView == year) 
+        return [years objectAtIndex:row];
+    else
+        return [months objectAtIndex:row];
+    
 }
 
 @end

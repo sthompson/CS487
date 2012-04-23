@@ -28,6 +28,7 @@
 @property (strong, nonatomic) NSMutableArray *orders;
 
 @property (strong, nonatomic) UIAlertView *emptyAlert;
+@property (strong, nonatomic) UIAlertView *orderAlert;
 
 @property (strong, nonatomic) Cart *cart;
 

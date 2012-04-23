@@ -10,7 +10,7 @@
 #import "Model.h"
 #import "CJSONDeserializer.h"
 
-#define ROOT @"http://69.210.254.67:8080/"
+#define ROOT @"http://69.210.252.150:8080/"
 
 @implementation Model
 
@@ -118,6 +118,16 @@
                       username];
     NSArray *items = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
     return items;
+}
+
++(NSArray *) getStatusFromUsername: (NSString *) username
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@order_status_retrieval/",ROOT];
+    NSString *post = [NSString stringWithFormat:@"username=%@",
+                      username];
+    NSArray *statuses = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
+    return statuses;
+
 }
 
 +(void) removeItem:(NSString *)itemPK fromUser:(NSString *) username

@@ -10,26 +10,29 @@
 
 @protocol RegisterDelegate <NSObject>
 
--(void) userRegistered:(id)sender;
+-(void) finishedRegistering:(id) sender;
 
 @end
 
-@interface RegisterViewController : UIViewController<UITextFieldDelegate>
+@interface RegisterViewController : UIViewController<UITextFieldDelegate,UIPickerViewDelegate,UIPickerViewDataSource>
 
 @property(weak, nonatomic) IBOutlet UITextField *username;
 @property(weak, nonatomic) IBOutlet UITextField *password;
+@property(weak, nonatomic) IBOutlet UITextField *confirmPassword;
 @property(weak, nonatomic) IBOutlet UITextField *name;
-@property(weak, nonatomic) IBOutlet UITextField *year;
+@property(weak, nonatomic) IBOutlet UIPickerView *year;
 @property(weak, nonatomic) IBOutlet UITextField *ccnumber;
-@property(weak, nonatomic) IBOutlet UILabel *month;
-@property(weak, nonatomic) IBOutlet UIStepper *stepper;
+@property(weak, nonatomic) IBOutlet UIPickerView *month;
 @property(weak, nonatomic) IBOutlet UIButton *registerButton;
+@property(weak, nonatomic) IBOutlet UIButton *cancelButton;
 @property (nonatomic, retain) IBOutlet UIScrollView *scroller;
+@property(strong, nonatomic) NSArray *years;
+@property(strong, nonatomic) NSArray *months;
 
 @property (nonatomic, assign) id<RegisterDelegate> delegate;
 
 -(IBAction)registerUser:(id)sender;
--(IBAction)clickStepper:(id)sender;
+-(IBAction)cancel:(id)sender;
 
 
 @end

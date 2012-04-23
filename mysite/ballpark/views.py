@@ -34,8 +34,22 @@ def extra_item(request):
     return HttpResponse(simplejson.dumps(extra_item))
 
 def order_status_retrieval(request):
-    transaction = list(Order_status.objects.values('transaction_number','order_number','order_status_description','seat_number').filter(transaction_number__exact= request.POST.__getitem__('transaction_number')))
-    return HttpResponse(simplejson.dumps(transaction))
+    status = list(Order_status.objects.values('order_number','order_status_description','restaurant_id', 'pk').filter(user__exact= request.POST.__getitem__('username')).exclude(order_status_description = 'Arrived'))
+    for item in status:
+        item['restaurant_name'] = Restaurant.objects.get(pk=item['restaurant_id']).restaurant_name
+        item['total_price'] = 0
+        cart = list(Order.objects.values('item_quantity', 'item_price', 'pk').filter(order_number__exact= item['pk']))
+        for cart_item in cart:
+            extraprice = Order_extra.objects.filter(order_number = cart_item['pk']).aggregate(Sum('extra_price')).values()[0]
+            if extraprice != None:
+                cart_item['item_price'] = cart_item['item_price'] + extraprice
+                cart_item['item_price'] = cart_item['item_quantity']*cart_item['item_price']
+            print cart_item['item_price']
+            item['total_price'] = item['total_price'] + cart_item['item_price']
+        item['total_price'] = str(item['total_price'])
+        del item['pk']
+        del item['restaurant_id']
+    return HttpResponse(simplejson.dumps(status))
 
 def order_submission(request):
     seat = Customer.objects.get(username__exact= request.POST.__getitem__('username')).seat_number
@@ -112,7 +126,7 @@ def create_username(request):
     elif len(user) < 5:
         return HttpResponse("Username must be at least 5 characters long")
     elif len(pw) < 5:
-        return HttpResponse("Password must be at least 6 characters long")
+        return HttpResponse("Password must be at least 5 characters long")
     elif len(ccname) < 2:
         return HttpResponse("Invalid name")
     elif len(ccnumber) < 15 or len(ccnumber) > 16 or not ccnumber.isdigit():

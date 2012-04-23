@@ -1,26 +1,23 @@
 //
-//  CategoryViewController.m
+//  StatusViewController.m
 //  BallParkDelivery
 //
-//  Created by Seth  Thompson on 4/17/12.
+//  Created by Seth  Thompson on 4/22/12.
 //  Copyright (c) 2012 Bradley University. All rights reserved.
 //
 
-#import "CategoryViewController.h"
-#import "MenuViewController.h"
+#import "StatusViewController.h"
 
-@implementation CategoryViewController
+@implementation StatusViewController
 
-@synthesize categories,menu,restaurantName,stadiumName,cart,userKey,count;
-@synthesize menuViewController = _menuViewController;
-@synthesize fetchedResultsController = __fetchedResultsController;
-@synthesize managedObjectContext = __managedObjectContext;
+@synthesize statuses;
+@synthesize orderLabel,restaurantLabel,statusLabel,priceLabel,customCell,delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
     if (self) {
-
+        self.title = @"Order Status";
     }
     return self;
 }
@@ -33,50 +30,12 @@
     // Release any cached data, images, etc that aren't in use.
 }
 
--(void) deleteEmptyCategories
-{
-    int corr = 0;
-    int cnt = 0;
-    for (NSNumber *num in self.count) 
-    {
-        if (num.intValue == 0) 
-        {
-            [categories removeObjectAtIndex:(cnt-corr)];
-            corr++;
-        }
-        cnt++;
-    }
-}
--(void) checkCategories
-{
-    for (NSArray *item in menu)
-    {
-        NSString *cat = [item valueForKey:@"item_type"];
-        NSInteger index = [categories indexOfObjectPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) 
-        {
-            return [cat isEqualToString:(NSString *)obj];
-        }];
-        [self.count replaceObjectAtIndex:index withObject:
-         [NSNumber numberWithInt:([[self.count objectAtIndex:index]intValue]+1)]];
-    }
-    [self deleteEmptyCategories];
-}
-
 #pragma mark - View lifecycle
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.title = @"Category";
-    
-    self.categories = [[NSMutableArray alloc] initWithObjects:@"Appetizers",@"Desserts",@"Drinks",@"Main Dishes",@"Side Dishes", nil];
-    
-    self.count = [[NSMutableArray alloc]init];
-    for (int i = 0; i<[categories count]; i++) 
-    {
-        [self.count addObject:[NSNumber numberWithInt:0]];
-    }
-    [self checkCategories];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -129,7 +88,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [categories count];
+    return [statuses count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -138,12 +97,21 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+        [[NSBundle mainBundle] loadNibNamed:@"StatusCell" owner:self options:nil];
+        cell = self.customCell;
+        self.customCell = nil;
     }
+    restaurantLabel.text = [[statuses objectAtIndex:indexPath.row]valueForKey:@"restaurant_name"];
+    orderLabel.text = [NSString stringWithFormat:@"Order %@",
+                  [[statuses objectAtIndex:indexPath.row]valueForKey:@"order_number"]];
+    priceLabel.text = [NSString stringWithFormat:@"$%@",
+                  [[statuses objectAtIndex:indexPath.row]valueForKey:@"total_price"]];
+    statusLabel.text = [[statuses objectAtIndex:indexPath.row]valueForKey:
+                        @"order_status_description"];
+    
+
     
     // Configure the cell...
-    cell.textLabel.text = [categories objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -191,26 +159,18 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSIndexSet *indexSet = [menu indexesOfObjectsPassingTest:^BOOL(id obj, NSUInteger idx, BOOL *stop) 
-    {
-        return [[(NSDictionary *)obj valueForKey:@"item_type"] isEqualToString:[categories objectAtIndex:indexPath.row]];
-    }];
-    
-    NSArray *menuSubset = [menu objectsAtIndexes:indexSet];
-    
-    if (!self.menuViewController) {
-        self.menuViewController = [[MenuViewController alloc] initWithNibName:@"MenuViewController" bundle:nil];
-    }
-    self.menuViewController.restaurantName = self.restaurantName;
-    self.menuViewController.menuList = menuSubset;
-    self.menuViewController.stadiumName = self.stadiumName;
-    self.menuViewController.cart = self.cart;
-    self.menuViewController.navigationItem.rightBarButtonItems = self.navigationItem.rightBarButtonItems;
-    self.menuViewController.managedObjectContext = self.managedObjectContext;
-    self.menuViewController.userKey = self.userKey;
-    
-    [self.navigationController pushViewController:self.menuViewController animated:YES];
-                        
+    // Navigation logic may go here. Create and push another view controller.
+    /*
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     // ...
+     // Pass the selected object to the new view controller.
+     [self.navigationController pushViewController:detailViewController animated:YES];
+     */
+}
+
+-(void) done:(id)sender
+{
+    [delegate finishedWithStatus:self];
 }
 
 @end

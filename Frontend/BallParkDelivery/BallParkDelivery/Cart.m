@@ -21,9 +21,8 @@
     {
         [extraNames addObject:[extra objectForKey:@"extra_name"]];
     }
-    NSArray *result = [Model addToCartWithStadiumName:order.stadiumName 
-                                        andRestaurantName:order.restaurantName 
-                                            andItemName:order.itemName andExtras:extraNames andQuantity:order.quantity andUsername:order.userKey];
+    [Model addToCartWithStadiumName:order.stadiumName andRestaurantName:order.restaurantName 
+                        andItemName:order.itemName andExtras:extraNames andQuantity:order.quantity andUsername:order.userKey];
     
 }
 

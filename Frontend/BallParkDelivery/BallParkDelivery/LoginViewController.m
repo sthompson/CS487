@@ -16,7 +16,6 @@
 
 @synthesize username,password,loginButton,registerButton,seatNumber,scroller,userKey;
 @synthesize restaurantViewController;
-//@synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -56,6 +55,7 @@
     username.text = @"";
     password.text = @"";
     seatNumber.text = @"";
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -83,6 +83,11 @@
      removeObserver:self
      name:UIKeyboardWillHideNotification
      object:nil];
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField { 
@@ -176,9 +181,12 @@
     [self presentViewController:regVC animated:YES completion:nil];
 }
 
--(void) userRegistered:(id)sender
+
+-(void) finishedRegistering:(id)sender
 {
     [sender dismissViewControllerAnimated:YES completion:nil];
 }
+
+
 
 @end

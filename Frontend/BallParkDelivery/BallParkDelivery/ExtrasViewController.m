@@ -10,7 +10,7 @@
 
 @implementation ExtrasViewController
 
-@synthesize tableview,finished,extras,delegate,selectedRows,extrasChosen;
+@synthesize tableview,finished,extras,delegate,selectedRows,extrasChosen,tableViewCell,priceLabel,nameLabel;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -90,12 +90,17 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        [[NSBundle mainBundle] loadNibNamed:@"ExtraCell" owner:self options:nil];
+        cell = tableViewCell;
+        self.tableViewCell = nil;
         cell.accessoryType = UITableViewCellAccessoryNone;
     }
     
     // Configure the cell...
-    cell.textLabel.text = [[extras objectAtIndex:indexPath.row] objectForKey:@"extra_name"];
+    nameLabel.text = [[extras objectAtIndex:indexPath.row] objectForKey:@"extra_name"];
+    priceLabel.text = [NSString stringWithFormat:@"$%@",
+                                              [[extras objectAtIndex:indexPath.row]
+                                               objectForKey:@"extra_price"]];
     return cell;
 }
 
