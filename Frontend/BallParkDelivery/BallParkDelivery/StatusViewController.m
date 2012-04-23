@@ -10,6 +10,8 @@
 
 @implementation StatusViewController
 
+@synthesize statuses;
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];

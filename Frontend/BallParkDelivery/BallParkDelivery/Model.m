@@ -120,6 +120,16 @@
     return items;
 }
 
++(NSArray *) getStatusFromUsername: (NSString *) username
+{
+    NSString *urlString = [NSString stringWithFormat:@"%@order_status_retrieval/",ROOT];
+    NSString *post = [NSString stringWithFormat:@"username=%@",
+                      username];
+    NSArray *statuses = (NSArray *)[Model getPostDataFromURLString:urlString andPost:post];
+    return statuses;
+
+}
+
 +(void) removeItem:(NSString *)itemPK fromUser:(NSString *) username
 {
     NSString *urlString = [NSString stringWithFormat:@"%@delete_item/",ROOT];

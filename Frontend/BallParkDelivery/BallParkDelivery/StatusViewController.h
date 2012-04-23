@@ -10,4 +10,6 @@
 
 @interface StatusViewController : UITableViewController
 
+@property (strong, nonatomic) NSArray *statuses;
+
 @end
