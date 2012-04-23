@@ -13,6 +13,7 @@
 #import "CustomCell.h"
 #import "CartViewController.h"
 #import "CategoryViewController.h"
+#import "StatusViewController.h"
 
 
 @implementation RestaurantViewController
@@ -161,6 +162,14 @@
     cartVC.orders = [[NSMutableArray alloc] initWithArray:[Model getCartItemsFromUsername:self.userKey]];
     cartVC.userKey = self.userKey;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:cartVC];
+    [self presentViewController:nav animated:YES completion:nil];
+}
+
+-(void) status:(id)sender
+{
+    StatusViewController *statusVC = [[StatusViewController alloc] init];
+    statusVC.statuses = [Model getStatusFromUsername:self.userKey];
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:statusVC];
     [self presentViewController:nav animated:YES completion:nil];
 }
 
