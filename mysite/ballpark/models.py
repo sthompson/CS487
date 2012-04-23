@@ -180,7 +180,7 @@ class Cart(models.Model):
 class Cart_extra(models.Model):
     cart_item = models.ForeignKey(Cart)
     extra_name = models.CharField(max_length=20, verbose_name='Extra')
-    extra_price = models.DecimalField(max_digits=6, decimal_places=2, verbose_name='price') 
+    extra_price = models.DecimalField(max_digits=6, decimal_places=2, verbose_name='price')
     
     def __unicode__(self):
         return u'%s Extra: %s' % (self.cart_item, self.extra_name)
