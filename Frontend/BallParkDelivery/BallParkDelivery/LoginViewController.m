@@ -16,7 +16,6 @@
 
 @synthesize username,password,loginButton,registerButton,seatNumber,scroller,userKey;
 @synthesize restaurantViewController;
-//@synthesize fetchedResultsController = __fetchedResultsController;
 @synthesize managedObjectContext = __managedObjectContext;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil

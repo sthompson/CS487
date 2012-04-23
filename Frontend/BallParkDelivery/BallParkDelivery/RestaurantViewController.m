@@ -42,7 +42,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    self.navigationController.navigationBarHidden = NO;
     UIBarButtonItem *shoppingCart = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"shoppingcart.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(checkout)];
     UIBarButtonItem *status = [[UIBarButtonItem alloc]initWithTitle:@"Status" style:UIBarButtonItemStyleBordered target:self action:@selector(status:)];
     self.navigationItem.rightBarButtonItems = [NSArray arrayWithObjects:shoppingCart,status,nil];
