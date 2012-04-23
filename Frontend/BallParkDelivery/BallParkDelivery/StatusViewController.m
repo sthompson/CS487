@@ -11,7 +11,7 @@
 @implementation StatusViewController
 
 @synthesize statuses;
-@synthesize orderLabel,restaurantLabel,statusLabel,priceLabel,customCell;
+@synthesize orderLabel,restaurantLabel,statusLabel,priceLabel,customCell,delegate;
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -35,6 +35,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"Done" style:UIBarButtonItemStyleDone target:self action:@selector(done:)];
 
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -165,6 +166,11 @@
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];
      */
+}
+
+-(void) done:(id)sender
+{
+    [delegate finishedWithStatus:self];
 }
 
 @end

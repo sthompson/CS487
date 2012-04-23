@@ -7,14 +7,10 @@
 //
 
 #import "RestaurantViewController.h"
-
 #import "MenuViewController.h"
 #import "Model.h"
 #import "CustomCell.h"
-#import "CartViewController.h"
 #import "CategoryViewController.h"
-#import "StatusViewController.h"
-
 
 @implementation RestaurantViewController
 
@@ -169,6 +165,7 @@
 {
     StatusViewController *statusVC = [[StatusViewController alloc] init];
     statusVC.statuses = [Model getStatusFromUsername:self.userKey];
+    statusVC.delegate = self;
     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:statusVC];
     [self presentViewController:nav animated:YES completion:nil];
 }
@@ -237,6 +234,11 @@
     self.categoryVC.userKey = self.userKey;
     
     [self.navigationController pushViewController:self.categoryVC animated:YES];
+}
+
+-(void) finishedWithStatus:(id)sender
+{
+    [sender dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

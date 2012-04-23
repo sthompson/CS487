@@ -8,12 +8,14 @@
 
 #import <UIKit/UIKit.h>
 #import "CartViewController.h"
+#import "StatusViewController.h"
+
 
 @class MenuViewController;
 @class Cart;
 @class CategoryViewController;
 
-@interface RestaurantViewController : UITableViewController<CartDelegate,NSFetchedResultsControllerDelegate>
+@interface RestaurantViewController : UITableViewController<CartDelegate,NSFetchedResultsControllerDelegate,StatusDelegate>
 
 @property (strong, nonatomic) MenuViewController *menuViewController;
 @property (strong, nonatomic) CategoryViewController *categoryVC;

@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol StatusDelegate <NSObject>
+
+-(void) finishedWithStatus:(id) sender;
+
+@end
+
 @interface StatusViewController : UITableViewController
 
 @property (strong, nonatomic) NSArray *statuses;
@@ -17,6 +23,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *priceLabel;
 @property (weak, nonatomic) IBOutlet UILabel *statusLabel;
 @property (weak, nonatomic) IBOutlet UITableViewCell *customCell;
+
+@property(nonatomic, assign) id<StatusDelegate> delegate;
+
 
 
 @end
