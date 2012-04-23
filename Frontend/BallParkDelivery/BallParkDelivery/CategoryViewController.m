@@ -67,6 +67,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"Category";
     
     self.categories = [[NSMutableArray alloc] initWithObjects:@"Appetizers",@"Desserts",@"Drinks",@"Main Dishes",@"Side Dishes", nil];
     

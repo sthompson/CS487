@@ -17,7 +17,7 @@
 {
     self = [super initWithStyle:style];
     if (self) {
-        // Custom initialization
+        self.title = @"Order Status";
     }
     return self;
 }
