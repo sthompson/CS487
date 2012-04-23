@@ -28,6 +28,7 @@
 		7225B2461544E90200B7A904 /* StatusViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7225B2441544E90200B7A904 /* StatusViewController.m */; };
 		7225B2471544E90200B7A904 /* StatusViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7225B2451544E90200B7A904 /* StatusViewController.xib */; };
 		7225B24A1544EC3900B7A904 /* StatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7225B2491544EC3900B7A904 /* StatusCell.xib */; };
+		7225B24C1544FBFC00B7A904 /* ballpark_delivery_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 7225B24B1544FBFC00B7A904 /* ballpark_delivery_logo.png */; };
 		723094D1152B507F00C3CDD8 /* StadiumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094CF152B507F00C3CDD8 /* StadiumViewController.m */; };
 		723094D2152B507F00C3CDD8 /* StadiumViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 723094D0152B507F00C3CDD8 /* StadiumViewController.xib */; };
 		723094DF152B7E0E00C3CDD8 /* ExtrasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 723094DD152B7E0E00C3CDD8 /* ExtrasViewController.m */; };
@@ -93,6 +94,7 @@
 		7225B2441544E90200B7A904 /* StatusViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusViewController.m; sourceTree = "<group>"; };
 		7225B2451544E90200B7A904 /* StatusViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusViewController.xib; sourceTree = "<group>"; };
 		7225B2491544EC3900B7A904 /* StatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StatusCell.xib; sourceTree = "<group>"; };
+		7225B24B1544FBFC00B7A904 /* ballpark_delivery_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ballpark_delivery_logo.png; sourceTree = "<group>"; };
 		723094CE152B507F00C3CDD8 /* StadiumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StadiumViewController.h; sourceTree = "<group>"; };
 		723094CF152B507F00C3CDD8 /* StadiumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StadiumViewController.m; sourceTree = "<group>"; };
 		723094D0152B507F00C3CDD8 /* StadiumViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StadiumViewController.xib; sourceTree = "<group>"; };
@@ -271,6 +273,7 @@
 		72B10A97152F708D0010D14D /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				7225B24B1544FBFC00B7A904 /* ballpark_delivery_logo.png */,
 				7271D46D153C7C05007ED535 /* logo.png */,
 				72B10A99152F709D0010D14D /* shoppingcart.png */,
 			);
@@ -345,6 +348,7 @@
 				72DA24A5153DDC5400425F2C /* ExtraCell.xib in Resources */,
 				7225B2471544E90200B7A904 /* StatusViewController.xib in Resources */,
 				7225B24A1544EC3900B7A904 /* StatusCell.xib in Resources */,
+				7225B24C1544FBFC00B7A904 /* ballpark_delivery_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
