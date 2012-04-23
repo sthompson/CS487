@@ -12,7 +12,7 @@
 @implementation RegisterViewController
 
 @synthesize username,password,name,ccnumber,year,month,registerButton,delegate,scroller;
-@synthesize cancelButton;
+@synthesize cancelButton,confirmPassword;
 @synthesize years,months;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
@@ -97,6 +97,11 @@
 
 -(IBAction)registerUser:(id)sender
 {
+    if (![confirmPassword.text isEqualToString:password.text]) {
+        UIAlertView *passwordProblem = [[UIAlertView alloc] initWithTitle:nil message:@"Passwords do not match" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [passwordProblem show];
+        return;
+    }
     NSString *selectedMonth = [NSString stringWithFormat:@"%d",
                                [month selectedRowInComponent:0]+1];
     NSString *selectedYear = [years objectAtIndex:[year selectedRowInComponent:0]];
@@ -115,7 +120,7 @@
 {
     NSDictionary* info = [aNotification userInfo];
     CGSize kbSize = [[info objectForKey:UIKeyboardFrameBeginUserInfoKey] CGRectValue].size;
-    scroller.contentSize = scroller.frame.size;
+    //scroller.contentSize = scroller.frame.size;
     [scroller setFrame:CGRectMake(0, 0, scroller.frame.size.width, scroller.frame.size.height - kbSize.height)];
 }
 

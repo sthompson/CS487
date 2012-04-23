@@ -41,7 +41,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    self.navigationController.navigationBarHidden = YES;
     // Do any additional setup after loading the view from its nib.
 }
 
@@ -57,6 +56,7 @@
     username.text = @"";
     password.text = @"";
     seatNumber.text = @"";
+    self.navigationController.navigationBarHidden = YES;
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -84,6 +84,11 @@
      removeObserver:self
      name:UIKeyboardWillHideNotification
      object:nil];
+}
+
+-(void) viewWillDisappear:(BOOL)animated
+{
+    self.navigationController.navigationBarHidden = NO;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField { 

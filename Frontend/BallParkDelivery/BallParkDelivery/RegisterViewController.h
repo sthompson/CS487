@@ -18,6 +18,7 @@
 
 @property(weak, nonatomic) IBOutlet UITextField *username;
 @property(weak, nonatomic) IBOutlet UITextField *password;
+@property(weak, nonatomic) IBOutlet UITextField *confirmPassword;
 @property(weak, nonatomic) IBOutlet UITextField *name;
 @property(weak, nonatomic) IBOutlet UIPickerView *year;
 @property(weak, nonatomic) IBOutlet UITextField *ccnumber;
