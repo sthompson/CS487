@@ -34,12 +34,25 @@ def extra_item(request):
     return HttpResponse(simplejson.dumps(extra_item))
 
 def order_status_retrieval(request):
-    transaction = list(Order_status.objects.values('transaction_number','order_number','order_status_description','seat_number').filter(transaction_number__exact= request.POST.__getitem__('transaction_number')))
-    return HttpResponse(simplejson.dumps(transaction))
+    status = list(Order_status.objects.values('order_number','order_status_description','restaurant_id', 'pk').filter(user__exact= request.GET.__getitem__('username')).exclude(order_status_description = 'Arrived'))
+    for item in status:
+        item['restaurant_name'] = Restaurant.objects.get(pk=item['restaurant_id']).restaurant_name
+        item['total_price'] = 0
+        cart = list(Order.objects.values('item_quantity', 'item_price', 'pk').filter(order_number__exact= item['pk']))
+        for cart_item in cart:
+            extraprice = Order_extra.objects.filter(order_number = cart_item['pk']).aggregate(Sum('extra_price')).values()[0]
+            if extraprice != None:
+                cart_item['item_price'] = cart_item['item_price'] + extraprice
+                cart_item['item_price'] = cart_item['item_quantity']*cart_item['item_price']
+            print cart_item['item_price']
+            item['total_price'] = item['total_price'] + cart_item['item_price']
+        item['total_price'] = str(item['total_price'])
+        del item['pk']
+        del item['restaurant_id']
+    return HttpResponse(simplejson.dumps(status))
 
 def order_submission(request):
     seat = Customer.objects.get(username__exact= request.POST.__getitem__('username')).seat_number
-    print seat
     restaurants_in_cart = list((Cart.objects.values('restaurant_id').filter(username__exact= request.POST.__getitem__('username'))).distinct())
     restaurantPKs = []
     for item in restaurants_in_cart:
@@ -87,7 +100,8 @@ def view_cart(request):
     cart = list(Cart.objects.values('has_extra', 'item_name', 'item_quantity', 'item_price', 'pk').filter(username__exact= request.POST.__getitem__('username')))
     for item in cart:
         extraprice = Cart_extra.objects.filter(cart_item = item['pk']).aggregate(Sum('extra_price')).values()[0]
-        print extraprice
+        if extraprice != None:
+            item['item_price'] = item['item_price'] + extraprice
         item['item_price'] = str(item['item_price'])
     return HttpResponse(simplejson.dumps(cart))
 
@@ -107,9 +121,25 @@ def create_username(request):
     ccexpmonth = request.POST.__getitem__('cc_exp_month')
     ccexpyear = request.POST.__getitem__('cc_exp_year')
     is_valid = not len(Customer.objects.filter(pk=user))
-    if is_valid:
+    if is_valid == False:
+        return HttpResponse("Username taken")
+    elif len(user) < 5:
+        return HttpResponse("Username must be at least 5 characters long")
+    elif len(pw) < 5:
+        return HttpResponse("Password must be at least 5 characters long")
+    elif len(ccname) < 2:
+        return HttpResponse("Invalid name")
+    elif len(ccnumber) < 15 or len(ccnumber) > 16 or not ccnumber.isdigit():
+        return HttpResponse("Invalid credit card number")
+    elif len(ccexpmonth) == 0 or len(ccexpmonth) > 2 or not ccexpmonth.isdigit():
+        return HttpResponse("Invalid expiration month")
+    elif len(ccexpyear) != 4 or not ccexpyear.isdigit():
+        return HttpResponse("Invalid expiration year")
+    elif is_valid:
         Customer.objects.create(username=user, password=pw, cc_name=ccname, cc_number=ccnumber, cc_exp_month = ccexpmonth, cc_exp_year=ccexpyear)
-    return HttpResponse(is_valid)
+        return HttpResponse(is_valid)
+    else:
+        return HttpResponse("Registration process needs more refinement!")
 
 def login(request):
     user = request.POST.__getitem__('username')
