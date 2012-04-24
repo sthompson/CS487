@@ -18,6 +18,7 @@ class Restaurant(models.Model):
     restaurant_name = models.CharField(max_length=25)
     stadium_name = models.ForeignKey(Stadium)
     delivery_fee = models.DecimalField(max_digits=6, decimal_places=2)
+    username = models.CharField(max_length=25, unique=True)
     logo_url = models.CharField(max_length=120)
     current_order_number = models.IntegerField(default=0)
     current_business_date = models.DateField(auto_now_add=True)
@@ -180,7 +181,7 @@ class Cart(models.Model):
 class Cart_extra(models.Model):
     cart_item = models.ForeignKey(Cart)
     extra_name = models.CharField(max_length=20, verbose_name='Extra')
-    extra_price = models.DecimalField(max_digits=6, decimal_places=2, verbose_name='price')
+    extra_price = models.DecimalField(max_digits=6, decimal_places=2, verbose_name='price') 
     
     def __unicode__(self):
         return u'%s Extra: %s' % (self.cart_item, self.extra_name)
