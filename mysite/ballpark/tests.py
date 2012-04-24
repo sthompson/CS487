@@ -324,6 +324,7 @@ class SimpleTest(TestCase):
       # Tests that, given coordinates known to coincide with a stadium, the
       # correct stadium is returned
       response = self.client.post('/stadium/',{'longitude':'-87.633','latitude':'41.831'})
+      print response
       self.assertEqual(response.status_code, 200)
       self.assertContains(response, 'Comiskey Park')
 
